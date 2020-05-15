@@ -1,0 +1,8 @@
+"0",""
+"0","# AUC Computation"
+"0","auc <- calc_auc(heartROCplot) %>% pull(AUC)"
+"0","auc"
+"1","[1]"
+"1"," 0.945762"
+"1","
+"

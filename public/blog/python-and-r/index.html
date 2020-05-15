@@ -72,6 +72,7 @@
               
 
 
+<p><img src="/blog/2020-05-15-python-and-r_files/MyOldBoy.PNG" /></p>
 <div id="python-and-r" class="section level1">
 <h1>Python and R</h1>
 <div id="r-is-a-very-handy-programming-language-for-analyzing-datasets-manipulating-data-and-creating-effective-plots-to-illustrate-relationships-between-variables-whereas-python-which-can-do-similar-things-is-very-slick-in-its-ability-to-create-functions-and-its-easily-readable-code-and-simplicity.-below-ive-taken-the-heart-dataset-in-python-and-using-the-reticulate-library-ive-been-able-to-use-that-dataset-in-r.-this-allowed-me-to-run-a-logistic-regression-on-the-data-and-using-lasso-ive-selected-the-variables-that-have-a-significant-effect-on-whether-or-not-a-patient-was-predicted-to-have-heart-disease-for-more-information-see-the-modeling-project-under-the-projects-tab-to-obtain-an-roc-plot-of-which-i-used-to-calculate-the-area-under-the-curve-auc.-this-could-then-be-used-to-determine-how-effective-our-model-is." class="section level2">
@@ -105,7 +106,7 @@ library(&quot;glmnet&quot;)</code></pre>
 ## 
 ##     expand, pack, unpack</code></pre>
 <pre><code>## Loaded glmnet 3.0-2</code></pre>
-<pre class="r"><code>heart &lt;- read.csv(&quot;heart.csv&quot;)
+<pre class="r"><code>heart &lt;- py$heart
 
 # Define class_diags function:
 class_diag&lt;-function(probs,truth){
@@ -199,30 +200,30 @@ lasso1 &lt;- glmnet(x=heartmatrix, y=heartresponse, family=&quot;binomial&quot;,
 coef(lasso1)</code></pre>
 <pre><code>## 24 x 1 sparse Matrix of class &quot;dgCMatrix&quot;
 ##                        s0
-## (Intercept) -0.1144747546
+## (Intercept)  0.2759850905
 ## age          .           
-## sex1        -0.5435226092
-## cp1          0.2615835963
-## cp2          0.8469800973
-## cp3          0.5780582363
-## trestbps    -0.0021565654
+## sex1        -0.6510888890
+## cp1          0.3566244751
+## cp2          0.9776758666
+## cp3          0.7872374641
+## trestbps    -0.0043528443
 ## chol         .           
 ## fbs1         .           
-## restecg      0.0405601099
-## thalach      0.0110470973
-## exang1      -0.6563134610
-## oldpeak     -0.3083070009
-## slope1      -0.3913987497
-## slope2       0.1828466148
-## ca1         -1.0220346285
-## ca2         -1.3918022118
-## ca3         -0.9419640635
+## restecg      0.0779083641
+## thalach      0.0111909936
+## exang1      -0.6578457834
+## oldpeak     -0.3219827701
+## slope1      -0.4305644603
+## slope2       0.2161553260
+## ca1         -1.1449361967
+## ca2         -1.5499626571
+## ca3         -1.0591243029
 ## ca4          .           
 ## thal1        .           
-## thal2        0.5730708005
-## thal3       -0.6551830980
+## thal2        0.5020682632
+## thal3       -0.7323821315
 ## chol_c       .           
-## trestbps_c  -0.0001604326</code></pre>
+## trestbps_c  -0.0001739217</code></pre>
 <pre class="r"><code># Set Explanatory Dummy variables in a new dataset with the acquired LASSO Non-zero Coefficients
 
 heart6 &lt;- heart %&gt;% mutate(sex1=ifelse(sex==&quot;1&quot;,1,0), cp1=ifelse(cp==&quot;1&quot;,1,0), cp2=ifelse(cp==&quot;2&quot;,1,0), 
@@ -282,7 +283,7 @@ diags&lt;-rbind(diags,class_diag(probs,truth))
 ## prediction from a rank-deficient fit may be misleading</code></pre>
 <pre class="r"><code>summarize_all(diags,mean)</code></pre>
 <pre><code>##         acc      sens      spec       ppv       auc
-## 1 0.8747312 0.9150717 0.8350057 0.8614951 0.9291249</code></pre>
+## 1 0.8382796 0.8729458 0.8003544 0.8439228 0.9150978</code></pre>
 <pre class="r"><code>heart4 &lt;- heart %&gt;% mutate(probcurve= predict(heartLassoFit, type= &quot;response&quot;))
 heartROCplot &lt;- ggplot(heart4) + geom_roc(aes(m= probcurve, d= target), n.cuts=0) +
   ggtitle(&quot;ROC Plot for Heart Disease Dataset Logistic Regression&quot;)

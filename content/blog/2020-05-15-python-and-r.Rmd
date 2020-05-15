@@ -11,6 +11,9 @@ slug: python-and-r
 tags: []
 categories: []
 ---
+
+![](/blog/2020-05-15-python-and-r_files/MyOldBoy.PNG)
+
 # Python and R
 ## R is a very handy programming language for analyzing datasets, manipulating data and creating effective plots to illustrate relationships between variables whereas Python which can do similar things is very slick in its ability to create functions and its easily readable code and simplicity. Below, I've taken the `heart` dataset in python and using the Reticulate library, I've been able to use that dataset in R. This allowed me to run a logistic regression on the data, and using LASSO, I've selected the variables that have a significant effect on whether or not a patient was predicted to have heart disease (For more information, see the Modeling project under the Projects Tab) to obtain an ROC plot of which I used to calculate the Area-under-the-curve (AUC). This could then be used to determine how effective our model is. 
 
@@ -27,7 +30,7 @@ library("tidyverse")
 library("plotROC")
 library("glmnet")
 
-heart <- read.csv("heart.csv")
+heart <- py$heart
 
 # Define class_diags function:
 class_diag<-function(probs,truth){

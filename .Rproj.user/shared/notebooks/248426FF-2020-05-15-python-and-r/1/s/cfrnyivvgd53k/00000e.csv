@@ -1,0 +1,5 @@
+"0",""
+"0","heart4 <- heart %>% mutate(probcurve= predict(heartLassoFit, type= ""response""))"
+"0","heartROCplot <- ggplot(heart4) + geom_roc(aes(m= probcurve, d= target), n.cuts=0) +"
+"0","  ggtitle(""ROC Plot for Heart Disease Dataset Logistic Regression"")"
+"0","heartROCplot"
