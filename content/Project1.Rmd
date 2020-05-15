@@ -1,0 +1,316 @@
+---
+title: "Project 1: Exploratory Data Analysis and Tidyverse Tools"
+author: "John Ferratt"
+UTEID: "jtf948"
+date: "May 13, 2020"
+output:
+  pdf_document: default
+  html_document: default
+
+---
+
+```{r global_options, include=FALSE}
+library(knitr)
+opts_chunk$set(fig.align="center", echo= TRUE, eval= TRUE, fig.height=5, message=FALSE, warning= FALSE,  fig.width=8,tidy.opts=list(width.cutoff=60),tidy=TRUE, R.options=list(max.print=100))
+```
+
+```{R}
+# Calling Libraries
+library("ggplot2")
+library("dplyr")
+library("tidyverse")
+library("GGally")
+library("cluster")
+library("plotly")
+library("factoextra")
+
+# Importing Datasets
+COVID19 <- read.csv("Covid19_2.csv")
+SARS <- read.csv("sars_2003_complete_dataset_clean2.csv")
+
+# Show introductory information regarding the two datasets
+glimpse(COVID19)
+glimpse(SARS)
+```
+
+## Introduction: 
+   
+### The `Covid19` dataset is a dataset compiled by kaggle user, Devakumar kp, and can be found here (https://www.kaggle.com/imdevskp/corona-virus-report) which contains other useful documents downloadable in .csv format contains 8 variables. The dataset includes information on amounts of confirmed cases, cumulative number of deceased individuals and recovered individuals from the virus, COVID-19. The virus, COVID-19, is a coronavirus strain that originated in Wuhan, China that spread from animal-to-human contact. However, more recently the virus has been seen to spread between humans via inhalation or ingestion of droplets from coughing/sneezing from infected people. The long incubation period of the virus has made containment and limitation of exposure rather difficult. This dataset was made accessible by John Hopkins University and information has come from the World Health Organization (WHO) as well as from other various centers for disease control (CDC) across multiple countries (United States, Italy, China, Hong Kong, Macau, Taiwan, Australia, and the European Centre for Disease Prevention and Control (ECDC)). Variables in the dataset include:
+
+ Date = Gives the month, day, and year as (MM/DD/YY). The month, day, and year will be separated into different columns later while tidying.
+ Province.State = details the province or state if it's applicable or given. In some observations, even cruise ships where cases were confirmed are also noted. 
+ Country.Region = details the specific country of the observation. In some observations, even cruise ships where cases were confirmed are also noted.  
+ Virus = indicates the Virus name (personally added for use after joining)
+ Cuml.Confirmed = the cumulative number of confirmed positive cases for COVID-19 in each particular region upon a given date
+ Cuml.Deaths = the cumulative number of deceased individuals due to COVID-19 in each particular region upon a given date
+ Cuml.Recovered = the cumulative number of individuals who recovered from COVID-19 in each particular region upon a given date
+ Latitude = General Latitude of the region or country (and cruise ships in some appicable observations)
+ Longitude = General Longitude of the region or country (and cruise ships in some appicable observations)
+
+   The `Sars` dataset is a dataset compiled by another kaggle user, Devakumar kp, and can be found here (https://www.kaggle.com/imdevskp/sars-outbreak-2003-complete-dataset). The dataset includes day-by-day observations from the WHO website and was compiled using scrapping from Python by the kaggle user. SARS (Severe Acute Respiratory Syndrome) is a disease induced by a coronavirus strain similar in type to the recent COVID-19 virus. The virus spread rapidly in 2003, however, no cases have been reported since 2004. The 6 Variables included in this dataset are as follows: 
+ Country = denotes the country in which the observation was recorded. 
+ Date = gives the date that the observation was recorded in the format (MM/DD/YY)
+ Cuml.Confirmed = the cumulative number of confirmed positive cases for SARS in each particular country upon a given date
+ Cuml.Deaths = the cumulative number of deceased individuals due to SARS in each particular country upon a given date
+ Cuml.Recovered = the cumulative number of individuals who recovered from SARS in each particular country upon a given date
+ Virus = (A variable I added myself to note the type of virus for after joining the datasets)
+ 
+   Due to recent events, and my interest in analyzing viruses and their spread across populations, I've decided to compare the development of the outbreaks of the SARS and COVID-19 viruses. I hope to one day apply to medical school so knowledge about virus transmission between individuals and the rate of spread is interesting to me, for the more information on virus transmission to this degree will help in preparation for any new virus that may follow suit in the future. It is also interesting to me to see how quickly individual cases might recover or die to the virus over the time frames in the datasets and how those times compare to one another. My interest in medical school and healthcare stems from my late father's passing from paraganglioma, a rare neuroendocrine cancer. My hope is that by learning more about the transmission of these kinds of viruses, we can better protect the immunocompromised individuals in society.  
+
+## Data Investigation
+
+### Some observations are missing for some dates as more countries appear as the dates progress chronologically. This is likely because some countries had not reported any confirmed cases until a particular date. Switzerland, for example, reported 2 cases on March 17, 2003, but then didn't report anything until March 20, 2003 where the confirmed case amount jumped to 7 but then decreased to 2 on March 24, 2003, meaning that some people likely could have left the country. This means that the datasets could be inaccurate due to when certain countries actually report cases versus when a person actually is infected with the virus. However, the `COVID19` dataset does not have this issue. This can be seen from the below code. However, confirmed cases also can drop if a confirmed individual recovers or dies, however, there are some instances where neither is recorded. This is most noticeable later when confirmed cases are negative for a particular day, presumptively because the individual left the country or the report was inaccurate. 
+```{R}
+# Pivot the date columns to widen the datasets
+COVID19.2 <- (COVID19 %>% pivot_wider(names_from = Date, values_from = c("Cuml.Confirmed","Cuml.Deaths","Cuml.Recovered")))
+SARS.2 <- (SARS %>% distinct() %>% pivot_wider(names_from = "Date", values_from = c("Cuml.Confirmed","Cuml.Deaths","Cuml.Recovered")))
+
+# Pivot the dataset to create month, day, and year variables.
+COVID19.2 <- COVID19.2 %>% pivot_longer(contains("_")) %>% separate(name, into = c("Cuml", "Info","Month","Day","Year")) %>% select(-Cuml) %>% pivot_wider(names_from = "Info", values_from = "value")
+SARS.2 <- SARS.2 %>% pivot_longer(contains("_")) %>% separate(name, into = c("Cuml", "Info","Month","Day","Year")) %>% select(-Cuml) %>% pivot_wider(names_from = "Info", values_from = "value")
+```
+ 
+## Joining the Datasets
+
+### First, an anti-join was done in order to determine the number of countries in the `COVID19` dataset that were not in the `SARS` dataset.This was found to be zero, meaning that all countries in the `SARS` dataset were present in the `COVID19` dataset. Thus, a full-join was done to incorporate both datasets together as this would retain all information from the `COVID19` dataset while adding information by date (variables: month, day, and year) for each country included in the `SARS` dataset. This also is most feasible because it would not duplicate any columns since the `COVID19` dataset possess all variables that the `SARS` dataset has (with some additional variables). A new dataset with all information would be created called `Coronavirus` since both viruses are strains of Coronavirus. 
+
+```{R}
+# Noting Different Countries between datasets
+SARS <- (SARS %>% mutate(Country.Region=Country) %>% select(-Country))
+DiffSARSCountries <- (SARS %>% anti_join(COVID19, by="Country.Region"))
+DiffSARSCountries %>% nrow()
+
+# Creating Numeric and Categorical Date Variables in each dataset
+SARS <- SARS %>% separate(Date, into = c("Month","Day","Year"), sep="/", remove = F) %>% mutate(Month = recode(Month, "1"="01","2"="02","3"="03","4"="04","5"="05","6"="06","7"="07","8"="08","9"="09")) %>% mutate(Year = recode(Year, "03"="2003")) %>% mutate(Day = recode(Day, "1"="01","2"="02","3"="03","4"="04","5"="05","6"="06","7"="07","8"="08","9"="09"))
+COVID19 <- COVID19 %>% separate(Date, into = c("Month","Day","Year"), sep="/", remove = F) %>% mutate(Month = recode(Month, "1"="01","2"="02","3"="03","4"="04","5"="05","6"="06","7"="07","8"="08","9"="09")) %>% mutate(Year = recode(Year, "20"="2020")) %>% mutate(Day = recode(Day,"1"="01","2"="02","3"="03","4"="04","5"="05","6"="06","7"="07","8"="08","9"="09"))
+
+# Date format changed to numeric form "YYYYMMDD".
+# Standard Date format (MM/DD/YY) retained.
+COVID19 <- COVID19 %>% unite(Year, Month, Day, col = "Date.n", sep = "", remove = F)
+SARS <- SARS %>% unite(Year, Month, Day, col = "Date.n", sep = "", remove = F)
+SARS <- SARS %>% mutate(Month = recode(Month, "01"="January","02"="February","03"="March","04"="April","05"="May","06"="June","07"="July","08"="August","09"="September","10"="October","11"="November","12"="December"))
+COVID19 <- COVID19 %>% mutate(Month = recode(Month, "01"="January","02"="February","03"="March","04"="April","05"="May","06"="June","07"="July","08"="August","09"="September","10"="October","11"="November","12"="December"))
+
+# Joining COVID19 and SARS datasets with desired variables.
+Coronavirus <- (COVID19 %>% full_join(SARS, by=c("Date"="Date","Date.n"="Date.n","Country.Region"="Country.Region","Month"="Month","Virus"="Virus","Cuml.Confirmed"="Cuml.Confirmed","Cuml.Deaths"="Cuml.Deaths","Cuml.Recovered"="Cuml.Recovered","Province.State"="Province.State","Day"="Day","Year"="Year")))
+```
+
+### Because the number of rows in the `DiffSARSCountries` data frame is 0, this shows that all the countries/regions in the `SARS` dataset are present in the `COVID19` dataset. 
+
+## Summary Statistics and dplyr
+
+### First, 3 new variables were created in order to better visualize how many new confirmed cases, deaths, and recoveries occurred each recorded day for both viruses. Then dplyr functions were used to explore the dataset. I had to remove the 'Province.State' variable because of the amount of blank cells and implicit NAs which was preventing me from grouping the Countries properly. New numeric variables that are created are 'Deaths' (The number of fatalities due to coronavirus reported on a given day), 'Confirmed' (The number of confirmed cases of coronavirus on given day), and 'Recovered' (Number of people reported to have recovered from the virus).  
+
+```{R}
+# Denote new recoveries, deaths, and confirmed cases per date.
+# Missing values required to be made explicit. 
+
+# NA values to "Not Recorded" in Lat., Long. and Prov.St. for SARS data
+Coronavirus[is.na(Coronavirus)] <- "Not Recorded"
+Coronavirus <- Coronavirus %>% group_by(Country.Region) %>% complete(Province.State) %>% na.omit()
+
+# Variable creation of noncumulative deaths, recoveries, and confirmed cases using mutate()
+Coronavirus <- Coronavirus %>% group_by(Country.Region, Province.State) %>% mutate(Confirmed= (Cuml.Confirmed - lag(Cuml.Confirmed)))
+Coronavirus <- Coronavirus %>% group_by(Country.Region, Province.State) %>% mutate(Deaths= (Cuml.Deaths - lag(Cuml.Deaths)))
+Coronavirus <- Coronavirus %>% group_by(Country.Region, Province.State) %>% mutate(Recovered= (Cuml.Recovered - lag(Cuml.Recovered)))
+
+# Create ifelse statements to eliminate remaining NA values.
+# If there's an NA value in a noncuml col, replace with cuml col value.
+Coronavirus$Confirmed <- ifelse(is.na(Coronavirus$Confirmed), Coronavirus$Cuml.Confirmed, Coronavirus$Confirmed)
+Coronavirus$Deaths <- ifelse(is.na(Coronavirus$Deaths), Coronavirus$Cuml.Deaths, Coronavirus$Deaths)
+Coronavirus$Recovered <- ifelse(is.na(Coronavirus$Recovered), Coronavirus$Cuml.Recovered, Coronavirus$Recovered)
+
+# Return NA values back to Lat. and Long. for SARS observations.
+Coronavirus$Latitude[Coronavirus$Latitude == "Not Recorded"] <- NA
+Coronavirus$Longitude[Coronavirus$Longitude == "Not Recorded"] <- NA
+
+# dplyr investigation!
+
+# Show highest observations for number of deaths on a given day.
+Coronavirus %>% group_by(Country.Region) %>% summarize(Deaths=max(Deaths)) %>% arrange(desc(Deaths))
+
+# Show COVID19 observations in March and see which countries lost the most people.
+Coronavirus  %>% filter(Month == "March", Virus == "COVID19") %>% summarize(Max.Deaths= max(Deaths)) %>% arrange(desc(Max.Deaths))
+
+Coronavirus %>% select(-Latitude,-Longitude) %>% group_by(Country.Region) %>% summarize(mean_Recovered=mean(Recovered))
+Coronavirus <- Coronavirus %>% arrange(desc(Date.n))
+
+```
+
+```{R}
+# Summary Statistics!
+
+Coronavirus %>% group_by(Country.Region) %>% summarize(mean_Deaths=mean(Deaths), sd_Deaths=sd(Deaths), var_Deaths=var(Deaths),n(),min_Deaths=min(Deaths),max_Deaths=max(Deaths),n_distinct_Deaths=n_distinct(Deaths),cor_Deaths_Recovered=cor(Deaths, Recovered), IQR_Deaths=IQR(Deaths), median_Deaths=median(Deaths)) %>% pivot_longer(contains("_"))
+
+Coronavirus %>% group_by(Country.Region) %>% summarize(mean_Deaths=mean(Deaths), sd_Deaths=sd(Deaths), var_Deaths=var(Deaths),n(),min_Deaths=min(Deaths),max_Deaths=max(Deaths),n_distinct_Deaths=n_distinct(Deaths),cor_Deaths_Recovered=cor(Deaths, Recovered), IQR_Deaths=IQR(Deaths), median_Deaths=median(Deaths)) %>% arrange(desc(mean_Deaths))
+
+Coronavirus %>% group_by(Country.Region, Virus) %>% summarize(mean_Deaths=mean(Deaths), sd_Deaths=sd(Deaths), var_Deaths=var(Deaths),n(),min_Deaths=min(Deaths),max_Deaths=max(Deaths),n_distinct_Deaths=n_distinct(Deaths),cor_Deaths_Recovered=cor(Deaths, Recovered), IQR_Deaths=IQR(Deaths), median_Deaths=median(Deaths))
+
+Coronavirus %>% group_by(Country.Region) %>% summarize(mean_Confirmed=mean(Confirmed), sd_Confirmed=sd(Confirmed), var_Confirmed=var(Confirmed),n(),min_Confirmed=min(Confirmed),max_Confirmed=max(Confirmed),n_distinct_Confirmed=n_distinct(Confirmed),cor_Confirmed_Deaths=cor(Confirmed, Deaths), IQR_Confirmed=IQR(Confirmed), median_Confirmed=median(Confirmed))
+
+Coronavirus %>% group_by(Country.Region, Virus) %>% summarize(mean_Confirmed=mean(Confirmed), sd_Confirmed=sd(Confirmed), var_Confirmed=var(Confirmed),n(),min_Confirmed=min(Confirmed),max_Confirmed=max(Confirmed),n_distinct_Confirmed=n_distinct(Confirmed),cor_Confirmed_Deaths=cor(Confirmed, Deaths), IQR_Confirmed=IQR(Confirmed), median_Confirmed=median(Confirmed)) %>% arrange(desc(median_Confirmed))
+
+Coronavirus %>% group_by(Country.Region) %>% summarize(mean_Recovered=mean(Recovered), sd_Recovered=sd(Recovered), var_Recovered=var(Recovered),n(),min_Recovered=min(Recovered),max_Recovered=max(Recovered),n_distinct_Recovered=n_distinct(Recovered),cor_Recovered_Confirmed=cor(Recovered, Confirmed), IQR_Recovered=IQR(Recovered), median_Recovered=median(Recovered)) %>% arrange(desc(max_Recovered))
+
+Coronavirus %>% group_by(Country.Region,Virus) %>% summarize(mean_Recovered=mean(Recovered), sd_Recovered=sd(Recovered), var_Recovered=var(Recovered),n(),min_Recovered=min(Recovered),max_Recovered=max(Recovered),n_distinct_Recovered=n_distinct(Recovered),cor_Recovered_Confirmed=cor(Recovered, Confirmed), IQR_Recovered=IQR(Recovered), median_Recovered=median(Recovered))
+```
+
+### The first set of summary statistics was meant to show another instance of pivot_longer use where multiple columns are converted into rows. This means that for each country/region in the country.region variable, there will be a summary statistic with it's corresponding value. This would increase the number of rows from 118 to 1062 but decrease the total number of columnds from 11 to 3. Pivot_wider would do the reverse if done where it would shift rows to become columns where particular values would be taken from a preexisting column. 
+
+### Regarding the summary statistics, the first set focused on the deaths numeric variable. I decided to also arrange the summary in descending order with respect to the mean. Clearly, as portrayed in the media, Iran has been experiencing, on average per day, the greatest number of fatalities due to coronavirus. Iran is not represented in the `SARS` dataset so this average is purely from the COVID19 strain alone. Most of the higher average countries are Asian countries, but Italy with its tight population density in the north is shown to experience the second highest number of fatalities per day on average but has a higher standard deviation than Iran, so this number fluctuates more. 
+On another note, Japan has the highest median confirmation of new cases which could be explained by their standard of living and access to healthcare services as compared to Iran which has a median close to zero because they can't accurately test individuals as well as more wealthy countries. 
+  Surprisingly enough, China has the most amount of indiviudals who are in recovery or have recovered from the virus, suggesting they could be past their peak of transmission for the virus within their region. This would also suggest an individual will not have the virus for an extended amount of time but moreso that the virus has permeated through that region and those remainging in the region have already been exposed and have obtained the appropriate defenses while other countries in the near Pacific and abroad from China are experiencing more Confirmed Cases and more fatalaties currently. These variables on a day-basis were more beneficial to analyze than their cumulative predecessors because only the most recent statistic for each cumulative variable would have been useful. 
+```{R}
+# Correlation Matrix and Heatmap Visualization
+Coronavirus %>% mutate(Day=recode(Day, "01"="1","02"="2","03"="3","04"="4","05"="5","06"="6","07"="7","08"="8","09"="9"))
+
+Coronavirus<-Coronavirus %>% as.data.frame%>%mutate_at(c(3:4,6,8,9),as.numeric) %>% mutate(Province.State=ifelse(Province.State=="",NA,Province.State)) %>% arrange(Country.Region)
+
+sapply(Coronavirus, class)
+Recov_Death_correlation <- Coronavirus %>% select(Recovered, Deaths) %>% cor()
+
+Heatmap <- Coronavirus %>% select(Confirmed, Recovered, Deaths, Cuml.Confirmed, Cuml.Deaths, Cuml.Recovered) %>% cor() %>% as.data.frame() %>% rownames_to_column() %>% pivot_longer(-1) %>% ggplot(aes(rowname, name, fill=value)) + geom_tile() + geom_text(aes(label=round(value, 4))) + xlab("Numeric Variables") + ylab("Numeric Variables") + scale_fill_gradient2(low="blue", mid = "white", high="red") + ggtitle("Numeric Correlation Heatmap")
+Heatmap
+
+```
+### According to the heatmap, Deaths have a somewhat high correlation with the number of confirmed cases. This would suggest that as more cases become confirmed, more deaths seem to arise. This could be explained by the fact more people are taken to the hospital to be treated for the virus but hospitals are less able to handle such an influx of people causing people to have reduced care and are more a the whim of how they handle the virus' symptoms. Cumulative Deaths and Cumulative Confirmed cases have a very high correlation, slightly more than the correlation between cumulative confirmed cases and recoveries. This would suggest that more confirmed cases of either virus thus far have resulted in fatality than recovery. 
+   Furthermore, the correlation between confirmed cases on a given day and cumulative recoveries seems to have a very low correlation which would likely be because people new cases are sporadic and are not exponentially occuring each day, rather confirmed cases varies by day and could be higher or lower than the previous day. However, recoveries per day has a strong correlation with the cumulative variables, likely in part due to the fact that people are consistenly recovering more as of lately and thus since recoveries per day increases, we could expect the cumulative variables to increase as well since more cases, deaths, and recoveries continuously happen with COVID19. Recoveries and Deaths also have a low correlation which is expected since those not recovering from the virus are likely dying from it and vice-versa.
+ 
+  
+## Visualizations!
+
+### Below are some graphs constructed from ggplot, while after each graph will be a brief analysis. 
+```{R}
+library("ggplot2")
+
+Coronavirus <- Coronavirus %>% mutate(Month= recode(Month, "January"="1","February"="2","March"="3","April"="4","May"="5","June"="6","July"="7","August"="8","September"="9","October"="10","November"="11","December"="12"))
+
+Deathplot <- ggplot(data = Coronavirus, aes(x = Month, y = Deaths, fill = Virus)) +
+  geom_bar(stat = "summary", fun.y = "mean") + 
+  geom_errorbar(stat="summary", width = 0.5) 
+
+Deathplot + ggtitle("Average Number of Deaths Daily Per Country by Month") +
+  scale_y_continuous(name = "Average Number of Deaths Per Day Per Country", breaks=seq(0,25,5)) + 
+  theme_dark() + 
+  scale_fill_brewer(palette="Dark2") +
+  facet_wrap(~Virus)
+```
+### In this visualization, the average number of deaths per month is displayed. However, not all months were analyzed in the dataset, and COVID19 currently has not seen the summer months of 2020 yet so only January, Febraury, and March data for COVID19 is shown. Between these two strains of coronavirus, it can be seen that SARS caused its peak amount of deaths in April of 2003 whereas COVID19 has yet to reach a peak in amount of deaths caused globally. Furthermore, it can be seen that March has been the month with the highest average deaths per day per country, globally. The SARS virus, on the other hand exhibited a large drop off from its peak month in April. This may have been due to most countries experiencing summer in May through July and into September since the virus would have a harder time spreading in warmer environments and low humidity. 
+
+```{R}
+Coronavirus <- Coronavirus %>% mutate(Month = recode(Month, "1"="January","2"="February","3"="March","4"="April","5"="May","6"="June","7"="July","8"="August","9"="September","10"="October","11"="November","12"="December"))
+
+Coronavirus$Month <- factor(Coronavirus$Month, levels = c("January","February","March","April","May","June","July","September","October","November","December"))
+
+ChinaPlot <- Coronavirus %>%
+  filter(Virus=="COVID19", Month %in% c("January","February","March"),Country.Region=="China") %>%
+  ggplot(aes(x = Day, y = Confirmed, fill=Month)) +
+  geom_bar(stat="summary") +
+  xlab("Day") +
+  ylab("Number of Confirmed Cases") +
+  ggtitle("Daily Confirmed Cases in Hubei, China by Day") +
+  theme_dark() + 
+  scale_fill_brewer(palette="Dark2") + facet_wrap("Month")
+ChinaPlot
+
+ItalyPlot <- Coronavirus %>%
+  filter(Virus=="COVID19", Month %in% c("March","April","May"),Country.Region=="Italy") %>%
+  ggplot(aes(x = Day, y = Confirmed, fill=Month)) +
+  geom_bar(stat="summary") +
+  xlab("Day") +
+  ylab("Number of Confirmed Cases") +
+  ggtitle("Daily Confirmed Cases in Italy by Day") +
+  theme_dark() + 
+  scale_fill_brewer(palette="Dark2") +
+  facet_wrap("Month")
+ItalyPlot
+
+SpreadPlot <- Coronavirus %>% filter(Virus=="COVID19", Latitude >=0) %>% ggplot() + geom_line(aes(Latitude, Confirmed)) + scale_x_continuous() + xlab("Latitude (Degrees from Equator)") + ylab("Cumulative Confirmed Cases of COVID19") + ggtitle("Cumulative Number of Confirmed Cases by Latitude") + facet_wrap(~Month)
+SpreadPlot
+
+USPlot <- Coronavirus %>%
+  filter(Virus=="COVID19", Month %in% c("March","April","May"), Country.Region=="US") %>%
+  ggplot(aes(x = Day, y = Confirmed, fill= Month)) + 
+  geom_bar(stat="summary") +
+  xlab("Day") +
+  ylab("Number of Confirmed Cases") +
+  ggtitle("Daily Confirmed Cases in the United States of America by Day") +
+  theme_dark() +
+  scale_fill_brewer(palette="Dark2") +
+  facet_wrap("Month")
+USPlot
+
+BrazilPlot <- Coronavirus %>%
+  filter(Virus=="COVID19", Month %in% c("March","April","May"), Country.Region=="Brazil") %>%
+  ggplot(aes(x = Day, y = Confirmed, fill= Month)) + 
+  geom_bar(stat="summary") +
+  xlab("Day") +
+  ylab("Number of Confirmed Cases") +
+  ggtitle("Daily Confirmed Cases in Brazil by Day") +
+  theme_dark() +
+  scale_fill_brewer(palette="Dark2") +
+  facet_wrap("Month")
+BrazilPlot
+
+```
+### In these next two plots, the graphs are divided in two to differentiate by months but also to highlight the contrast between the months. In Hubei, China, the place of origin of the virus, the number of daily confirmed cases reached nearly 15,000 in mid-February, but decreased dramatically to about 100 going into mid-March. This would suggest that after lengthy exposure to the virus, the region has begun to limit the spread of the virus or newly infected individuals have not been able to reach the hospital to create accurate statistics. By contrast, Italy has had an exponential growth in the number of confirmed cases by Day as they are reaching over 2000 confirmed cases each day. This could be do to a high population density like China. However, the sudden drop on Day 10 could be due to their extensive efforts in Northern Italy to quarantine individuals and limit the spread to the remainder of the nation. 
+   The last plot briefly depicts the cumulative number of cases at each latitude. It's noteworthy that as COVID19 began to spread dramatically throughout Hubei, China, the Chinese began to treat more patients by constructing additional medical facilities and quaranting individuals, generating the change from February to March where the peak at latitude 30.97 degrees decreased in height. More peaks began to resonate from that latitude to higher and lower latitudes showing COVID19's spread across the world but not in as extreme concentrations as was Hubei, China. 
+
+
+## Principle Component Analysis
+
+```{R}
+# PCA
+library(dplyr)
+
+# Eliminate numeric columns with NAs to allow princomp analysis
+virus1 <- Coronavirus
+virus_nums <- Coronavirus %>% select(-Latitude, -Longitude) %>% select_if(is.numeric) %>% scale()
+
+rownames(virus_nums) <- virus1$name
+virus_pca<-princomp(virus_nums)
+names(virus_pca)
+
+# View principle components
+Virus_summary <- summary(virus_pca, loadings=T)
+Virus_summary
+
+# Determine eigenvalues and show what variation is due to each prin.comp.
+eigval<-virus_pca$sdev^2 
+varprop=round(eigval/sum(eigval),2) 
+
+ggplot()+geom_bar(aes(y=varprop,x=1:9),stat="identity")+xlab("")+geom_path(aes(y=varprop,x=1:9))+
+  geom_text(aes(x=1:9,y=varprop,label=round(varprop,2)),vjust=1,col="white",size=4)+
+  scale_y_continuous(breaks=seq(0,.6,.2),labels = scales::percent)+
+  scale_x_continuous(breaks=1:6)
+
+# From this ~47% of variation is due to comp.1 and ~22% is due to comp.2
+
+# Show cumulative proportion of variances due to each principle component in eigenvalue display
+round(cumsum(eigval)/sum(eigval),2)
+eigval
+
+
+eigen(cor(virus_nums))
+
+virus_pca_1 <- princomp(virus_nums)
+summary(virus_pca_1, loadings = TRUE)
+
+viral_pca <- Coronavirus %>% select(-Latitude, -Longitude) %>% select_if(is.numeric) %>% scale() %>% prcomp
+
+pca_Coronavirus1 <- data.frame(PC1=viral_pca$x[, 1], PC2=viral_pca$x[, 2])
+ggplot(pca_Coronavirus1, aes(PC1, PC2)) + geom_point()+ ggtitle("PC1 against PC2")
+pca_Coronavirus2 <- data.frame(PC2=viral_pca$x[, 2], PC3=viral_pca$x[, 3])
+ggplot(pca_Coronavirus2, aes(PC2, PC3)) + geom_point()+ ggtitle("PC2 against PC3")
+pca_Coronavirus3 <- data.frame(PC1=viral_pca$x[, 1], PC3=viral_pca$x[, 3])
+ggplot(pca_Coronavirus3, aes(PC1, PC3)) + geom_point()+ ggtitle("PC1 against PC3")
+```
+### The numeric variables in the Coronavirus dataset were selected for and compiled into a matrix and analyzed by their principle components. From the summary information, it can be seen that no particular principle component is solely made up of one variable except for component 4 which is made up of the Day variable. Component 1 accounts for the most variation at about 47% but consists of several different variables rather than just one, suggesting that some of them do correlate. The resulting bar graph clearly denotes that most of the variance is accounted for by the first 3 principle components. Interestingly, there seems to be some correlation between principle components 2 and 3 but this is somewhat expected due to the fact that daily confirmed cases increases with each day for most countries due to the spread of the coronavirus (SARS and COVID19 strains). 
+    The plots constructed from ggplot show the relationships between PC1,PC2, and PC3, where a somewhat linear relationship exists between PC2 and PC3 except for one cluster of extreme points. Another relationship exists between PC1 and PC3 where two clusters of points develop, showing a relationship between Cumulative Confirmed cases (the highest proportion in PC1) and Daily confirmed cases and daily death counts. 
+```{R, echo=F}
+sessionInfo()
+Sys.time()
+Sys.info()
+```
+
+

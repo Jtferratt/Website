@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="John Ferratt" />
+    <meta name="description" content="A Portfolio showcasing Computational Biology Projects">
+    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+    <title>Project 2: Modeling, Testing, and Classification</title>
+    <meta name="generator" content="Hugo 0.70.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/projects/">PROJECTS</a></li>
+        
+        <li><a href="Website%20Resume.pdf">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="/project2/">Project 2: Modeling, Testing, and Classification</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          January 1, 0001
+            &nbsp;&nbsp;
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              
+
+
+<pre class="r"><code># Calling necessary Libraries 
+library(&quot;tidyverse&quot;)
+library(&quot;dplyr&quot;)
+library(&quot;ggplot2&quot;)
+library(&quot;plotROC&quot;)
+
+# Import Dataset
+heart &lt;- read.csv(&quot;heart.csv&quot;)
+glimpse(heart)</code></pre>
+<pre><code>## Observations: 303
+## Variables: 14
+## $ age &lt;int&gt; 63, 37, 41, 56, 57, 57, 56, 44, 52, 57, 54,
+48, 49, 64, 58, 50, 58, 66, 43, 69, …
+## $ sex &lt;int&gt; 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0,
+0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1,…
+## $ cp &lt;int&gt; 3, 2, 1, 1, 0, 0, 1, 1, 2, 2, 0, 2, 1, 3, 3,
+2, 2, 3, 0, 3, 0, 2, 0, 2, 3, 1, 2,…
+## $ trestbps &lt;int&gt; 145, 130, 130, 120, 120, 140, 140, 120,
+172, 150, 140, 130, 130, 110, 150, 120, …
+## $ chol &lt;int&gt; 233, 250, 204, 236, 354, 192, 294, 263,
+199, 168, 239, 275, 266, 211, 283, 219, …
+## $ fbs &lt;int&gt; 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1,
+0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1,…
+## $ restecg &lt;int&gt; 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1,
+0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,…
+## $ thalach &lt;int&gt; 150, 187, 172, 178, 163, 148, 153, 173,
+162, 174, 160, 139, 171, 144, 162, 158, …
+## $ exang &lt;int&gt; 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1,
+0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0,…
+## $ oldpeak &lt;dbl&gt; 2.3, 3.5, 1.4, 0.8, 0.6, 0.4, 1.3, 0.0,
+0.5, 1.6, 1.2, 0.2, 0.6, 1.8, 1.0, 1.6, …
+## $ slope &lt;int&gt; 0, 0, 2, 2, 2, 1, 1, 2, 2, 2, 2, 2, 2, 1,
+2, 1, 2, 0, 2, 2, 1, 2, 2, 1, 2, 2, 2,…
+## $ ca &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 2, 0,…
+## $ thal &lt;int&gt; 1, 2, 2, 2, 2, 1, 2, 3, 3, 2, 2, 2, 2, 2,
+2, 2, 2, 2, 2, 2, 3, 2, 2, 2, 3, 2, 2,…
+## $ target &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,…</code></pre>
+<pre class="r"><code># Check for Missing Values
+heart %&gt;% na.omit() %&gt;% count()</code></pre>
+<pre><code>## # A tibble: 1 x 1
+##       n
+##   &lt;int&gt;
+## 1   303</code></pre>
+<div id="creators-of-the-dataset" class="section level2">
+<h2>Creators of the dataset:</h2>
+<p>Hungarian Institute of Cardiology. Budapest: Andras Janosi,
+M.D. University Hospital, Zurich, Switzerland: William Steinbrunn,
+M.D. University Hospital, Basel, Switzerland: Matthias Pfisterer,
+M.D. V.A. Medical Center, Long Beach and Cleveland Clinic Foundation: Robert Detrano, M.D.,
+Ph.D. Donor: David W. Aha (aha ‘@’ ics.uci.edu) (714) 856-8779</p>
+</div>
+<div id="the-source-of-the-complete-dataset-can-be-found-here-httpsarchive.ics.uci.edumldatasetsheartdisease" class="section level2">
+<h2>The source of the complete dataset can be found here: <a href="https://archive.ics.uci.edu/ml/datasets/Heart+Disease" class="uri">https://archive.ics.uci.edu/ml/datasets/Heart+Disease</a></h2>
+<p>While the abbreviated dataset used for the project can be found here:
+<a href="https://www.kaggle.com/volodymyrgavrysh/heart-disease/data#" class="uri">https://www.kaggle.com/volodymyrgavrysh/heart-disease/data#</a> under user: VolodymyrGavrysh</p>
+</div>
+<div id="introduction" class="section level2">
+<h2>Introduction:</h2>
+<div id="this-abbreviated-dataset-contains-303-complete-observations-of-individuals-who-underwent-experiments-in-cleveland-while-the-entire-dataset-has-about-76-different-attributes.-data-on-individuals-was-taken-regarding-the-following-variables-in-effort-to-distinguish-what-would-influence-diagnosis-of-heart-disease" class="section level3">
+<h3>This abbreviated dataset contains 303 complete observations of individuals who underwent experiments in Cleveland while the entire dataset has about 76 different attributes. Data on Individuals was taken regarding the following variables in effort to distinguish what would influence diagnosis of heart disease:</h3>
+<p>age = number of years the patient has lived (Age measured in years).
+sex = Categorical variable denoting Male or Female for the patient (where Male = 1, Female= 0).
+cp = Chest pain experienced by the patient (Denoted as typical= 0, Asymptotic= 1, nonanginal= 2, or nontypical= 3).
+trestbps = Resting Blood Pressure measured in mmHG upon hospital admission.
+chol = The patient’s serum cholesterol levels (mg/dl).
+fbs = fasting blood sugar (Expressed in terms of whether or not the patient’s fasting blood sugar was above 120 mg/dl, 0 = False, 1 = True).
+restecg = resting electrocardiographic results (ranges 0 to 2).
+thalach = The maximum heart rate the patient achieved in the hospital(beats per minute).
+exang = categorical variable denoting whether the patient experiences exercise induced angina (1=yes, 0=no).
+oldpeak = ST depression read in the electrocardiogram induced by exercise relative to rest.
+slope = categorical variable representing the slope of the peak ST segment during patient exercise where 1= increase in slope, 2=no change/flat-slope, and 3= decrease in slope.
+ca = the number of major vessels colored by flouroscopy in the patient (denoted by the range of integers 0-3).
+thal = categorical variable representing the potential for Thalassemia in the patient where the body would carry less hemoglobin than normal. (Denoted as 1= normal, 2= fixed defect, and 3= reversable defect)
+target = Binary classifier describing whether or not the Patient was diagnosed with Heart Disease (1 = yes, 0= no. )</p>
+<pre class="r"><code># Multivariate Normality Assumption Check
+library(ggExtra)
+library(mvtnorm)
+
+# Assumption Testing
+ggplot(heart, aes(x = age, y = trestbps)) +
+  geom_point(alpha = .5) + geom_density_2d(h=2) + coord_fixed() + facet_wrap(~target)</code></pre>
+<p><img src="/Project2_files/figure-html/unnamed-chunk-2-1.png" width="768" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>cov(heart)</code></pre>
+<pre><code>## age sex cp trestbps chol fbs restecg
+## age 82.4845584 -0.416661203 -0.64349879 44.4959019
+100.5850764 0.392433283 -0.555012786
+## sex -0.4166612 0.217166087 -0.02373615 -0.4639696
+-4.7803095 0.007474920 -0.014261360
+## cp -0.6434988 -0.023736148 1.06513234 0.8617140
+-4.1137740 0.034719035 0.024107709
+## trestbps 44.4959019 -0.463969576 0.86171399 307.5864533
+111.9672153 1.109042030 -1.052324438
+## chol 100.5850764 -4.780309488 -4.11377396 111.9672153
+2686.4267480 0.245426529 -4.116702730
+## fbs 0.3924333 0.007474920 0.03471903 1.1090420 0.2454265
+0.126876926 -0.015769458
+## restecg -0.5550128 -0.014261360 0.02410771 -1.0523244
+-4.1167027 -0.015769458 0.276528315
+## thalach -82.9033178 -0.469870828 6.99161804 -18.7591305
+-11.8004940 -0.069897056 0.531462418
+## exang 0.4130221 0.031014360 -0.19116779 0.5571110
+1.6319913 0.004294800 -0.017474264
+## oldpeak 2.2145827 0.051993312 -0.17882106 3.9344863
+3.2467937 0.002376893 -0.035882893
+## slope -0.9447905 -0.008819094 0.07613708 -1.3128319
+-0.1289642 -0.013146679 0.030151028
+## ca 2.5663563 0.056356960 -0.19108037 1.8183726 3.7372522
+0.050258999 -0.038740629
+## thal 0.3781391 0.059930496 -0.10220095 0.6680218
+3.1354884 -0.006983149 -0.003857671
+## target -1.0213429 -0.065307193 0.22332962 -1.2679496
+-2.2038555 -0.004983280 0.035997639
+## thalach exang oldpeak slope ca thal target
+## age -82.90331782 0.41302210 2.214582650 -0.944790506
+2.56635630 0.378139138 -1.02134286
+## sex -0.46987083 0.03101436 0.051993312 -0.008819094
+0.05635696 0.059930496 -0.06530719
+## cp 6.99161804 -0.19116779 -0.178821061 0.076137084
+-0.19108037 -0.102200949 0.22332962
+## trestbps -18.75913055 0.55711101 3.934486263
+-1.312831945 1.81837257 0.668021769 -1.26794964
+## chol -11.80049396 1.63199134 3.246793653 -0.128964221
+3.73725220 3.135488383 -2.20385548
+## fbs -0.06989706 0.00429480 0.002376893 -0.013146679
+0.05025900 -0.006983149 -0.00498328
+## restecg 0.53146242 -0.01747426 -0.035882893 0.030151028
+-0.03874063 -0.003857671 0.03599764
+## thalach 524.64640570 -4.07629008 -9.153517802
+5.459368785 -4.99323542 -1.352490547 4.81876598
+## exang -4.07629008 0.22070684 0.157215920 -0.074618058
+0.05560291 0.059471510 -0.10235394
+## oldpeak -9.15351780 0.15721592 1.348095207 -0.413218805
+0.26439578 0.149462330 -0.24945249
+## slope 5.45936878 -0.07461806 -0.413218805 0.379734662
+-0.05051035 -0.039527463 0.10632090
+## ca -4.99323542 0.05560291 0.264395777 -0.050510349
+1.04572378 0.095064804 -0.19982296
+## thal -1.35249055 0.05947151 0.149462330 -0.039527463
+0.09506480 0.374882521 -0.10507508
+## target 4.81876598 -0.10235394 -0.249452495 0.106320897
+-0.19982296 -0.105075077 0.24883614</code></pre>
+<pre class="r"><code># MANOVA Results
+heartmanova &lt;- manova(cbind(age,trestbps,chol,thalach,oldpeak)~target, data= heart)
+summary(heartmanova)</code></pre>
+<pre><code>## Df Pillai approx F num Df den Df Pr(&gt;F)
+## target 1 0.27846 22.924 5 297 &lt; 2.2e-16 ***
+## Residuals 301
+## ---
+## Signif. codes: 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1
+&#39; &#39; 1</code></pre>
+<pre class="r"><code># ANOVA results
+summary.aov(heartmanova)</code></pre>
+<pre><code>## Response age :
+## Df Sum Sq Mean Sq F value Pr(&gt;F)
+## target 1 1266 1266.01 16.117 7.525e-05 ***
+## Residuals 301 23644 78.55
+## ---
+## Signif. codes: 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1
+&#39; &#39; 1
+##
+## Response trestbps :
+## Df Sum Sq Mean Sq F value Pr(&gt;F)
+## target 1 1951 1951.18 6.4582 0.01155 *
+## Residuals 301 90940 302.13
+## ---
+## Signif. codes: 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1
+&#39; &#39; 1
+##
+## Response chol :
+## Df Sum Sq Mean Sq F value Pr(&gt;F)
+## target 1 5895 5894.7 2.203 0.1388
+## Residuals 301 805406 2675.8
+##
+## Response thalach :
+## Df Sum Sq Mean Sq F value Pr(&gt;F)
+## target 1 28182 28181.6 65.12 1.697e-14 ***
+## Residuals 301 130262 432.8
+## ---
+## Signif. codes: 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1
+&#39; &#39; 1
+##
+## Response oldpeak :
+## Df Sum Sq Mean Sq F value Pr(&gt;F)
+## target 1 75.52 75.521 68.551 4.085e-15 ***
+## Residuals 301 331.60 1.102
+## ---
+## Signif. codes: 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1
+&#39; &#39; 1</code></pre>
+<pre class="r"><code># First Bonferroni Correction
+0.05/6</code></pre>
+<pre><code>## [1] 0.008333333</code></pre>
+<pre class="r"><code># Post-hoc T-tests
+pairwise.t.test(heart$age,heart$target,p.adj=&quot;none&quot;)</code></pre>
+<pre><code>## 
+##  Pairwise comparisons using t tests with pooled SD 
+## 
+## data:  heart$age and heart$target 
+## 
+##   0      
+## 1 7.5e-05
+## 
+## P value adjustment method: none</code></pre>
+<pre class="r"><code>pairwise.t.test(heart$thalach,heart$target,p.adj=&quot;none&quot;)</code></pre>
+<pre><code>## 
+##  Pairwise comparisons using t tests with pooled SD 
+## 
+## data:  heart$thalach and heart$target 
+## 
+##   0      
+## 1 1.7e-14
+## 
+## P value adjustment method: none</code></pre>
+<pre class="r"><code>pairwise.t.test(heart$oldpeak,heart$target,p.adj=&quot;none&quot;)</code></pre>
+<pre><code>## 
+##  Pairwise comparisons using t tests with pooled SD 
+## 
+## data:  heart$oldpeak and heart$target 
+## 
+##   0      
+## 1 4.1e-15
+## 
+## P value adjustment method: none</code></pre>
+<pre class="r"><code># Second Bonferroni Correction
+0.05/9</code></pre>
+<pre><code>## [1] 0.005555556</code></pre>
+<pre class="r"><code># Type I Error (If Unadjusted)
+1-((0.95)^9)</code></pre>
+<pre><code>## [1] 0.3697506</code></pre>
+</div>
+<div id="a-one-way-manova-was-conducted-analyzing-effects-of-presence-of-heart-disease-diagnosed-yesno-on-5-numeric-responsedependent-variables-age-resting-blood-pressure-serum-cholesterol-maximum-heart-rate-and-st-depression.-merely-looking-at-the-multivariate-normality-plots-shows-that-this-assumption-is-not-met.-however-random-sampling-of-hospital-patients-and-the-fact-each-patient-represents-an-independent-observation-makes-at-least-one-assumption-met.-some-patients-also-possess-an-extremely-high-resting-blood-pressure-and-have-high-st-depressions-oldpeak-making-outliers-appear-in-the-data-and-violating-that-assumption.-homogeneity-of-within-group-covariances-is-also-violated-as-merely-looking-at-age-does-not-show-a-result-of-1-instead-its-82.-multicollinearity-could-be-met-as-no-immediate-relationships-are-visible-when-plotted-against-one-another.-despite-these-assumption-violations-a-manova-test-was-still-carried-out." class="section level3">
+<h3>A one-way MANOVA was conducted analyzing effects of presence of heart disease (diagnosed yes/no) on 5 numeric response/dependent variables (age, resting blood pressure, serum cholesterol, maximum heart rate, and ST depression). Merely looking at the multivariate normality plots shows that this assumption is not met. However, random sampling of hospital patients and the fact each patient represents an independent observation makes at least one assumption met. Some patients also possess an extremely high resting blood pressure and have high ST depressions (oldpeak) making outliers appear in the data and violating that assumption. Homogeneity of within-group covariances is also violated as merely looking at age does not show a result of 1 (instead it’s ~82). Multicollinearity could be met as no immediate relationships are visible when plotted against one another. Despite these assumption violations, a MANOVA test was still carried out.</h3>
+</div>
+<div id="not-surprisingly-significant-differences-were-found-among-those-diagnosed-with-heart-disease-and-those-not-diagnosed-with-heart-disease-for-at-least-one-of-the-dependentresponse-variables-age-resting-blood-pressure-serum-cholesterol-st-depression-and-maximum-heart-rate-p-value-2.2e-16-pillai-trace-0.27846-pseudo-f5297-22.924" class="section level3">
+<h3>Not surprisingly, significant differences were found among those diagnosed with heart disease and those not diagnosed with heart disease for at least one of the dependent/response variables (age, resting blood pressure, serum cholesterol, ST depression, and maximum heart rate) (p-value= 2.2e-16, Pillai trace= 0.27846, pseudo F(5,297)= 22.924)</h3>
+</div>
+<div id="one-way-univariate-anova-follow-up-testing-showed-that-age-maximum-heart-rate-and-st-depression-held-at-least-one-significant-difference-between-the-groups.-adjusting-for-bonferronis-correction-a-significance-level-of-0.056-which-equates-to-about-0.0083-was-taken.-age-p-value-7.525e-05-0.0083-f-16.117-thalach-p-value1.697e-14-0.0083-f65.12-oldpeak-p-value-4.085e-15-f-68.551" class="section level3">
+<h3>One-way (univariate) ANOVA follow-up testing showed that age, maximum heart rate, and ST depression held at least one significant difference between the groups. Adjusting for bonferroni’s correction, a significance level of (0.05/6 which equates to about 0.0083) was taken. (Age, p-value= 7.525e-05 &lt; 0.0083, F= 16.117), (thalach, p-value=1.697e-14 &lt; 0.0083, F=65.12), (oldpeak, p-value= 4.085e-15, F= 68.551)</h3>
+</div>
+<div id="post-hoc-t-tests-were-then-performed-to-analyze-which-type-of-patient-diagnosed-with-heart-disease-or-not-differed-in-the-response-variables-age-st-depression-and-maximum-heart-rate.-with-bonferronis-correction-the-significance-value-was-found-to-be-0.059-which-equates-to-about-0.00556-because-a-total-of-9-tests-were-taken-due-to-diagnosis-only-having-2-groups.-regardless-age-p-value-7.5e-05-heart-rate-maximum-p-value-1.7e-14-and-st-depression-p-value-4.1e-15-all-fell-below-the-bonferroni-corrected-level-of-significance-of-0.00556-and-thus-the-group-of-patients-diagnosed-with-heart-disease-significantly-differed-in-age-maximum-heart-rate-and-st-depression-from-the-patients-not-diagnosed-with-heart-disease." class="section level3">
+<h3>Post-hoc t-tests were then performed to analyze which Type of Patient (Diagnosed with heart disease or not) differed in the response variables age, ST depression, and maximum heart rate. With bonferroni’s correction, the significance value was found to be (0.05/9 which equates to about 0.00556) because a total of 9 tests were taken (due to diagnosis only having 2 groups). Regardless, age (p-value= 7.5e-05), heart rate maximum (p-value= 1.7e-14), and ST depression (p-value= 4.1e-15) all fell below the bonferroni corrected level of significance of 0.00556 and thus the group of patients diagnosed with heart disease significantly differed in age, maximum heart rate, and ST depression from the patients not diagnosed with heart disease.</h3>
+</div>
+<div id="the-type-i-error-if-unadjusted-would-have-been-0.3697506.-this-would-have-been-extremely-high." class="section level3">
+<h3>The type I error (if unadjusted) would have been 0.3697506. This would have been extremely high.</h3>
+<pre class="r"><code>heart$cp &lt;- as.factor(heart$cp)
+heart$sex &lt;- as.factor(heart$sex)
+heart$fbs &lt;- as.factor(heart$fbs)
+heart$slope &lt;- as.factor(heart$slope)
+heart$thal &lt;- as.factor(heart$thal)
+heart$ca &lt;- as.factor(heart$ca)
+
+# Randomization Test
+t.test(data=heart, age ~ target)</code></pre>
+<pre><code>##
+## Welch Two Sample t-test
+##
+## data: age by target
+## t = 4.0797, df = 301, p-value = 5.781e-05
+## alternative hypothesis: true difference in means is not
+equal to 0
+## 95 percent confidence interval:
+## 2.124635 6.084324
+## sample estimates:
+## mean in group 0 mean in group 1
+## 56.60145 52.49697</code></pre>
+<pre class="r"><code>heart%&gt;%group_by(target)%&gt;%
+  summarize(means=mean(age))%&gt;%
+  summarize(`mean_diff:`=diff(means))</code></pre>
+<pre><code>## # A tibble: 1 x 1
+##   `mean_diff:`
+##          &lt;dbl&gt;
+## 1        -4.10</code></pre>
+<pre class="r"><code>set.seed(9001)
+rand_dist1&lt;-vector()
+
+for(i in 1:5000){
+heart1 &lt;-data.frame(age=sample(heart$age), Diagnosis=heart$target) 
+rand_dist1[i]&lt;-mean(heart1[heart1$Diagnosis==&quot;1&quot;,]$age)-
+              mean(heart1[heart1$Diagnosis==&quot;0&quot;,]$age)}
+
+mean(rand_dist1 &gt; 4.10448 | rand_dist1 &lt; -4.10448)</code></pre>
+<pre><code>## [1] 0</code></pre>
+<pre class="r"><code>{hist(rand_dist1,main=&quot;Null Distribution under t-statistic&quot;,ylab=&quot;&quot;); abline(v = 4.10448,col=&quot;red&quot;)}</code></pre>
+<p><img src="/Project2_files/figure-html/unnamed-chunk-3-1.png" width="768" style="display: block; margin: auto;" />
+### A Randomization test was performed by randomizing the ages into a dataframe respective of whether the particular associate patient was diagnosed with heart disease in order to see if there was a difference in average age between the two categories- diagnosed with heart disease or not diagnosed.</p>
+</div>
+<div id="null-hypothesis-h0-the-mean-age-for-patients-diagnosed-with-heart-disease-is-equal-to-the-mean-age-for-patients-not-diagnosed-with-heart-disease.-thus-the-difference-in-these-means-would-be-equal-to-0." class="section level3">
+<h3>Null Hypothesis (H0): The mean age for Patients diagnosed with heart disease is equal to the mean age for patients not diagnosed with heart disease. Thus, the difference in these means would be equal to 0.</h3>
+</div>
+<div id="alternative-hypothesis-ha-the-mean-age-for-patients-diagnosed-with-heart-disease-and-the-mean-age-for-patients-not-diagnosed-with-heart-disease-are-not-equal.-thus-the-difference-in-these-means-would-not-be-equal-to-0." class="section level3">
+<h3>Alternative Hypothesis (HA): The mean age for Patients diagnosed with heart disease and the mean age for patients not diagnosed with heart disease are not equal. Thus, the difference in these means would not be equal to 0.</h3>
+</div>
+<div id="because-the-p-value-of-0-is-much-less-than-the-level-of-significance-we-can-reject-the-null-hypothesis-that-the-means-are-equal-between-the-two-groups.-this-is-further-supported-by-the-fact-that-the-parametric-t-test-gave-a-p-value-of-5.781e-05-which-is-also-extremely-close-to-0.-t-stat4.0797-df301.observed-difference-in-means-is-4.10448" class="section level3">
+<h3>Because the p-value of 0 is much less than the level of significance, we can reject the null hypothesis that the means are equal between the two groups. This is further supported by the fact that the parametric t-test gave a p-value of 5.781e-05 which is also extremely close to 0. (t-stat=4.0797, df=301).(Observed difference in means is 4.10448)</h3>
+<pre class="r"><code># Linear Regression Model
+library(sandwich)
+library(lmtest)
+
+heart &lt;- heart %&gt;% mutate(chol_c= chol - mean(chol), trestbps_c=trestbps - mean(trestbps),
+                          exang=as.factor(exang))
+heartfit &lt;- lm(age ~ chol_c+trestbps_c+exang+trestbps_c:exang, data= heart)
+summary(heartfit)</code></pre>
+<pre><code>##
+## Call:
+## lm(formula = age ~ chol_c + trestbps_c + exang +
+trestbps_c:exang,
+## data = heart)
+##
+## Residuals:
+## Min 1Q Median 3Q Max
+## -23.3487 -6.2294 0.3875 5.7666 23.5033
+##
+## Coefficients:
+## Estimate Std. Error t value Pr(&gt;|t|)
+## (Intercept) 53.973903 0.600035 89.951 &lt; 2e-16 ***
+## chol_c 0.031834 0.009593 3.318 0.00102 **
+## trestbps_c 0.172283 0.036555 4.713 3.75e-06 ***
+## exang1 1.375542 1.052651 1.307 0.19231
+## trestbps_c:exang1 -0.102654 0.057346 -1.790 0.07446 .
+## ---
+## Signif. codes: 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1
+&#39; &#39; 1
+##
+## Residual standard error: 8.554 on 298 degrees of freedom
+## Multiple R-squared: 0.1246, Adjusted R-squared: 0.1129
+## F-statistic: 10.61 on 4 and 298 DF, p-value: 4.759e-08</code></pre>
+<pre class="r"><code># Plotted Linear Model
+heartlmplot&lt;- heartfit %&gt;% ggplot(aes(x= chol_c, y= trestbps_c, group= exang)) + geom_smooth(aes(color= exang), method= &quot;lm&quot;) + geom_point(aes(color=exang)) + ggtitle(&quot;Linear Regression Model&quot;)
+heartlmplot</code></pre>
+<p><img src="/Project2_files/figure-html/unnamed-chunk-4-1.png" width="768" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># Assumption Checks
+
+# Linearity
+resids &lt;- heartfit$residuals
+fitvals &lt;- heartfit$fitted.values
+heartLinearity &lt;- ggplot()+geom_point(aes(fitvals,resids))+geom_hline(yintercept=0, color=&#39;red&#39;)
+heartLinearity</code></pre>
+<p><img src="/Project2_files/figure-html/unnamed-chunk-4-2.png" width="768" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># Normality
+heartQQ &lt;- ggplot()+geom_qq(aes(sample=resids))+geom_qq_line(aes(sample=resids))
+heartQQ</code></pre>
+<p><img src="/Project2_files/figure-html/unnamed-chunk-4-3.png" width="768" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>hearthist &lt;- ggplot()+geom_histogram(aes(resids), bins=20)
+hearthist</code></pre>
+<p><img src="/Project2_files/figure-html/unnamed-chunk-4-4.png" width="768" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># Homoskedasticity
+bptest(heartfit)</code></pre>
+<pre><code>## 
+##  studentized Breusch-Pagan test
+## 
+## data:  heartfit
+## BP = 4.8927, df = 4, p-value = 0.2985</code></pre>
+<pre class="r"><code># Robust Standard Errors
+coeftest(heartfit, vcov=vcovHC(heartfit))</code></pre>
+<pre><code>##
+## t test of coefficients:
+##
+## Estimate Std. Error t value Pr(&gt;|t|)
+## (Intercept) 53.9739030 0.6066102 88.9763 &lt; 2.2e-16 ***
+## chol_c 0.0318345 0.0091587 3.4759 0.0005849 ***
+## trestbps_c 0.1722832 0.0357602 4.8177 2.315e-06 ***
+## exang1 1.3755419 1.0469999 1.3138 0.1899262
+## trestbps_c:exang1 -0.1026539 0.0520325 -1.9729 0.0494332
+*
+## ---
+## Signif. codes: 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1
+&#39; &#39; 1</code></pre>
+<pre class="r"><code># R-Squared Clarification 
+(sum((heart$age-mean(heart$age))^2)-sum(heartfit$residuals^2))/sum((heart$age-mean(heart$age))^2)</code></pre>
+<pre><code>## [1] 0.1246386</code></pre>
+</div>
+<div id="intercept-the-predicted-age-in-years-for-a-patient-that-has-an-average-resting-blood-pressuremmhg-has-average-serum-cholesterol-mgdl-and-does-not-have-exercise-induced-angina-is-53.973903-years-on-average.-significant-p-value-2e-16-t89.951-df299" class="section level3">
+<h3>Intercept: The predicted age (in years) for a patient that has an average resting blood pressure(mmHg), has average serum cholesterol (mg/dl), and does not have exercise induced angina is 53.973903 years on average. (significant, p-value &lt; 2e-16, t=89.951, df=299)</h3>
+</div>
+<div id="trestbps_c-controlling-for-average-serum-cholesterol-patients-without-exercise-induced-angina-tend-to-be-0.172283-years-older-for-every-1-unit-increase-in-resting-blood-pressure-mmhg.-significant-p-value-3.75e-06-t4.713-df299" class="section level3">
+<h3>trestbps_c: Controlling for average serum cholesterol, patients without exercise induced angina tend to be 0.172283 years older for every 1 unit increase in resting blood pressure (mmHg). (significant, p-value= 3.75e-06, t=4.713, df=299)</h3>
+</div>
+<div id="chol_c-controlling-for-average-resting-blood-pressure-mmhg-patients-without-exercise-induced-angina-tend-to-be-0.031834-years-older-for-every-1-unit-increase-in-serum-cholesterol-mgdl.-significant-p-value0.00102-t3.318-df299" class="section level3">
+<h3>chol_c: Controlling for average resting blood pressure (mmHg), patients without exercise induced angina tend to be 0.031834 years older for every 1 unit increase in serum cholesterol (mg/dl). (significant, p-value=0.00102, t=3.318, df=299)</h3>
+</div>
+<div id="exang_yes-controlling-for-average-resting-blood-pressure-mmhg-and-average-serum-cholesterol-mgdl-patients-with-exercise-induced-angina-tend-to-be-1.375542-years-older-than-those-without-exercise-induced-angina.-not-significant-p-value0.19231-t1.307-df299" class="section level3">
+<h3>exang_Yes: Controlling for average resting blood pressure (mmHg) and average serum cholesterol (mg/dl), patients with exercise induced angina tend to be 1.375542 years older than those without exercise induced angina. (not significant, p-value=0.19231, t=1.307, df=299)</h3>
+</div>
+<div id="trestbps_cchol_c-controlling-for-serum-cholesterol-mgdl-the-slope-for-resting-blood-pressure-on-age-is-0.102654-less-for-patients-with-exercise-induced-angina-compared-to-those-without-exercise-induced-angina.-not-significant-p-value-0.07446-t-stat--1.790-df299" class="section level3">
+<h3>trestbps_c:chol_c: Controlling for serum cholesterol (mg/dl), the slope for resting blood pressure on age is 0.102654 less for patients with exercise induced angina compared to those without exercise induced angina. (not significant, p-value= 0.07446, t-stat= -1.790, df=299)</h3>
+</div>
+<div id="because-the-data-involves-individual-patients-each-patient-and-their-health-issues-represent-independent-observations.-furthermore-because-each-person-responded-to-the-exercise-differently-according-to-their-own-capabilities-and-health-limitations-it-can-be-assumed-this-is-a-random-sample.-according-to-the-residuals-plot-the-residuals-are-scattered-above-and-below-the-line-throughout-the-line-showing-no-signs-of-fanning-out-so-the-linearity-assumption-looks-to-have-been-met.-furthermore-the-normality-assumption-appears-to-have-been-met-according-to-the-unimodal-zero-centered-histogram-distribution-and-the-qqplot-that-mostly-adheres-to-the-y-intercept.-finally-according-to-the-breusch-pagan-test-with-a-p-value-of-0.2985-that-is-greater-than-the-level-of-significance-of-0.05-we-fail-to-reject-the-null-hypothesis-that-the-model-is-homoskedastic-bp-4.8927-df-4." class="section level3">
+<h3>Because the data involves individual patients, each patient and their health issues represent independent observations. Furthermore, because each person responded to the exercise differently according to their own capabilities and health limitations, it can be assumed this is a random sample. According to the residuals plot, the residuals are scattered above and below the line throughout the line, showing no signs of fanning out, so the linearity assumption looks to have been met. Furthermore, the normality assumption appears to have been met according to the unimodal, zero-centered histogram distribution and the QQplot that mostly adheres to the y-intercept. Finally, according to the Breusch-Pagan test, with a p-value of 0.2985 that is greater than the level of significance of 0.05, we fail to reject the null hypothesis that the model is homoskedastic (BP = 4.8927, df = 4).</h3>
+</div>
+<div id="after-running-the-t-test-of-coefficients-chol_c-trestbps_c-the-intercept-and-the-interaction-between-trestbps_c-and-exang_yes-trestbp_cexang_yes-all-of-the-results-were-significant-except-for-exang_yes-which-was-not-significant.-this-means-that-we-would-fail-to-reject-the-null-hypothesis-that-heteroskedasticity-is-met-for-exang_yes-p-value-0.1899262-t-stat-1.3138.-however-because-chol_c-p-value-0.0005849-t-stat-3.4759-trestbps_c-2.315e-06-t-stat-4.8177-trestbps_cexang_yes-p-value-0.0494332-t-stat--1.9729-and-the-intercept-p-value-2.2e-16-t-stat-88.9763-all-were-statistically-significant-the-equal-variance-assumption-is-fulfilled-and-we-would-reject-the-null-hypothesis-that-heteroskedasticity-is-met-meaning-that-homoskedasticity-is-met-instead.-thus-after-robust-standard-errors-the-interaction-became-significant-however-the-categorical-variable-of-exercise-induced-angina-remained-not-significant." class="section level3">
+<h3>After running the t-test of coefficients, chol_c, trestbps_c, the intercept, and the interaction between trestbps_c and exang_Yes (trestbp_c:exang_Yes), all of the results were significant except for exang_yes which was not significant. This means that we would fail to reject the null hypothesis that heteroskedasticity is met for exang_Yes (p-value= 0.1899262, t-stat= 1.3138). However, because chol_c (p-value= 0.0005849, t-stat= 3.4759), trestbps_c (2.315e-06, t-stat= 4.8177), trestbps_c:exang_Yes (p-value= 0.0494332, t-stat= -1.9729), and the intercept (p-value= &lt; 2.2e-16, t-stat= 88.9763) all were statistically significant, the equal variance assumption is fulfilled and we would reject the null hypothesis that heteroskedasticity is met, meaning that homoskedasticity is met instead. Thus, after robust standard errors, the interaction became significant, however, the categorical variable of exercise induced angina remained not significant.</h3>
+</div>
+<div id="the-r-squared-value-represents-the-amount-of-variation-that-could-be-explained-by-the-linear-regression-model-heartfit.-thus-the-proportion-of-variation-in-age-that-can-be-explained-by-heartfit-is-0.1246.-the-adjusted-r-squared-is-slightly-less-at-0.1129-as-seen-in-the-model-but-this-is-due-to-the-multiple-explanatory-variables-selected." class="section level3">
+<h3>The R-Squared value represents the amount of variation that could be explained by the linear regression model, <code>heartfit</code>. Thus, the proportion of variation in age that can be explained by <code>heartfit</code> is 0.1246. The adjusted R-Squared is slightly less at 0.1129 as seen in the model, but this is due to the multiple explanatory variables selected.</h3>
+<pre class="r"><code># Bootstrapped Standard Errors
+set.seed(9001)
+
+samp_resids &lt;- replicate(5000, {
+  fresh_resids &lt;- sample(resids, replace= T)
+  heart$new_y &lt;- (fitvals + fresh_resids)
+  fits &lt;- lm(new_y ~ chol_c+trestbps_c+exang+trestbps_c:exang, data= heart)
+  coef(fits)
+})
+
+samp_resids %&gt;% t %&gt;% as.data.frame %&gt;% summarize_all(sd)</code></pre>
+<pre><code>## (Intercept) chol_c trestbps_c exang1 trestbps_c:exang1
+## 1 0.5938213 0.009499944 0.03613192 1.048246 0.05710731</code></pre>
+<p>(Note that these observations are shown for one randomization, but the seed changes every time)</p>
+</div>
+<div id="the-intercept-0.6066102-standard-error-did-not-drastically-change-from-what-it-was-in-the-robust-standard-error-output-as-shown-in-paranthesis-instead-it-only-decreases-by-about-0.0127889.-the-mean-centered-serum-cholesterol-chol_c-0.0091587-standard-error-did-not-drastically-change-from-what-it-was-in-the-robust-standard-error-output-either-as-shown-in-paranthesis-instead-it-only-increased-by-0.00034124.-the-mean-centered-resting-blood-pressure-trestbps_c-0.0357602-standard-error-did-not-drastically-change-from-what-it-was-in-the-robust-standard-error-output-either-as-shown-in-paranthesis-instead-it-only-increased-by-0.00037172.-surprisingly-the-variable-exang_yesexang_yes-1.0469999-actually-increased-by-0.0012461-from-what-it-had-in-the-robust-standard-errors-output-and-fineally-the-interaction-between-mean-centered-resting-blood-pressure-and-having-exercise-induced-angina-trestbps_cexang_yes-0.0520325-standard-error-did-not-drastically-change-from-what-it-was-in-the-robust-standard-error-output-either-as-shown-in-paranthesis-instead-it-only-increased-by-0.00507481.-because-these-changes-to-the-standard-errors-are-so-miniscule-we-could-expect-similar-outcomes-where-we-would-still-reject-the-null-hypothesis-that-heteroskedasticity-is-met-except-for-in-the-exang_yes-response-variable." class="section level3">
+<h3>The Intercept: (0.6066102) standard error did not drastically change from what it was in the robust standard error output as shown in paranthesis, instead it only decreases by about 0.0127889. The mean-centered serum cholesterol (chol_c, 0.0091587) standard error did not drastically change from what it was in the robust standard error output either as shown in paranthesis, instead it only increased by 0.00034124. The mean-centered resting blood pressure (trestbps_c, 0.0357602) standard error did not drastically change from what it was in the robust standard error output either as shown in paranthesis, instead it only increased by 0.00037172. Surprisingly, the variable, exang_Yes,(exang_Yes, 1.0469999) actually increased by 0.0012461 from what it had in the robust standard errors output and fineally the interaction between mean-centered resting blood pressure and having exercise induced angina (trestbps_c:exang_Yes, 0.0520325) standard error did not drastically change from what it was in the robust standard error output either as shown in paranthesis, instead it only increased by 0.00507481. Because these changes to the standard errors are so miniscule, we could expect similar outcomes where we would still reject the null hypothesis that heteroskedasticity is met except for in the exang_Yes response variable.</h3>
+<pre class="r"><code># Logistic Regression
+heart$cp &lt;- as.factor(heart$cp)
+heartlogsfit &lt;- glm(target ~ (cp+oldpeak+thalach+age+trestbps+chol), data=heart)
+summary(heartlogsfit)</code></pre>
+<pre><code>##
+## Call:
+## glm(formula = target ~ (cp + oldpeak + thalach + age +
+trestbps +
+## chol), data = heart)
+##
+## Deviance Residuals:
+## Min 1Q Median 3Q Max
+## -0.91795 -0.27804 0.04049 0.25856 0.90024
+##
+## Coefficients:
+## Estimate Std. Error t value Pr(&gt;|t|)
+## (Intercept) 0.2606578 0.2973258 0.877 0.38138
+## cp1 0.3292882 0.0708550 4.647 5.08e-06 ***
+## cp2 0.3880769 0.0566341 6.852 4.26e-11 ***
+## cp3 0.3753818 0.0913182 4.111 5.12e-05 ***
+## oldpeak -0.1065198 0.0218969 -4.865 1.87e-06 ***
+## thalach 0.0040929 0.0011975 3.418 0.00072 ***
+## age -0.0013426 0.0029055 -0.462 0.64435
+## trestbps -0.0020488 0.0013823 -1.482 0.13935
+## chol -0.0002820 0.0004523 -0.624 0.53340
+## ---
+## Signif. codes: 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1
+&#39; &#39; 1
+##
+## (Dispersion parameter for gaussian family taken to be
+0.1549317)
+##
+## Null deviance: 75.149 on 302 degrees of freedom
+## Residual deviance: 45.550 on 294 degrees of freedom
+## AIC: 305.71
+##
+## Number of Fisher Scoring iterations: 2</code></pre>
+<pre class="r"><code>exp(coef(heartlogsfit))</code></pre>
+<pre><code>## (Intercept) cp1 cp2 cp3 oldpeak thalach age trestbps
+## 1.2977834 1.3899784 1.4741431 1.4555471 0.8989572
+1.0041013 0.9986583 0.9979532
+## chol
+## 0.9997180</code></pre>
+<pre class="r"><code># Confusion Matrix 
+prob &lt;- predict(heartlogsfit, type= &quot;response&quot;)
+pred &lt;- ifelse(prob&gt;0.5,1,0)
+table(prediction=pred, truth=heart$target) %&gt;% addmargins</code></pre>
+<pre><code>##           truth
+## prediction   0   1 Sum
+##        0    97  31 128
+##        1    41 134 175
+##        Sum 138 165 303</code></pre>
+<pre class="r"><code># Generate Accuracy, Sensitivity, Specificity, PPV, and AUC
+class_diag(prob, heart$target)</code></pre>
+<pre><code>##         acc      sens      spec       ppv       auc
+## 1 0.7623762 0.8121212 0.7028986 0.7657143 0.8633729</code></pre>
+</div>
+</div>
+<div id="interpretation-of-coefficients" class="section level2">
+<h2>Interpretation of coefficients:</h2>
+<div id="intercept-the-odds-of-correctly-predicting-a-patient-with-a-chest-pain-rating-of-0-an-average-st-depression-average-maximum-heart-rate-after-exercisebpm-average-ageyears-average-resting-blood-pressuremmhg-and-an-average-serum-cholesterol-mgdl-to-be-diagnosed-with-heart-disease-would-be-1.2977834.-not-significant-p-value-0.38138-0.05-t0.877" class="section level3">
+<h3>Intercept: The odds of correctly predicting a patient with a chest pain rating of 0, an average ST depression, average maximum heart rate after exercise(bpm), average age(years), average resting blood pressure(mmHg), and an average serum cholesterol (mg/dl) to be diagnosed with heart disease would be 1.2977834. (not significant, p-value= 0.38138 &gt; 0.05, t=0.877)</h3>
+</div>
+<div id="cp1-controlling-for-st-depression-maximum-heart-rate-age-resting-blood-pressure-and-serum-cholesterol-we-would-expect-the-odds-of-correctly-predicting-a-patient-with-a-chest-pain-rating-of-asymptotic1-to-be-diagnosed-with-heart-disease-to-be-1.3899784-times-that-of-a-chest-pain-rating-of-typical0.-significant-p-value-5.08e-06-0.05-t4.647" class="section level3">
+<h3>cp1: Controlling for ST depression, maximum heart rate, age, resting blood pressure, and serum cholesterol, we would expect the odds of correctly predicting a patient with a chest pain rating of asymptotic(1) to be diagnosed with heart disease to be 1.3899784 times that of a chest pain rating of typical(0). (significant, p-value= 5.08e-06 &lt; 0.05, t=4.647)</h3>
+</div>
+<div id="cp2-controlling-for-st-depression-maximum-heart-rate-age-resting-blood-pressure-and-serum-cholesterol-we-would-expect-the-odds-of-correctly-predicting-a-patient-with-a-chest-pain-rating-of-nonanginal2-to-be-diagnosed-with-heart-disease-to-be-1.4741431-times-that-of-a-chest-pain-rating-of-typical0.-signigicant-p-value-4.26e-11-0.05-t-6.852" class="section level3">
+<h3>cp2: Controlling for ST depression, maximum heart rate, age, resting blood pressure, and serum cholesterol, we would expect the odds of correctly predicting a patient with a chest pain rating of nonanginal(2) to be diagnosed with heart disease to be 1.4741431 times that of a chest pain rating of typical(0). (signigicant, p-value= 4.26e-11 &lt; 0.05, t= 6.852)</h3>
+</div>
+<div id="cp3-controlling-for-st-depression-maximum-heart-rate-age-resting-blood-pressure-and-serum-cholesterol-the-odds-of-correctly-predicting-a-patient-with-a-chest-pain-rating-of-nontypical3-to-be-diagnosed-with-heart-disease-to-be-1.4555471-times-that-of-a-chest-pain-rating-of-typical0.-significant-p-value-5.12e-05-0.05-t4.111" class="section level3">
+<h3>cp3: Controlling for ST depression, maximum heart rate, age, resting blood pressure, and serum cholesterol, the odds of correctly predicting a patient with a chest pain rating of nontypical(3) to be diagnosed with heart disease to be 1.4555471 times that of a chest pain rating of typical(0). (significant, p-value= 5.12e-05 &lt; 0.05, t=4.111)</h3>
+</div>
+<div id="oldpeak-controlling-for-maximum-heart-rate-age-resting-blood-pressure-and-serum-cholesterol-we-would-expect-that-for-every-one-unit-increase-in-st-depression-the-odds-of-correctly-predicting-a-patient-with-a-chest-pain-rating-of-typical0-to-be-diagnosed-with-heart-disease-increases-by-a-factor-of-0.8989572.-significant-p-value-1.87e-06-0.05-t-4.865" class="section level3">
+<h3>oldpeak: Controlling for maximum heart rate, age, resting blood pressure, and serum cholesterol, we would expect that for every one unit increase in ST depression, the odds of correctly predicting a patient with a chest pain rating of typical(0) to be diagnosed with heart disease increases by a factor of 0.8989572. (significant, p-value= 1.87e-06 &lt; 0.05, t=-4.865)</h3>
+</div>
+<div id="thalach-controlling-for-st-depression-age-resting-blood-pressure-and-serum-cholesterol-we-would-expect-that-for-every-one-beat-per-minute-increase-in-maximum-heart-rate-the-odds-of-correctly-predicting-a-patient-with-a-chest-pain-rating-of-typical0-to-be-diagnosed-with-heart-disease-increases-by-a-factor-of-1.0041013.-significant-p-value-0.00072-0.05-t3.418" class="section level3">
+<h3>thalach: Controlling for ST depression, age, resting blood pressure, and serum cholesterol, we would expect that for every one beat per minute increase in maximum heart rate, the odds of correctly predicting a patient with a chest pain rating of typical(0) to be diagnosed with heart disease increases by a factor of 1.0041013. (significant, p-value= 0.00072 &lt; 0.05, t=3.418)</h3>
+</div>
+<div id="age-controlling-for-st-depression-resting-blood-pressure-maximum-heart-rate-and-serum-cholesterol-we-would-expect-that-for-every-one-year-increase-in-age-the-odds-of-correctly-predicting-a-patient-with-a-chest-pain-rating-of-typical0-to-be-diagnosed-with-heart-disease-increases-by-a-factor-of-0.9986583.-not-significant-p-value-0.64435-0.05-t-0.462" class="section level3">
+<h3>age: Controlling for ST depression, resting blood pressure, maximum heart rate and serum cholesterol, we would expect that for every one year increase in age, the odds of correctly predicting a patient with a chest pain rating of typical(0) to be diagnosed with heart disease increases by a factor of 0.9986583. (not significant, p-value= 0.64435 &gt; 0.05, t=-0.462)</h3>
+</div>
+<div id="trestbps-controlling-for-st-depression-age-maximum-heart-rate-and-serum-cholesterol-we-would-expect-that-for-every-one-mmhg-increase-in-resting-blood-pressure-the-odds-of-correctly-predicting-a-patient-with-a-chest-pain-rating-of-typical0-to-be-diagnosed-with-heart-disease-increases-by-a-factor-of-0.9979532.-not-significant-p-value-0.13935-0.05-t-1.482" class="section level3">
+<h3>trestbps: Controlling for ST depression, age, maximum heart rate and serum cholesterol, we would expect that for every one mmHG increase in resting blood pressure, the odds of correctly predicting a patient with a chest pain rating of typical(0) to be diagnosed with heart disease increases by a factor of 0.9979532. (not significant, p-value= 0.13935 &gt; 0.05, t=-1.482)</h3>
+</div>
+<div id="chol-controlling-for-st-depression-age-maximum-heart-rate-and-resting-blood-pressure-we-would-expect-that-for-every-one-mgdl-increase-in-serum-cholesterol-the-odds-of-correctly-predicting-a-patient-with-a-chest-pain-rating-of-typical0-to-be-diagnosed-with-heart-disease-increases-by-a-factor-of-0.9997180.-not-significant-p-value-0.53340-0.05-t-0.624" class="section level3">
+<h3>chol: Controlling for ST depression, age, maximum heart rate and resting blood pressure, we would expect that for every one mg/dl increase in serum cholesterol, the odds of correctly predicting a patient with a chest pain rating of typical(0) to be diagnosed with heart disease increases by a factor of 0.9997180. (not significant, p-value= 0.53340 &gt; 0.05, t=-0.624)</h3>
+</div>
+<div id="the-confusion-matrix-is-contained-in-the-code-above." class="section level3">
+<h3>The confusion matrix is contained in the code above.</h3>
+</div>
+<div id="the-accuracy-of-the-model-was-found-to-be-0.7623762-and-represents-how-much-of-the-dataset-the-model-classified-correctly-as-diagnosed-with-heart-disease-or-not.-the-specificity-of-0.7028986-represents-the-proportion-of-patients-correctly-predicted-as-not-diagnosed-while-the-sensitivity-of-0.8121212-represents-the-amount-of-patients-the-model-classified-correclty-as-having-liver-disease.-the-proportion-of-the-population-classified-as-diseased-is-0.7657143-the-precision.-finally-the-auc-which-represents-how-well-the-model-performs-as-a-whole-was-found-to-be-0.8633729-which-is-not-great-but-still-pretty-good.-these-results-show-the-model-performed-quite-accurately-but-not-entirely-perfectly-and-there-is-still-generous-room-for-error.-the-fact-that-the-sensitivity-true-positive-rate-is-higher-than-the-specificty-true-negative-rate-means-the-models-cutoff-could-be-used-to-change-borderline-false-positives-and-false-negatives." class="section level3">
+<h3>The Accuracy of the model was found to be 0.7623762 and represents how much of the dataset the model classified correctly as diagnosed with heart disease or not. The specificity of 0.7028986 represents the proportion of patients correctly predicted as not diagnosed while the sensitivity of 0.8121212 represents the amount of patients the model classified correclty as having liver disease. The proportion of the population classified as diseased is 0.7657143 (the precision). Finally, the AUC which represents how well the model performs as a whole was found to be 0.8633729, which is Not great but still pretty good. These results show the model performed quite accurately but not entirely perfectly and there is still generous room for error. The fact that the sensitivity (true positive rate) is higher than the specificty (true negative rate) means the model’s cutoff could be used to change borderline false positives and false negatives.</h3>
+<pre class="r"><code># Density of Log-Odds versus Binary Outcome (Heart Disease diagnosis)
+heart2 &lt;- heart %&gt;% mutate(Diagnosis=ifelse(target==&quot;1&quot;,&quot;Diseased&quot;,&quot;Normal&quot;))
+
+heart2$logit&lt;-predict(heartlogsfit) #get predicted log-odds
+heart2$outcome&lt;-factor(heart2$Diagnosis,levels=c(&quot;Diseased&quot;,&quot;Normal&quot;))
+heartlogitplot &lt;- ggplot(heart2,aes(logit, fill=outcome))+ geom_density(alpha=.3)+
+  geom_vline(xintercept=0,lty=2) +
+  ggtitle(&quot;Log-odds versus Binary Outcome Density&quot;)
+heartlogitplot</code></pre>
+<p><img src="/Project2_files/figure-html/unnamed-chunk-7-1.png" width="768" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># ROC curve
+heart4 &lt;- heart %&gt;% mutate(probcurve= predict(heartlogsfit, type= &quot;response&quot;))
+heartROCplot &lt;- ggplot(heart4) + geom_roc(aes(m= probcurve, d= target), n.cuts=0) +
+  ggtitle(&quot;ROC Plot for Heart Disease Dataset Logistic Regression&quot;)
+heartROCplot</code></pre>
+<p><img src="/Project2_files/figure-html/unnamed-chunk-8-1.png" width="768" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># AUC Computation
+calc_auc(heartROCplot)</code></pre>
+<pre><code>##   PANEL group       AUC
+## 1     1    -1 0.8633729</code></pre>
+<p>According to the plot, we are able to calculate the AUC which was found to be 0.8633729. This AUC is regarded to be quite good, but not necessarily great. This represents the trade-off between Specificty and Sensitivity since increasing or decreasing the cutoff would allow for growth in one and a decrease in the other. An AUC between 0.8 and 0.9 is classified as good thus showing that this logistic regression model is a good predictor.</p>
+<pre class="r"><code># 10-fold Cross-Validation 
+set.seed(9001)
+k=10
+
+heart3&lt;-heart[sample(nrow(heart)),] 
+folds&lt;-cut(seq(1:nrow(heart)),breaks=k,labels=F) 
+
+diags&lt;-NULL
+for(i in 1:k){          
+train&lt;-heart3[folds!=i,] 
+test&lt;-heart3[folds==i,]  
+
+truth&lt;-test$target
+
+fit&lt;- glm(target~(cp+oldpeak+thalach+age+trestbps+chol), data=train, family=&quot;binomial&quot;)
+probs&lt;- predict(fit, newdata=test, type=&quot;response&quot;)
+
+diags&lt;-rbind(diags,class_diag(probs,truth)) 
+}
+
+summarize_all(diags,mean)</code></pre>
+<pre><code>##         acc      sens      spec       ppv       auc
+## 1 0.7724731 0.8535872 0.6762917 0.7732876 0.8358966</code></pre>
+<p>The Accuracy was found to be 0.7724731, while the sensitivity and specificity both decreased from the previous classification diagnostics of the logistic regression model (without cross-validation). The sensitivity is now 0.8535872 and the specificity is now 0.6762917. Output was also acquired for the PPV equating to 0.7732876. And finally, an AUC of 0.8358966 was obtained, suggesting more overfitting compared to the previous model.</p>
+<pre class="r"><code># LASSO Regression 
+library(&quot;glmnet&quot;)
+set.seed(9001)
+
+heartLassoFit &lt;- glm(target~(.), data=heart, family=&quot;binomial&quot;)
+summary(heartLassoFit)</code></pre>
+<pre><code>##
+## Call:
+## glm(formula = target ~ (.), family = &quot;binomial&quot;, data =
+heart)
+##
+## Deviance Residuals:
+## Min 1Q Median 3Q Max
+## -2.9459 -0.2917 0.1024 0.4479 3.1401
+##
+## Coefficients: (2 not defined because of singularities)
+## Estimate Std. Error z value Pr(&gt;|z|)
+## (Intercept) 0.256315 3.717325 0.069 0.945028
+## age 0.027711 0.025461 1.088 0.276436
+## sex1 -1.845598 0.570225 -3.237 0.001210 **
+## cp1 0.872344 0.578449 1.508 0.131535
+## cp2 2.017603 0.530174 3.806 0.000141 ***
+## cp3 2.427691 0.718961 3.377 0.000734 ***
+## trestbps -0.026755 0.011778 -2.272 0.023108 *
+## chol -0.004489 0.004202 -1.068 0.285391
+## fbs1 0.461956 0.589685 0.783 0.433395
+## restecg 0.398460 0.383928 1.038 0.299339
+## thalach 0.020396 0.011853 1.721 0.085297 .
+## exang1 -0.778793 0.451888 -1.723 0.084813 .
+## oldpeak -0.416509 0.240005 -1.735 0.082667 .
+## slope1 -0.756969 0.873155 -0.867 0.385978
+## slope2 0.705157 0.941443 0.749 0.453847
+## ca1 -2.356771 0.526311 -4.478 7.54e-06 ***
+## ca2 -3.462666 0.811700 -4.266 1.99e-05 ***
+## ca3 -2.294901 0.935058 -2.454 0.014116 *
+## ca4 1.240056 1.704808 0.727 0.466989
+## thal1 2.636985 2.705956 0.975 0.329803
+## thal2 2.372031 2.618241 0.906 0.364955
+## thal3 0.934193 2.622063 0.356 0.721630
+## chol_c NA NA NA NA
+## trestbps_c NA NA NA NA
+## ---
+## Signif. codes: 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1
+&#39; &#39; 1
+##
+## (Dispersion parameter for binomial family taken to be 1)
+##
+## Null deviance: 417.64 on 302 degrees of freedom
+## Residual deviance: 180.01 on 281 degrees of freedom
+## AIC: 224.01
+##
+## Number of Fisher Scoring iterations: 6</code></pre>
+<pre class="r"><code>heartmatrix &lt;- model.matrix(heartLassoFit)
+heartmatrix &lt;- heartmatrix[,-1]
+
+heartresponse &lt;- as.matrix(heart$target)
+
+cv.lasso1 &lt;- cv.glmnet(x=heartmatrix, y=heartresponse, family=&quot;binomial&quot;)
+lasso1 &lt;- glmnet(x=heartmatrix, y=heartresponse, family=&quot;binomial&quot;, alpha=1, lambda=cv.lasso1$lambda.1se)
+coef(lasso1)</code></pre>
+<pre><code>## 24 x 1 sparse Matrix of class &quot;dgCMatrix&quot;
+##                        s0
+## (Intercept) -3.009295e-01
+## age          .           
+## sex1        -4.879657e-01
+## cp1          2.093418e-01
+## cp2          7.781378e-01
+## cp3          4.661289e-01
+## trestbps    -1.143167e-03
+## chol         .           
+## fbs1         .           
+## restecg      2.089814e-02
+## thalach      1.099329e-02
+## exang1      -6.567686e-01
+## oldpeak     -3.016502e-01
+## slope1      -3.714614e-01
+## slope2       1.657843e-01
+## ca1         -9.572044e-01
+## ca2         -1.310563e+00
+## ca3         -8.801024e-01
+## ca4          .           
+## thal1        .           
+## thal2        6.096038e-01
+## thal3       -6.167547e-01
+## chol_c       .           
+## trestbps_c  -1.445128e-06</code></pre>
+<pre class="r"><code># Set Explanatory Dummy variables in a new dataset with the acquired LASSO Non-zero Coefficients
+
+heart6 &lt;- heart %&gt;% mutate(sex1=ifelse(sex==&quot;1&quot;,1,0), cp1=ifelse(cp==&quot;1&quot;,1,0), cp2=ifelse(cp==&quot;2&quot;,1,0), 
+                           cp3=ifelse(cp==&quot;3&quot;,1,0), exang1=ifelse(exang==&quot;1&quot;,1,0),
+                           slope1=ifelse(slope==&quot;1&quot;,1,0), slope2=ifelse(slope==&quot;2&quot;,1,0), 
+                           ca1=ifelse(ca==&quot;1&quot;,1,0), ca2=ifelse(ca==&quot;2&quot;,1,0), ca3=ifelse(ca==&quot;3&quot;,1,0),
+                           thal2=ifelse(thal==&quot;2&quot;,1,0), thal3=ifelse(thal==&quot;3&quot;,1,0)) %&gt;%
+                    select(-sex, -cp, -chol, -fbs, -slope, -ca, -exang, -thal, -chol_c)
+  
+# 10-fold Out-of-Sample Cross Validation for LASSO Nonzero Coefficients
+
+k=10
+
+heart7&lt;-heart6[sample(nrow(heart6)),] 
+folds&lt;-cut(seq(1:nrow(heart6)),breaks=k,labels=F) 
+
+diags&lt;-NULL
+for(i in 1:k){          
+train&lt;-heart7[folds!=i,] 
+test&lt;-heart7[folds==i,]  
+
+truth&lt;-test$target
+
+fit&lt;- glm(target~(.), data=train, family=&quot;binomial&quot;)
+probs&lt;- predict(fit, newdata=test, type=&quot;response&quot;)
+
+diags&lt;-rbind(diags,class_diag(probs,truth)) 
+}
+
+summarize_all(diags,mean)</code></pre>
+<pre><code>##         acc      sens     spec       ppv       auc
+## 1 0.8553763 0.8885548 0.818295 0.8555108 0.9124903</code></pre>
+</div>
+<div id="without-considering-the-intercept-coefficient-estimates-that-give-a-nonzero-reading-aresex1denoting-male-cp1-cp2-cp3-the-varying-degrees-of-chest-pain-not-equal-to-typical-restecgresting-electrocardiograph-results-thlachmaximum-heart-rate-during-exercise-exang1presence-of-exercise-induced-angina-oldpeak-st-segment-depression-slope1-where-peak-st-segment-increases-slope2-where-peak-st-segment-stays-constant-ca1-ca2-and-ca3-all-representing-highlighted-portions-from-fluorscopy-thal2-fixed-effect-of-thalessemia-and-thal3-reversible-effect-of-thalessemia.-after-running-a-lasso-on-all-the-predictor-variables-many-predictors-stood-out-to-be-significant-and-retained-in-the-analysis-as-expressed-prior.-according-to-these-new-classification-diagnostics-run-from-the-cross-validation-of-only-the-explanatory-variables-that-had-non-zero-lasso-coefficients-an-accuracy-of-0.8553763-was-obtained-which-is-0.0829032-higher-than-that-from-the-cross-validation-of-the-logistic-regression-from-part-5-0.7724731.-the-sensitivity-was-much-higher-0.8885548-in-the-lasso-model.-furthermore-a-specificity-of-0.818295-was-obtained-and-a-ppv-of-0.855508-was-obtained.-lastly-the-auc-which-shows-the-success-of-the-model-was-found-to-be-0.9124903-which-is-quite-good." class="section level3">
+<h3>Without considering the intercept, Coefficient Estimates that give a nonzero reading are:sex1(denoting male), cp1, cp2, cp3 (The varying degrees of chest pain not equal to typical), restecg(resting electrocardiograph results), thlach(maximum heart rate during exercise), exang1(presence of exercise induced angina), oldpeak (ST segment depression), slope1 (Where peak ST segment increases), slope2 (where peak ST segment stays constant), ca1, ca2, and ca3 (all representing highlighted portions from fluorscopy), thal2 (fixed effect of Thalessemia), and thal3 (reversible effect of Thalessemia). After running a LASSO on all the predictor variables, many predictors stood out to be significant and retained in the analysis as expressed prior. According to these new classification diagnostics run from the cross-validation of only the explanatory variables that had non-zero LASSO coefficients, an accuracy of 0.8553763 was obtained which is 0.0829032 higher than that from the cross-validation of the logistic regression from part 5 (0.7724731). The sensitivity was much higher (0.8885548) in the LASSO model. Furthermore a Specificity of 0.818295 was obtained and a PPV of 0.855508 was obtained. Lastly, the AUC, which shows the success of the model, was found to be 0.9124903, which is quite good.</h3>
+<pre><code>## R version 3.6.2 (2019-12-12)
+## Platform: x86_64-apple-darwin15.6.0 (64-bit)
+## Running under: macOS Catalina 10.15.4
+##
+## Matrix products: default
+## BLAS:
+/Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRblas.0.dylib
+## LAPACK:
+/Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRlapack.dylib
+##
+## locale:
+## [1]
+en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+##
+## attached base packages:
+## [1] stats graphics grDevices utils datasets methods base
+##
+## other attached packages:
+## [1] glmnet_3.0-2 Matrix_1.2-18 lmtest_0.9-37 zoo_1.8-7
+sandwich_2.5-1 mvtnorm_1.1-0
+## [7] ggExtra_0.9 plotROC_2.2.1 forcats_0.5.0
+stringr_1.4.0 dplyr_0.8.4 purrr_0.3.3
+## [13] readr_1.3.1 tidyr_1.0.2 tibble_2.1.3 ggplot2_3.2.1
+tidyverse_1.3.0 knitr_1.28
+##
+## loaded via a namespace (and not attached):
+## [1] httr_1.4.1 jsonlite_1.6.1 foreach_1.5.0 modelr_0.1.6
+shiny_1.4.0
+## [6] assertthat_0.2.1 cellranger_1.1.0 yaml_2.2.1
+pillar_1.4.3 backports_1.1.5
+## [11] lattice_0.20-40 glue_1.3.1 digest_0.6.25
+promises_1.1.0 rvest_0.3.5
+## [16] colorspace_1.4-1 htmltools_0.4.0 httpuv_1.5.2
+plyr_1.8.5 pkgconfig_2.0.3
+## [21] broom_0.5.4 haven_2.2.0 bookdown_0.18 xtable_1.8-4
+scales_1.1.0
+## [26] later_1.0.0 generics_0.0.2 farver_2.0.3 withr_2.1.2
+lazyeval_0.2.2
+## [31] cli_2.0.1 magrittr_1.5 crayon_1.3.4 readxl_1.3.1
+mime_0.9
+## [36] evaluate_0.14 fs_1.3.1 fansi_0.4.1 nlme_3.1-144
+MASS_7.3-51.5
+## [41] xml2_1.2.2 blogdown_0.18 tools_3.6.2 hms_0.5.3
+lifecycle_0.1.0
+## [46] munsell_0.5.0 reprex_0.3.0 compiler_3.6.2
+rlang_0.4.4 grid_3.6.2
+## [51] iterators_1.0.12 rstudioapi_0.11 miniUI_0.1.1.1
+labeling_0.3 rmarkdown_2.1
+## [56] codetools_0.2-16 gtable_0.3.0 DBI_1.1.0 R6_2.4.1
+lubridate_1.7.4
+## [61] fastmap_1.0.1 utf8_1.1.4 shape_1.4.4 stringi_1.4.6
+Rcpp_1.0.3
+## [66] vctrs_0.2.3 dbplyr_1.4.2 tidyselect_1.0.0 xfun_0.12</code></pre>
+<pre><code>## [1] &quot;2020-05-14 03:04:50 CDT&quot;</code></pre>
+<pre><code>## sysname
+## &quot;Darwin&quot;
+## release
+## &quot;19.4.0&quot;
+## version
+## &quot;Darwin Kernel Version 19.4.0: Wed Mar 4 22:28:40 PST
+2020; root:xnu-6153.101.6~15/RELEASE_X86_64&quot;
+## nodename
+## &quot;Blackfyre.fios-router.home&quot;
+## machine
+## &quot;x86_64&quot;
+## login
+## &quot;root&quot;
+## user
+## &quot;johnferratt&quot;
+## effective_user
+## &quot;johnferratt&quot;</code></pre>
+</div>
+</div>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = '';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="/js/docs.min.js"></script>
+<script src="/js/main.js"></script>
+
+<script src="/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>

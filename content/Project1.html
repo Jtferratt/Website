@@ -1,0 +1,609 @@
+---
+title: "Project 1: Exploratory Data Analysis and Tidyverse Tools"
+author: "John Ferratt"
+UTEID: "jtf948"
+date: "May 13, 2020"
+output:
+  pdf_document: default
+  html_document: default
+
+---
+
+
+
+<pre class="r"><code># Calling Libraries
+library(&quot;ggplot2&quot;)
+library(&quot;dplyr&quot;)
+library(&quot;tidyverse&quot;)
+library(&quot;GGally&quot;)
+library(&quot;cluster&quot;)
+library(&quot;plotly&quot;)
+library(&quot;factoextra&quot;)
+
+# Importing Datasets
+COVID19 &lt;- read.csv(&quot;Covid19_2.csv&quot;)
+SARS &lt;- read.csv(&quot;sars_2003_complete_dataset_clean2.csv&quot;)
+
+# Show introductory information regarding the two datasets
+glimpse(COVID19)</code></pre>
+<pre><code>## Observations: 29,040
+## Variables: 9
+## $ Province.State &lt;fct&gt; , , , , , , , , Australian Capital Territory, New Sout…
+## $ Country.Region &lt;fct&gt; Afghanistan, Albania, Algeria, Andorra, Angola, Antigu…
+## $ Latitude       &lt;dbl&gt; 33.0000, 41.1533, 28.0339, 42.5063, -11.2027, 17.0608,…
+## $ Longitude      &lt;dbl&gt; 65.0000, 20.1683, 1.6596, 1.5218, 17.8739, -61.7964, -…
+## $ Date           &lt;fct&gt; 1/22/20, 1/22/20, 1/22/20, 1/22/20, 1/22/20, 1/22/20, …
+## $ Cuml.Confirmed &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …
+## $ Cuml.Deaths    &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …
+## $ Cuml.Recovered &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …
+## $ Virus          &lt;fct&gt; COVID19, COVID19, COVID19, COVID19, COVID19, COVID19, …</code></pre>
+<pre class="r"><code>glimpse(SARS)</code></pre>
+<pre><code>## Observations: 2,538
+## Variables: 7
+## $ Date           &lt;fct&gt; 3/17/03, 3/17/03, 3/17/03, 3/17/03, 3/17/03, 3/17/03, …
+## $ Country        &lt;fct&gt; Germany, Canada, Singapore, Hong Kong, Switzerland, Th…
+## $ Virus          &lt;fct&gt; SARS, SARS, SARS, SARS, SARS, SARS, SARS, SARS, SARS, …
+## $ Cuml.Confirmed &lt;int&gt; 1, 8, 20, 95, 2, 1, 40, 2, 8, 0, 23, 123, 3, 1, 57, 1,…
+## $ Cuml.Deaths    &lt;int&gt; 0, 2, 0, 1, 0, 0, 1, 0, 2, 0, 0, 1, 0, 0, 1, 0, 0, 2, …
+## $ Cuml.Recovered &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …
+## $ Province.State &lt;fct&gt; Not Recorded, Not Recorded, Not Recorded, Not Recorded…</code></pre>
+<div id="introduction" class="section level2">
+<h2>Introduction:</h2>
+<div id="the-covid19-dataset-is-a-dataset-compiled-by-kaggle-user-devakumar-kp-and-can-be-found-here-httpswww.kaggle.comimdevskpcorona-virus-report-which-contains-other-useful-documents-downloadable-in-.csv-format-contains-8-variables.-the-dataset-includes-information-on-amounts-of-confirmed-cases-cumulative-number-of-deceased-individuals-and-recovered-individuals-from-the-virus-covid-19.-the-virus-covid-19-is-a-coronavirus-strain-that-originated-in-wuhan-china-that-spread-from-animal-to-human-contact.-however-more-recently-the-virus-has-been-seen-to-spread-between-humans-via-inhalation-or-ingestion-of-droplets-from-coughingsneezing-from-infected-people.-the-long-incubation-period-of-the-virus-has-made-containment-and-limitation-of-exposure-rather-difficult.-this-dataset-was-made-accessible-by-john-hopkins-university-and-information-has-come-from-the-world-health-organization-who-as-well-as-from-other-various-centers-for-disease-control-cdc-across-multiple-countries-united-states-italy-china-hong-kong-macau-taiwan-australia-and-the-european-centre-for-disease-prevention-and-control-ecdc.-variables-in-the-dataset-include" class="section level3">
+<h3>The <code>Covid19</code> dataset is a dataset compiled by kaggle user, Devakumar kp, and can be found here (<a href="https://www.kaggle.com/imdevskp/corona-virus-report" class="uri">https://www.kaggle.com/imdevskp/corona-virus-report</a>) which contains other useful documents downloadable in .csv format contains 8 variables. The dataset includes information on amounts of confirmed cases, cumulative number of deceased individuals and recovered individuals from the virus, COVID-19. The virus, COVID-19, is a coronavirus strain that originated in Wuhan, China that spread from animal-to-human contact. However, more recently the virus has been seen to spread between humans via inhalation or ingestion of droplets from coughing/sneezing from infected people. The long incubation period of the virus has made containment and limitation of exposure rather difficult. This dataset was made accessible by John Hopkins University and information has come from the World Health Organization (WHO) as well as from other various centers for disease control (CDC) across multiple countries (United States, Italy, China, Hong Kong, Macau, Taiwan, Australia, and the European Centre for Disease Prevention and Control (ECDC)). Variables in the dataset include:</h3>
+<p>Date = Gives the month, day, and year as (MM/DD/YY). The month, day, and year will be separated into different columns later while tidying.
+Province.State = details the province or state if it’s applicable or given. In some observations, even cruise ships where cases were confirmed are also noted.
+Country.Region = details the specific country of the observation. In some observations, even cruise ships where cases were confirmed are also noted.<br />
+Virus = indicates the Virus name (personally added for use after joining)
+Cuml.Confirmed = the cumulative number of confirmed positive cases for COVID-19 in each particular region upon a given date
+Cuml.Deaths = the cumulative number of deceased individuals due to COVID-19 in each particular region upon a given date
+Cuml.Recovered = the cumulative number of individuals who recovered from COVID-19 in each particular region upon a given date
+Latitude = General Latitude of the region or country (and cruise ships in some appicable observations)
+Longitude = General Longitude of the region or country (and cruise ships in some appicable observations)</p>
+<p>The <code>Sars</code> dataset is a dataset compiled by another kaggle user, Devakumar kp, and can be found here (<a href="https://www.kaggle.com/imdevskp/sars-outbreak-2003-complete-dataset" class="uri">https://www.kaggle.com/imdevskp/sars-outbreak-2003-complete-dataset</a>). The dataset includes day-by-day observations from the WHO website and was compiled using scrapping from Python by the kaggle user. SARS (Severe Acute Respiratory Syndrome) is a disease induced by a coronavirus strain similar in type to the recent COVID-19 virus. The virus spread rapidly in 2003, however, no cases have been reported since 2004. The 6 Variables included in this dataset are as follows:
+Country = denotes the country in which the observation was recorded.
+Date = gives the date that the observation was recorded in the format (MM/DD/YY)
+Cuml.Confirmed = the cumulative number of confirmed positive cases for SARS in each particular country upon a given date
+Cuml.Deaths = the cumulative number of deceased individuals due to SARS in each particular country upon a given date
+Cuml.Recovered = the cumulative number of individuals who recovered from SARS in each particular country upon a given date
+Virus = (A variable I added myself to note the type of virus for after joining the datasets)</p>
+<p>Due to recent events, and my interest in analyzing viruses and their spread across populations, I’ve decided to compare the development of the outbreaks of the SARS and COVID-19 viruses. I hope to one day apply to medical school so knowledge about virus transmission between individuals and the rate of spread is interesting to me, for the more information on virus transmission to this degree will help in preparation for any new virus that may follow suit in the future. It is also interesting to me to see how quickly individual cases might recover or die to the virus over the time frames in the datasets and how those times compare to one another. My interest in medical school and healthcare stems from my late father’s passing from paraganglioma, a rare neuroendocrine cancer. My hope is that by learning more about the transmission of these kinds of viruses, we can better protect the immunocompromised individuals in society.</p>
+</div>
+</div>
+<div id="data-investigation" class="section level2">
+<h2>Data Investigation</h2>
+<div id="some-observations-are-missing-for-some-dates-as-more-countries-appear-as-the-dates-progress-chronologically.-this-is-likely-because-some-countries-had-not-reported-any-confirmed-cases-until-a-particular-date.-switzerland-for-example-reported-2-cases-on-march-17-2003-but-then-didnt-report-anything-until-march-20-2003-where-the-confirmed-case-amount-jumped-to-7-but-then-decreased-to-2-on-march-24-2003-meaning-that-some-people-likely-could-have-left-the-country.-this-means-that-the-datasets-could-be-inaccurate-due-to-when-certain-countries-actually-report-cases-versus-when-a-person-actually-is-infected-with-the-virus.-however-the-covid19-dataset-does-not-have-this-issue.-this-can-be-seen-from-the-below-code.-however-confirmed-cases-also-can-drop-if-a-confirmed-individual-recovers-or-dies-however-there-are-some-instances-where-neither-is-recorded.-this-is-most-noticeable-later-when-confirmed-cases-are-negative-for-a-particular-day-presumptively-because-the-individual-left-the-country-or-the-report-was-inaccurate." class="section level3">
+<h3>Some observations are missing for some dates as more countries appear as the dates progress chronologically. This is likely because some countries had not reported any confirmed cases until a particular date. Switzerland, for example, reported 2 cases on March 17, 2003, but then didn’t report anything until March 20, 2003 where the confirmed case amount jumped to 7 but then decreased to 2 on March 24, 2003, meaning that some people likely could have left the country. This means that the datasets could be inaccurate due to when certain countries actually report cases versus when a person actually is infected with the virus. However, the <code>COVID19</code> dataset does not have this issue. This can be seen from the below code. However, confirmed cases also can drop if a confirmed individual recovers or dies, however, there are some instances where neither is recorded. This is most noticeable later when confirmed cases are negative for a particular day, presumptively because the individual left the country or the report was inaccurate.</h3>
+<pre class="r"><code># Pivot the date columns to widen the datasets
+COVID19.2 &lt;- (COVID19 %&gt;% pivot_wider(names_from = Date, values_from = c(&quot;Cuml.Confirmed&quot;,&quot;Cuml.Deaths&quot;,&quot;Cuml.Recovered&quot;)))
+SARS.2 &lt;- (SARS %&gt;% distinct() %&gt;% pivot_wider(names_from = &quot;Date&quot;, values_from = c(&quot;Cuml.Confirmed&quot;,&quot;Cuml.Deaths&quot;,&quot;Cuml.Recovered&quot;)))
+
+# Pivot the dataset to create month, day, and year variables.
+COVID19.2 &lt;- COVID19.2 %&gt;% pivot_longer(contains(&quot;_&quot;)) %&gt;% separate(name, into = c(&quot;Cuml&quot;, &quot;Info&quot;,&quot;Month&quot;,&quot;Day&quot;,&quot;Year&quot;)) %&gt;% select(-Cuml) %&gt;% pivot_wider(names_from = &quot;Info&quot;, values_from = &quot;value&quot;)
+SARS.2 &lt;- SARS.2 %&gt;% pivot_longer(contains(&quot;_&quot;)) %&gt;% separate(name, into = c(&quot;Cuml&quot;, &quot;Info&quot;,&quot;Month&quot;,&quot;Day&quot;,&quot;Year&quot;)) %&gt;% select(-Cuml) %&gt;% pivot_wider(names_from = &quot;Info&quot;, values_from = &quot;value&quot;)</code></pre>
+</div>
+</div>
+<div id="joining-the-datasets" class="section level2">
+<h2>Joining the Datasets</h2>
+<div id="first-an-anti-join-was-done-in-order-to-determine-the-number-of-countries-in-the-covid19-dataset-that-were-not-in-the-sars-dataset.this-was-found-to-be-zero-meaning-that-all-countries-in-the-sars-dataset-were-present-in-the-covid19-dataset.-thus-a-full-join-was-done-to-incorporate-both-datasets-together-as-this-would-retain-all-information-from-the-covid19-dataset-while-adding-information-by-date-variables-month-day-and-year-for-each-country-included-in-the-sars-dataset.-this-also-is-most-feasible-because-it-would-not-duplicate-any-columns-since-the-covid19-dataset-possess-all-variables-that-the-sars-dataset-has-with-some-additional-variables.-a-new-dataset-with-all-information-would-be-created-called-coronavirus-since-both-viruses-are-strains-of-coronavirus." class="section level3">
+<h3>First, an anti-join was done in order to determine the number of countries in the <code>COVID19</code> dataset that were not in the <code>SARS</code> dataset.This was found to be zero, meaning that all countries in the <code>SARS</code> dataset were present in the <code>COVID19</code> dataset. Thus, a full-join was done to incorporate both datasets together as this would retain all information from the <code>COVID19</code> dataset while adding information by date (variables: month, day, and year) for each country included in the <code>SARS</code> dataset. This also is most feasible because it would not duplicate any columns since the <code>COVID19</code> dataset possess all variables that the <code>SARS</code> dataset has (with some additional variables). A new dataset with all information would be created called <code>Coronavirus</code> since both viruses are strains of Coronavirus.</h3>
+<pre class="r"><code># Noting Different Countries between datasets
+SARS &lt;- (SARS %&gt;% mutate(Country.Region=Country) %&gt;% select(-Country))
+DiffSARSCountries &lt;- (SARS %&gt;% anti_join(COVID19, by=&quot;Country.Region&quot;))
+DiffSARSCountries %&gt;% nrow()</code></pre>
+<pre><code>## [1] 344</code></pre>
+<pre class="r"><code># Creating Numeric and Categorical Date Variables in each dataset
+SARS &lt;- SARS %&gt;% separate(Date, into = c(&quot;Month&quot;,&quot;Day&quot;,&quot;Year&quot;), sep=&quot;/&quot;, remove = F) %&gt;% mutate(Month = recode(Month, &quot;1&quot;=&quot;01&quot;,&quot;2&quot;=&quot;02&quot;,&quot;3&quot;=&quot;03&quot;,&quot;4&quot;=&quot;04&quot;,&quot;5&quot;=&quot;05&quot;,&quot;6&quot;=&quot;06&quot;,&quot;7&quot;=&quot;07&quot;,&quot;8&quot;=&quot;08&quot;,&quot;9&quot;=&quot;09&quot;)) %&gt;% mutate(Year = recode(Year, &quot;03&quot;=&quot;2003&quot;)) %&gt;% mutate(Day = recode(Day, &quot;1&quot;=&quot;01&quot;,&quot;2&quot;=&quot;02&quot;,&quot;3&quot;=&quot;03&quot;,&quot;4&quot;=&quot;04&quot;,&quot;5&quot;=&quot;05&quot;,&quot;6&quot;=&quot;06&quot;,&quot;7&quot;=&quot;07&quot;,&quot;8&quot;=&quot;08&quot;,&quot;9&quot;=&quot;09&quot;))
+COVID19 &lt;- COVID19 %&gt;% separate(Date, into = c(&quot;Month&quot;,&quot;Day&quot;,&quot;Year&quot;), sep=&quot;/&quot;, remove = F) %&gt;% mutate(Month = recode(Month, &quot;1&quot;=&quot;01&quot;,&quot;2&quot;=&quot;02&quot;,&quot;3&quot;=&quot;03&quot;,&quot;4&quot;=&quot;04&quot;,&quot;5&quot;=&quot;05&quot;,&quot;6&quot;=&quot;06&quot;,&quot;7&quot;=&quot;07&quot;,&quot;8&quot;=&quot;08&quot;,&quot;9&quot;=&quot;09&quot;)) %&gt;% mutate(Year = recode(Year, &quot;20&quot;=&quot;2020&quot;)) %&gt;% mutate(Day = recode(Day,&quot;1&quot;=&quot;01&quot;,&quot;2&quot;=&quot;02&quot;,&quot;3&quot;=&quot;03&quot;,&quot;4&quot;=&quot;04&quot;,&quot;5&quot;=&quot;05&quot;,&quot;6&quot;=&quot;06&quot;,&quot;7&quot;=&quot;07&quot;,&quot;8&quot;=&quot;08&quot;,&quot;9&quot;=&quot;09&quot;))
+
+# Date format changed to numeric form &quot;YYYYMMDD&quot;.
+# Standard Date format (MM/DD/YY) retained.
+COVID19 &lt;- COVID19 %&gt;% unite(Year, Month, Day, col = &quot;Date.n&quot;, sep = &quot;&quot;, remove = F)
+SARS &lt;- SARS %&gt;% unite(Year, Month, Day, col = &quot;Date.n&quot;, sep = &quot;&quot;, remove = F)
+SARS &lt;- SARS %&gt;% mutate(Month = recode(Month, &quot;01&quot;=&quot;January&quot;,&quot;02&quot;=&quot;February&quot;,&quot;03&quot;=&quot;March&quot;,&quot;04&quot;=&quot;April&quot;,&quot;05&quot;=&quot;May&quot;,&quot;06&quot;=&quot;June&quot;,&quot;07&quot;=&quot;July&quot;,&quot;08&quot;=&quot;August&quot;,&quot;09&quot;=&quot;September&quot;,&quot;10&quot;=&quot;October&quot;,&quot;11&quot;=&quot;November&quot;,&quot;12&quot;=&quot;December&quot;))
+COVID19 &lt;- COVID19 %&gt;% mutate(Month = recode(Month, &quot;01&quot;=&quot;January&quot;,&quot;02&quot;=&quot;February&quot;,&quot;03&quot;=&quot;March&quot;,&quot;04&quot;=&quot;April&quot;,&quot;05&quot;=&quot;May&quot;,&quot;06&quot;=&quot;June&quot;,&quot;07&quot;=&quot;July&quot;,&quot;08&quot;=&quot;August&quot;,&quot;09&quot;=&quot;September&quot;,&quot;10&quot;=&quot;October&quot;,&quot;11&quot;=&quot;November&quot;,&quot;12&quot;=&quot;December&quot;))
+
+# Joining COVID19 and SARS datasets with desired variables.
+Coronavirus &lt;- (COVID19 %&gt;% full_join(SARS, by=c(&quot;Date&quot;=&quot;Date&quot;,&quot;Date.n&quot;=&quot;Date.n&quot;,&quot;Country.Region&quot;=&quot;Country.Region&quot;,&quot;Month&quot;=&quot;Month&quot;,&quot;Virus&quot;=&quot;Virus&quot;,&quot;Cuml.Confirmed&quot;=&quot;Cuml.Confirmed&quot;,&quot;Cuml.Deaths&quot;=&quot;Cuml.Deaths&quot;,&quot;Cuml.Recovered&quot;=&quot;Cuml.Recovered&quot;,&quot;Province.State&quot;=&quot;Province.State&quot;,&quot;Day&quot;=&quot;Day&quot;,&quot;Year&quot;=&quot;Year&quot;)))</code></pre>
+</div>
+<div id="because-the-number-of-rows-in-the-diffsarscountries-data-frame-is-0-this-shows-that-all-the-countriesregions-in-the-sars-dataset-are-present-in-the-covid19-dataset." class="section level3">
+<h3>Because the number of rows in the <code>DiffSARSCountries</code> data frame is 0, this shows that all the countries/regions in the <code>SARS</code> dataset are present in the <code>COVID19</code> dataset.</h3>
+</div>
+</div>
+<div id="summary-statistics-and-dplyr" class="section level2">
+<h2>Summary Statistics and dplyr</h2>
+<div id="first-3-new-variables-were-created-in-order-to-better-visualize-how-many-new-confirmed-cases-deaths-and-recoveries-occurred-each-recorded-day-for-both-viruses.-then-dplyr-functions-were-used-to-explore-the-dataset.-i-had-to-remove-the-province.state-variable-because-of-the-amount-of-blank-cells-and-implicit-nas-which-was-preventing-me-from-grouping-the-countries-properly.-new-numeric-variables-that-are-created-are-deaths-the-number-of-fatalities-due-to-coronavirus-reported-on-a-given-day-confirmed-the-number-of-confirmed-cases-of-coronavirus-on-given-day-and-recovered-number-of-people-reported-to-have-recovered-from-the-virus." class="section level3">
+<h3>First, 3 new variables were created in order to better visualize how many new confirmed cases, deaths, and recoveries occurred each recorded day for both viruses. Then dplyr functions were used to explore the dataset. I had to remove the ‘Province.State’ variable because of the amount of blank cells and implicit NAs which was preventing me from grouping the Countries properly. New numeric variables that are created are ‘Deaths’ (The number of fatalities due to coronavirus reported on a given day), ‘Confirmed’ (The number of confirmed cases of coronavirus on given day), and ‘Recovered’ (Number of people reported to have recovered from the virus).</h3>
+<pre class="r"><code># Denote new recoveries, deaths, and confirmed cases per date.
+# Missing values required to be made explicit. 
+
+# NA values to &quot;Not Recorded&quot; in Lat., Long. and Prov.St. for SARS data
+Coronavirus[is.na(Coronavirus)] &lt;- &quot;Not Recorded&quot;
+Coronavirus &lt;- Coronavirus %&gt;% group_by(Country.Region) %&gt;% complete(Province.State) %&gt;% na.omit()
+
+# Variable creation of noncumulative deaths, recoveries, and confirmed cases using mutate()
+Coronavirus &lt;- Coronavirus %&gt;% group_by(Country.Region, Province.State) %&gt;% mutate(Confirmed= (Cuml.Confirmed - lag(Cuml.Confirmed)))
+Coronavirus &lt;- Coronavirus %&gt;% group_by(Country.Region, Province.State) %&gt;% mutate(Deaths= (Cuml.Deaths - lag(Cuml.Deaths)))
+Coronavirus &lt;- Coronavirus %&gt;% group_by(Country.Region, Province.State) %&gt;% mutate(Recovered= (Cuml.Recovered - lag(Cuml.Recovered)))
+
+# Create ifelse statements to eliminate remaining NA values.
+# If there&#39;s an NA value in a noncuml col, replace with cuml col value.
+Coronavirus$Confirmed &lt;- ifelse(is.na(Coronavirus$Confirmed), Coronavirus$Cuml.Confirmed, Coronavirus$Confirmed)
+Coronavirus$Deaths &lt;- ifelse(is.na(Coronavirus$Deaths), Coronavirus$Cuml.Deaths, Coronavirus$Deaths)
+Coronavirus$Recovered &lt;- ifelse(is.na(Coronavirus$Recovered), Coronavirus$Cuml.Recovered, Coronavirus$Recovered)
+
+# Return NA values back to Lat. and Long. for SARS observations.
+Coronavirus$Latitude[Coronavirus$Latitude == &quot;Not Recorded&quot;] &lt;- NA
+Coronavirus$Longitude[Coronavirus$Longitude == &quot;Not Recorded&quot;] &lt;- NA
+
+# dplyr investigation!
+
+# Show highest observations for number of deaths on a given day.
+Coronavirus %&gt;% group_by(Country.Region) %&gt;% summarize(Deaths=max(Deaths)) %&gt;% arrange(desc(Deaths))</code></pre>
+<pre><code>## # A tibble: 191 x 2
+##    Country.Region Deaths
+##    &lt;chr&gt;           &lt;int&gt;
+##  1 US               2612
+##  2 France           1436
+##  3 China            1290
+##  4 United Kingdom   1172
+##  5 Spain             961
+##  6 Italy             919
+##  7 Brazil            827
+##  8 Germany           510
+##  9 Belgium           496
+## 10 Ecuador           410
+## # … with 181 more rows</code></pre>
+<pre class="r"><code># Show COVID19 observations in March and see which countries lost the most people.
+Coronavirus  %&gt;% filter(Month == &quot;March&quot;, Virus == &quot;COVID19&quot;) %&gt;% summarize(Max.Deaths= max(Deaths)) %&gt;% arrange(desc(Max.Deaths))</code></pre>
+<pre><code>## # A tibble: 264 x 3
+## # Groups:   Country.Region [187]
+##    Country.Region Province.State Max.Deaths
+##    &lt;chr&gt;          &lt;chr&gt;               &lt;int&gt;
+##  1 US             &quot;&quot;                   1175
+##  2 Italy          &quot;&quot;                    919
+##  3 Spain          &quot;&quot;                    913
+##  4 France         &quot;&quot;                    499
+##  5 United Kingdom &quot;&quot;                    382
+##  6 Belgium        &quot;&quot;                    192
+##  7 Netherlands    &quot;&quot;                    175
+##  8 Iran           &quot;&quot;                    157
+##  9 Germany        &quot;&quot;                    130
+## 10 Switzerland    &quot;&quot;                     74
+## # … with 254 more rows</code></pre>
+<pre class="r"><code>Coronavirus %&gt;% select(-Latitude,-Longitude) %&gt;% group_by(Country.Region) %&gt;% summarize(mean_Recovered=mean(Recovered))</code></pre>
+<pre><code>## # A tibble: 191 x 2
+##    Country.Region      mean_Recovered
+##    &lt;chr&gt;                        &lt;dbl&gt;
+##  1 Afghanistan                  5.07 
+##  2 Albania                      5.91 
+##  3 Algeria                     24.3  
+##  4 Andorra                      5    
+##  5 Angola                       0.118
+##  6 Antigua and Barbuda          0.173
+##  7 Argentina                   16.0  
+##  8 Armenia                     12.0  
+##  9 Australia                    6.88 
+## 10 Austria                    127.   
+## # … with 181 more rows</code></pre>
+<pre class="r"><code>Coronavirus &lt;- Coronavirus %&gt;% arrange(desc(Date.n))</code></pre>
+<pre class="r"><code># Summary Statistics!
+
+Coronavirus %&gt;% group_by(Country.Region) %&gt;% summarize(mean_Deaths=mean(Deaths), sd_Deaths=sd(Deaths), var_Deaths=var(Deaths),n(),min_Deaths=min(Deaths),max_Deaths=max(Deaths),n_distinct_Deaths=n_distinct(Deaths),cor_Deaths_Recovered=cor(Deaths, Recovered), IQR_Deaths=IQR(Deaths), median_Deaths=median(Deaths)) %&gt;% pivot_longer(contains(&quot;_&quot;))</code></pre>
+<pre><code>## # A tibble: 1,719 x 4
+##    Country.Region `n()` name                  value
+##    &lt;chr&gt;          &lt;int&gt; &lt;chr&gt;                 &lt;dbl&gt;
+##  1 Afghanistan      110 mean_Deaths           1.09 
+##  2 Afghanistan      110 sd_Deaths             2.14 
+##  3 Afghanistan      110 var_Deaths            4.56 
+##  4 Afghanistan      110 min_Deaths            0    
+##  5 Afghanistan      110 max_Deaths           13    
+##  6 Afghanistan      110 n_distinct_Deaths    10    
+##  7 Afghanistan      110 cor_Deaths_Recovered  0.594
+##  8 Afghanistan      110 IQR_Deaths            1.75 
+##  9 Afghanistan      110 median_Deaths         0    
+## 10 Albania          110 mean_Deaths           0.282
+## # … with 1,709 more rows</code></pre>
+<pre class="r"><code>Coronavirus %&gt;% group_by(Country.Region) %&gt;% summarize(mean_Deaths=mean(Deaths), sd_Deaths=sd(Deaths), var_Deaths=var(Deaths),n(),min_Deaths=min(Deaths),max_Deaths=max(Deaths),n_distinct_Deaths=n_distinct(Deaths),cor_Deaths_Recovered=cor(Deaths, Recovered), IQR_Deaths=IQR(Deaths), median_Deaths=median(Deaths)) %&gt;% arrange(desc(mean_Deaths))</code></pre>
+<pre><code>## # A tibble: 191 x 11
+##    Country.Region mean_Deaths sd_Deaths var_Deaths `n()` min_Deaths max_Deaths
+##    &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt; &lt;int&gt;      &lt;int&gt;      &lt;int&gt;
+##  1 US                   390.      764.     584410.   204          0       2612
+##  2 Italy                151.      251.      63187.   202          0        919
+##  3 Spain                136.      253.      64065.   196          0        961
+##  4 Belgium               75.3     112.      12567.   115          0        496
+##  5 Iran                  60.4      54.9      3016.   110          0        158
+##  6 Brazil                58.2     143.      20552.   191          0        827
+##  7 Germany               36.7      80.8      6530.   206        -31        510
+##  8 Turkey                34.4      44.5      1983.   110          0        127
+##  9 Mexico                31.5      57.6      3315.   110          0        257
+## 10 United Kingdom        26.4     140.      19711.  1210         -1       1172
+## # … with 181 more rows, and 4 more variables: n_distinct_Deaths &lt;int&gt;,
+## #   cor_Deaths_Recovered &lt;dbl&gt;, IQR_Deaths &lt;dbl&gt;, median_Deaths &lt;dbl&gt;</code></pre>
+<pre class="r"><code>Coronavirus %&gt;% group_by(Country.Region, Virus) %&gt;% summarize(mean_Deaths=mean(Deaths), sd_Deaths=sd(Deaths), var_Deaths=var(Deaths),n(),min_Deaths=min(Deaths),max_Deaths=max(Deaths),n_distinct_Deaths=n_distinct(Deaths),cor_Deaths_Recovered=cor(Deaths, Recovered), IQR_Deaths=IQR(Deaths), median_Deaths=median(Deaths))</code></pre>
+<pre><code>## # A tibble: 224 x 12
+## # Groups:   Country.Region [191]
+##    Country.Region Virus mean_Deaths sd_Deaths var_Deaths `n()` min_Deaths
+##    &lt;chr&gt;          &lt;chr&gt;       &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt; &lt;int&gt;      &lt;int&gt;
+##  1 Afghanistan    COVI…      1.09       2.14      4.56     110          0
+##  2 Albania        COVI…      0.282      0.665     0.443    110          0
+##  3 Algeria        COVI…      4.56       6.99     48.9      110          0
+##  4 Andorra        COVI…      0.436      0.841     0.707    110          0
+##  5 Angola         COVI…      0.0182     0.191     0.0364   110          0
+##  6 Antigua and B… COVI…      0.0273     0.164     0.0268   110          0
+##  7 Argentina      COVI…      2.77       3.82     14.6      110          0
+##  8 Armenia        COVI…      0.409      0.782     0.611    110          0
+##  9 Australia      COVI…      0.110      0.438     0.191    880          0
+## 10 Australia      SARS       0          0         0         17          0
+## # … with 214 more rows, and 5 more variables: max_Deaths &lt;int&gt;,
+## #   n_distinct_Deaths &lt;int&gt;, cor_Deaths_Recovered &lt;dbl&gt;, IQR_Deaths &lt;dbl&gt;,
+## #   median_Deaths &lt;dbl&gt;</code></pre>
+<pre class="r"><code>Coronavirus %&gt;% group_by(Country.Region) %&gt;% summarize(mean_Confirmed=mean(Confirmed), sd_Confirmed=sd(Confirmed), var_Confirmed=var(Confirmed),n(),min_Confirmed=min(Confirmed),max_Confirmed=max(Confirmed),n_distinct_Confirmed=n_distinct(Confirmed),cor_Confirmed_Deaths=cor(Confirmed, Deaths), IQR_Confirmed=IQR(Confirmed), median_Confirmed=median(Confirmed))</code></pre>
+<pre><code>## # A tibble: 191 x 11
+##    Country.Region mean_Confirmed sd_Confirmed var_Confirmed `n()` min_Confirmed
+##    &lt;chr&gt;                   &lt;dbl&gt;        &lt;dbl&gt;         &lt;dbl&gt; &lt;int&gt;         &lt;int&gt;
+##  1 Afghanistan            40.0         72.7        5291.      110             0
+##  2 Albania                 7.89         8.98         80.7     110             0
+##  3 Algeria                52.0         63.5        4033.      110             0
+##  4 Andorra                 6.86        11.7         136.      110             0
+##  5 Angola                  0.409        1.12          1.25    110             0
+##  6 Antigua and B…          0.227        0.864         0.746   110             0
+##  7 Argentina              54.9         71.6        5126.      110             0
+##  8 Armenia                30.1         40.5        1642.      110             0
+##  9 Australia               7.75        24.4         595.      897            -2
+## 10 Austria               144.         236.        55543.      110             0
+## # … with 181 more rows, and 5 more variables: max_Confirmed &lt;int&gt;,
+## #   n_distinct_Confirmed &lt;int&gt;, cor_Confirmed_Deaths &lt;dbl&gt;,
+## #   IQR_Confirmed &lt;dbl&gt;, median_Confirmed &lt;dbl&gt;</code></pre>
+<pre class="r"><code>Coronavirus %&gt;% group_by(Country.Region, Virus) %&gt;% summarize(mean_Confirmed=mean(Confirmed), sd_Confirmed=sd(Confirmed), var_Confirmed=var(Confirmed),n(),min_Confirmed=min(Confirmed),max_Confirmed=max(Confirmed),n_distinct_Confirmed=n_distinct(Confirmed),cor_Confirmed_Deaths=cor(Confirmed, Deaths), IQR_Confirmed=IQR(Confirmed), median_Confirmed=median(Confirmed)) %&gt;% arrange(desc(median_Confirmed))</code></pre>
+<pre><code>## # A tibble: 224 x 12
+## # Groups:   Country.Region [191]
+##    Country.Region Virus mean_Confirmed sd_Confirmed var_Confirmed `n()`
+##    &lt;chr&gt;          &lt;chr&gt;          &lt;dbl&gt;        &lt;dbl&gt;         &lt;dbl&gt; &lt;int&gt;
+##  1 Italy          COVI…          1992.        1993.      3973550.   110
+##  2 US             COVI…         12084.       13574.    184261699.   110
+##  3 Iran           COVI…           978.         907.       822114.   110
+##  4 Germany        COVI…          1563.        1965.      3861925.   110
+##  5 Spain          COVI…          2040.        2967.      8804011.   110
+##  6 Belgium        COVI…           483.         586.       342872.   110
+##  7 Sweden         COVI…           239.         263.        69047.   110
+##  8 Switzerland    COVI…           276.         384.       147455.   110
+##  9 Brazil         COVI…          1479.        2529.      6397137.   110
+## 10 Portugal       COVI…           251.         318.       101424.   110
+## # … with 214 more rows, and 6 more variables: min_Confirmed &lt;int&gt;,
+## #   max_Confirmed &lt;int&gt;, n_distinct_Confirmed &lt;int&gt;,
+## #   cor_Confirmed_Deaths &lt;dbl&gt;, IQR_Confirmed &lt;dbl&gt;, median_Confirmed &lt;dbl&gt;</code></pre>
+<pre class="r"><code>Coronavirus %&gt;% group_by(Country.Region) %&gt;% summarize(mean_Recovered=mean(Recovered), sd_Recovered=sd(Recovered), var_Recovered=var(Recovered),n(),min_Recovered=min(Recovered),max_Recovered=max(Recovered),n_distinct_Recovered=n_distinct(Recovered),cor_Recovered_Confirmed=cor(Recovered, Confirmed), IQR_Recovered=IQR(Recovered), median_Recovered=median(Recovered)) %&gt;% arrange(desc(max_Recovered))</code></pre>
+<pre><code>## # A tibble: 191 x 11
+##    Country.Region mean_Recovered sd_Recovered var_Recovered `n()` min_Recovered
+##    &lt;chr&gt;                   &lt;dbl&gt;        &lt;dbl&gt;         &lt;dbl&gt; &lt;int&gt;         &lt;int&gt;
+##  1 US                     1060.         3319.     11016310.   204            -1
+##  2 Brazil                  340.         1218.      1483336.   191            -1
+##  3 Germany                 701.         1581.      2499502.   206             0
+##  4 Ireland                  84.7         751.       564685.   202             0
+##  5 Italy                   521.         1047.      1095543.   202            -4
+##  6 Iran                    783.         1044.      1089230.   110             0
+##  7 Spain                   695.         1333.      1778004.   196             0
+##  8 Russia                  243.          680.       462609.   141             0
+##  9 Turkey                  843.         1600.      2559920.   110             0
+## 10 Mexico                  198.          667.       445187.   110             0
+## # … with 181 more rows, and 5 more variables: max_Recovered &lt;int&gt;,
+## #   n_distinct_Recovered &lt;int&gt;, cor_Recovered_Confirmed &lt;dbl&gt;,
+## #   IQR_Recovered &lt;dbl&gt;, median_Recovered &lt;dbl&gt;</code></pre>
+<pre class="r"><code>Coronavirus %&gt;% group_by(Country.Region,Virus) %&gt;% summarize(mean_Recovered=mean(Recovered), sd_Recovered=sd(Recovered), var_Recovered=var(Recovered),n(),min_Recovered=min(Recovered),max_Recovered=max(Recovered),n_distinct_Recovered=n_distinct(Recovered),cor_Recovered_Confirmed=cor(Recovered, Confirmed), IQR_Recovered=IQR(Recovered), median_Recovered=median(Recovered))</code></pre>
+<pre><code>## # A tibble: 224 x 12
+## # Groups:   Country.Region [191]
+##    Country.Region Virus mean_Recovered sd_Recovered var_Recovered `n()`
+##    &lt;chr&gt;          &lt;chr&gt;          &lt;dbl&gt;        &lt;dbl&gt;         &lt;dbl&gt; &lt;int&gt;
+##  1 Afghanistan    COVI…          5.07        11.3         129.      110
+##  2 Albania        COVI…          5.91         8.25         68.1     110
+##  3 Algeria        COVI…         24.3         41.9        1754.      110
+##  4 Andorra        COVI…          5           10.8         116.      110
+##  5 Angola         COVI…          0.118        0.502         0.252   110
+##  6 Antigua and B… COVI…          0.173        0.728         0.530   110
+##  7 Argentina      COVI…         16.0         26.9         723.      110
+##  8 Armenia        COVI…         12.0         20.7         429.      110
+##  9 Australia      COVI…          7.01        52.3        2736.      880
+## 10 Australia      SARS           0.294        1.05          1.10     17
+## # … with 214 more rows, and 6 more variables: min_Recovered &lt;int&gt;,
+## #   max_Recovered &lt;int&gt;, n_distinct_Recovered &lt;int&gt;,
+## #   cor_Recovered_Confirmed &lt;dbl&gt;, IQR_Recovered &lt;dbl&gt;, median_Recovered &lt;dbl&gt;</code></pre>
+</div>
+<div id="the-first-set-of-summary-statistics-was-meant-to-show-another-instance-of-pivot_longer-use-where-multiple-columns-are-converted-into-rows.-this-means-that-for-each-countryregion-in-the-country.region-variable-there-will-be-a-summary-statistic-with-its-corresponding-value.-this-would-increase-the-number-of-rows-from-118-to-1062-but-decrease-the-total-number-of-columnds-from-11-to-3.-pivot_wider-would-do-the-reverse-if-done-where-it-would-shift-rows-to-become-columns-where-particular-values-would-be-taken-from-a-preexisting-column." class="section level3">
+<h3>The first set of summary statistics was meant to show another instance of pivot_longer use where multiple columns are converted into rows. This means that for each country/region in the country.region variable, there will be a summary statistic with it’s corresponding value. This would increase the number of rows from 118 to 1062 but decrease the total number of columnds from 11 to 3. Pivot_wider would do the reverse if done where it would shift rows to become columns where particular values would be taken from a preexisting column.</h3>
+</div>
+<div id="regarding-the-summary-statistics-the-first-set-focused-on-the-deaths-numeric-variable.-i-decided-to-also-arrange-the-summary-in-descending-order-with-respect-to-the-mean.-clearly-as-portrayed-in-the-media-iran-has-been-experiencing-on-average-per-day-the-greatest-number-of-fatalities-due-to-coronavirus.-iran-is-not-represented-in-the-sars-dataset-so-this-average-is-purely-from-the-covid19-strain-alone.-most-of-the-higher-average-countries-are-asian-countries-but-italy-with-its-tight-population-density-in-the-north-is-shown-to-experience-the-second-highest-number-of-fatalities-per-day-on-average-but-has-a-higher-standard-deviation-than-iran-so-this-number-fluctuates-more." class="section level3">
+<h3>Regarding the summary statistics, the first set focused on the deaths numeric variable. I decided to also arrange the summary in descending order with respect to the mean. Clearly, as portrayed in the media, Iran has been experiencing, on average per day, the greatest number of fatalities due to coronavirus. Iran is not represented in the <code>SARS</code> dataset so this average is purely from the COVID19 strain alone. Most of the higher average countries are Asian countries, but Italy with its tight population density in the north is shown to experience the second highest number of fatalities per day on average but has a higher standard deviation than Iran, so this number fluctuates more.</h3>
+<p>On another note, Japan has the highest median confirmation of new cases which could be explained by their standard of living and access to healthcare services as compared to Iran which has a median close to zero because they can’t accurately test individuals as well as more wealthy countries.
+Surprisingly enough, China has the most amount of indiviudals who are in recovery or have recovered from the virus, suggesting they could be past their peak of transmission for the virus within their region. This would also suggest an individual will not have the virus for an extended amount of time but moreso that the virus has permeated through that region and those remainging in the region have already been exposed and have obtained the appropriate defenses while other countries in the near Pacific and abroad from China are experiencing more Confirmed Cases and more fatalaties currently. These variables on a day-basis were more beneficial to analyze than their cumulative predecessors because only the most recent statistic for each cumulative variable would have been useful.</p>
+<pre class="r"><code># Correlation Matrix and Heatmap Visualization
+Coronavirus %&gt;% mutate(Day=recode(Day, &quot;01&quot;=&quot;1&quot;,&quot;02&quot;=&quot;2&quot;,&quot;03&quot;=&quot;3&quot;,&quot;04&quot;=&quot;4&quot;,&quot;05&quot;=&quot;5&quot;,&quot;06&quot;=&quot;6&quot;,&quot;07&quot;=&quot;7&quot;,&quot;08&quot;=&quot;8&quot;,&quot;09&quot;=&quot;9&quot;))</code></pre>
+<pre><code>## # A tibble: 31,578 x 16
+## # Groups:   Country.Region, Province.State [301]
+##    Country.Region Province.State Latitude Longitude Date  Date.n Month Day  
+##    &lt;chr&gt;          &lt;chr&gt;          &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;
+##  1 Afghanistan    &quot;&quot;             33       65        5/10… 20200… May   10   
+##  2 Albania        &quot;&quot;             41.1533  20.1683   5/10… 20200… May   10   
+##  3 Algeria        &quot;&quot;             28.0339  1.6596    5/10… 20200… May   10   
+##  4 Andorra        &quot;&quot;             42.5063  1.5218    5/10… 20200… May   10   
+##  5 Angola         &quot;&quot;             -11.2027 17.8739   5/10… 20200… May   10   
+##  6 Antigua and B… &quot;&quot;             17.0608  -61.7964  5/10… 20200… May   10   
+##  7 Argentina      &quot;&quot;             -38.4161 -63.6167  5/10… 20200… May   10   
+##  8 Armenia        &quot;&quot;             40.0691  45.0382   5/10… 20200… May   10   
+##  9 Australia      &quot;Australian C… -35.4735 149.0124  5/10… 20200… May   10   
+## 10 Australia      &quot;New South Wa… -33.8688 151.2093  5/10… 20200… May   10   
+## # … with 31,568 more rows, and 8 more variables: Year &lt;chr&gt;,
+## #   Cuml.Confirmed &lt;int&gt;, Cuml.Deaths &lt;int&gt;, Cuml.Recovered &lt;int&gt;, Virus &lt;chr&gt;,
+## #   Confirmed &lt;int&gt;, Deaths &lt;int&gt;, Recovered &lt;int&gt;</code></pre>
+<pre class="r"><code>Coronavirus&lt;-Coronavirus %&gt;% as.data.frame%&gt;%mutate_at(c(3:4,6,8,9),as.numeric) %&gt;% mutate(Province.State=ifelse(Province.State==&quot;&quot;,NA,Province.State)) %&gt;% arrange(Country.Region)
+
+sapply(Coronavirus, class)</code></pre>
+<pre><code>## Country.Region Province.State       Latitude      Longitude           Date 
+##    &quot;character&quot;    &quot;character&quot;      &quot;numeric&quot;      &quot;numeric&quot;    &quot;character&quot; 
+##         Date.n          Month            Day           Year Cuml.Confirmed 
+##      &quot;numeric&quot;    &quot;character&quot;      &quot;numeric&quot;      &quot;numeric&quot;      &quot;integer&quot; 
+##    Cuml.Deaths Cuml.Recovered          Virus      Confirmed         Deaths 
+##      &quot;integer&quot;      &quot;integer&quot;    &quot;character&quot;      &quot;integer&quot;      &quot;integer&quot; 
+##      Recovered 
+##      &quot;integer&quot;</code></pre>
+<pre class="r"><code>Recov_Death_correlation &lt;- Coronavirus %&gt;% select(Recovered, Deaths) %&gt;% cor()
+
+Heatmap &lt;- Coronavirus %&gt;% select(Confirmed, Recovered, Deaths, Cuml.Confirmed, Cuml.Deaths, Cuml.Recovered) %&gt;% cor() %&gt;% as.data.frame() %&gt;% rownames_to_column() %&gt;% pivot_longer(-1) %&gt;% ggplot(aes(rowname, name, fill=value)) + geom_tile() + geom_text(aes(label=round(value, 4))) + xlab(&quot;Numeric Variables&quot;) + ylab(&quot;Numeric Variables&quot;) + scale_fill_gradient2(low=&quot;blue&quot;, mid = &quot;white&quot;, high=&quot;red&quot;) + ggtitle(&quot;Numeric Correlation Heatmap&quot;)
+Heatmap</code></pre>
+<p><img src="/Project1_files/figure-html/unnamed-chunk-6-1.png" width="768" style="display: block; margin: auto;" />
+### According to the heatmap, Deaths have a somewhat high correlation with the number of confirmed cases. This would suggest that as more cases become confirmed, more deaths seem to arise. This could be explained by the fact more people are taken to the hospital to be treated for the virus but hospitals are less able to handle such an influx of people causing people to have reduced care and are more a the whim of how they handle the virus’ symptoms. Cumulative Deaths and Cumulative Confirmed cases have a very high correlation, slightly more than the correlation between cumulative confirmed cases and recoveries. This would suggest that more confirmed cases of either virus thus far have resulted in fatality than recovery.
+Furthermore, the correlation between confirmed cases on a given day and cumulative recoveries seems to have a very low correlation which would likely be because people new cases are sporadic and are not exponentially occuring each day, rather confirmed cases varies by day and could be higher or lower than the previous day. However, recoveries per day has a strong correlation with the cumulative variables, likely in part due to the fact that people are consistenly recovering more as of lately and thus since recoveries per day increases, we could expect the cumulative variables to increase as well since more cases, deaths, and recoveries continuously happen with COVID19. Recoveries and Deaths also have a low correlation which is expected since those not recovering from the virus are likely dying from it and vice-versa.</p>
+</div>
+</div>
+<div id="visualizations" class="section level2">
+<h2>Visualizations!</h2>
+<div id="below-are-some-graphs-constructed-from-ggplot-while-after-each-graph-will-be-a-brief-analysis." class="section level3">
+<h3>Below are some graphs constructed from ggplot, while after each graph will be a brief analysis.</h3>
+<pre class="r"><code>library(&quot;ggplot2&quot;)
+
+Coronavirus &lt;- Coronavirus %&gt;% mutate(Month= recode(Month, &quot;January&quot;=&quot;1&quot;,&quot;February&quot;=&quot;2&quot;,&quot;March&quot;=&quot;3&quot;,&quot;April&quot;=&quot;4&quot;,&quot;May&quot;=&quot;5&quot;,&quot;June&quot;=&quot;6&quot;,&quot;July&quot;=&quot;7&quot;,&quot;August&quot;=&quot;8&quot;,&quot;September&quot;=&quot;9&quot;,&quot;October&quot;=&quot;10&quot;,&quot;November&quot;=&quot;11&quot;,&quot;December&quot;=&quot;12&quot;))
+
+Deathplot &lt;- ggplot(data = Coronavirus, aes(x = Month, y = Deaths, fill = Virus)) +
+  geom_bar(stat = &quot;summary&quot;, fun.y = &quot;mean&quot;) + 
+  geom_errorbar(stat=&quot;summary&quot;, width = 0.5) 
+
+Deathplot + ggtitle(&quot;Average Number of Deaths Daily Per Country by Month&quot;) +
+  scale_y_continuous(name = &quot;Average Number of Deaths Per Day Per Country&quot;, breaks=seq(0,25,5)) + 
+  theme_dark() + 
+  scale_fill_brewer(palette=&quot;Dark2&quot;) +
+  facet_wrap(~Virus)</code></pre>
+<p><img src="/Project1_files/figure-html/unnamed-chunk-7-1.png" width="768" style="display: block; margin: auto;" />
+### In this visualization, the average number of deaths per month is displayed. However, not all months were analyzed in the dataset, and COVID19 currently has not seen the summer months of 2020 yet so only January, Febraury, and March data for COVID19 is shown. Between these two strains of coronavirus, it can be seen that SARS caused its peak amount of deaths in April of 2003 whereas COVID19 has yet to reach a peak in amount of deaths caused globally. Furthermore, it can be seen that March has been the month with the highest average deaths per day per country, globally. The SARS virus, on the other hand exhibited a large drop off from its peak month in April. This may have been due to most countries experiencing summer in May through July and into September since the virus would have a harder time spreading in warmer environments and low humidity.</p>
+<pre class="r"><code>Coronavirus &lt;- Coronavirus %&gt;% mutate(Month = recode(Month, &quot;1&quot;=&quot;January&quot;,&quot;2&quot;=&quot;February&quot;,&quot;3&quot;=&quot;March&quot;,&quot;4&quot;=&quot;April&quot;,&quot;5&quot;=&quot;May&quot;,&quot;6&quot;=&quot;June&quot;,&quot;7&quot;=&quot;July&quot;,&quot;8&quot;=&quot;August&quot;,&quot;9&quot;=&quot;September&quot;,&quot;10&quot;=&quot;October&quot;,&quot;11&quot;=&quot;November&quot;,&quot;12&quot;=&quot;December&quot;))
+
+Coronavirus$Month &lt;- factor(Coronavirus$Month, levels = c(&quot;January&quot;,&quot;February&quot;,&quot;March&quot;,&quot;April&quot;,&quot;May&quot;,&quot;June&quot;,&quot;July&quot;,&quot;September&quot;,&quot;October&quot;,&quot;November&quot;,&quot;December&quot;))
+
+ChinaPlot &lt;- Coronavirus %&gt;%
+  filter(Virus==&quot;COVID19&quot;, Month %in% c(&quot;January&quot;,&quot;February&quot;,&quot;March&quot;),Country.Region==&quot;China&quot;) %&gt;%
+  ggplot(aes(x = Day, y = Confirmed, fill=Month)) +
+  geom_bar(stat=&quot;summary&quot;) +
+  xlab(&quot;Day&quot;) +
+  ylab(&quot;Number of Confirmed Cases&quot;) +
+  ggtitle(&quot;Daily Confirmed Cases in Hubei, China by Day&quot;) +
+  theme_dark() + 
+  scale_fill_brewer(palette=&quot;Dark2&quot;) + facet_wrap(&quot;Month&quot;)
+ChinaPlot</code></pre>
+<p><img src="/Project1_files/figure-html/unnamed-chunk-8-1.png" width="768" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>ItalyPlot &lt;- Coronavirus %&gt;%
+  filter(Virus==&quot;COVID19&quot;, Month %in% c(&quot;March&quot;,&quot;April&quot;,&quot;May&quot;),Country.Region==&quot;Italy&quot;) %&gt;%
+  ggplot(aes(x = Day, y = Confirmed, fill=Month)) +
+  geom_bar(stat=&quot;summary&quot;) +
+  xlab(&quot;Day&quot;) +
+  ylab(&quot;Number of Confirmed Cases&quot;) +
+  ggtitle(&quot;Daily Confirmed Cases in Italy by Day&quot;) +
+  theme_dark() + 
+  scale_fill_brewer(palette=&quot;Dark2&quot;) +
+  facet_wrap(&quot;Month&quot;)
+ItalyPlot</code></pre>
+<p><img src="/Project1_files/figure-html/unnamed-chunk-8-2.png" width="768" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>SpreadPlot &lt;- Coronavirus %&gt;% filter(Virus==&quot;COVID19&quot;, Latitude &gt;=0) %&gt;% ggplot() + geom_line(aes(Latitude, Confirmed)) + scale_x_continuous() + xlab(&quot;Latitude (Degrees from Equator)&quot;) + ylab(&quot;Cumulative Confirmed Cases of COVID19&quot;) + ggtitle(&quot;Cumulative Number of Confirmed Cases by Latitude&quot;) + facet_wrap(~Month)
+SpreadPlot</code></pre>
+<p><img src="/Project1_files/figure-html/unnamed-chunk-8-3.png" width="768" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>USPlot &lt;- Coronavirus %&gt;%
+  filter(Virus==&quot;COVID19&quot;, Month %in% c(&quot;March&quot;,&quot;April&quot;,&quot;May&quot;), Country.Region==&quot;US&quot;) %&gt;%
+  ggplot(aes(x = Day, y = Confirmed, fill= Month)) + 
+  geom_bar(stat=&quot;summary&quot;) +
+  xlab(&quot;Day&quot;) +
+  ylab(&quot;Number of Confirmed Cases&quot;) +
+  ggtitle(&quot;Daily Confirmed Cases in the United States of America by Day&quot;) +
+  theme_dark() +
+  scale_fill_brewer(palette=&quot;Dark2&quot;) +
+  facet_wrap(&quot;Month&quot;)
+USPlot</code></pre>
+<p><img src="/Project1_files/figure-html/unnamed-chunk-8-4.png" width="768" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>BrazilPlot &lt;- Coronavirus %&gt;%
+  filter(Virus==&quot;COVID19&quot;, Month %in% c(&quot;March&quot;,&quot;April&quot;,&quot;May&quot;), Country.Region==&quot;Brazil&quot;) %&gt;%
+  ggplot(aes(x = Day, y = Confirmed, fill= Month)) + 
+  geom_bar(stat=&quot;summary&quot;) +
+  xlab(&quot;Day&quot;) +
+  ylab(&quot;Number of Confirmed Cases&quot;) +
+  ggtitle(&quot;Daily Confirmed Cases in Brazil by Day&quot;) +
+  theme_dark() +
+  scale_fill_brewer(palette=&quot;Dark2&quot;) +
+  facet_wrap(&quot;Month&quot;)
+BrazilPlot</code></pre>
+<p><img src="/Project1_files/figure-html/unnamed-chunk-8-5.png" width="768" style="display: block; margin: auto;" />
+### In these next two plots, the graphs are divided in two to differentiate by months but also to highlight the contrast between the months. In Hubei, China, the place of origin of the virus, the number of daily confirmed cases reached nearly 15,000 in mid-February, but decreased dramatically to about 100 going into mid-March. This would suggest that after lengthy exposure to the virus, the region has begun to limit the spread of the virus or newly infected individuals have not been able to reach the hospital to create accurate statistics. By contrast, Italy has had an exponential growth in the number of confirmed cases by Day as they are reaching over 2000 confirmed cases each day. This could be do to a high population density like China. However, the sudden drop on Day 10 could be due to their extensive efforts in Northern Italy to quarantine individuals and limit the spread to the remainder of the nation.
+The last plot briefly depicts the cumulative number of cases at each latitude. It’s noteworthy that as COVID19 began to spread dramatically throughout Hubei, China, the Chinese began to treat more patients by constructing additional medical facilities and quaranting individuals, generating the change from February to March where the peak at latitude 30.97 degrees decreased in height. More peaks began to resonate from that latitude to higher and lower latitudes showing COVID19’s spread across the world but not in as extreme concentrations as was Hubei, China.</p>
+</div>
+</div>
+<div id="principle-component-analysis" class="section level2">
+<h2>Principle Component Analysis</h2>
+<pre class="r"><code># PCA
+library(dplyr)
+
+# Eliminate numeric columns with NAs to allow princomp analysis
+virus1 &lt;- Coronavirus
+virus_nums &lt;- Coronavirus %&gt;% select(-Latitude, -Longitude) %&gt;% select_if(is.numeric) %&gt;% scale()
+
+rownames(virus_nums) &lt;- virus1$name
+virus_pca&lt;-princomp(virus_nums)
+names(virus_pca)</code></pre>
+<pre><code>## [1] &quot;sdev&quot;     &quot;loadings&quot; &quot;center&quot;   &quot;scale&quot;    &quot;n.obs&quot;    &quot;scores&quot;   &quot;call&quot;</code></pre>
+<pre class="r"><code># View principle components
+Virus_summary &lt;- summary(virus_pca, loadings=T)
+Virus_summary</code></pre>
+<pre><code>## Importance of components:
+##                           Comp.1    Comp.2    Comp.3     Comp.4     Comp.5
+## Standard deviation     2.1234175 1.4127340 1.0000650 0.84804945 0.66322139
+## Proportion of Variance 0.5010049 0.2217645 0.1111291 0.07991229 0.04887517
+## Cumulative Proportion  0.5010049 0.7227695 0.8338985 0.91381082 0.96268600
+##                            Comp.6    Comp.7     Comp.8       Comp.9
+## Standard deviation     0.41613869 0.3583744 0.18495748 1.583948e-03
+## Proportion of Variance 0.01924188 0.0142707 0.00380115 2.787746e-07
+## Cumulative Proportion  0.98192787 0.9961986 0.99999972 1.000000e+00
+## 
+## Loadings:
+##                Comp.1 Comp.2 Comp.3 Comp.4 Comp.5 Comp.6 Comp.7 Comp.8 Comp.9
+## Date.n                 0.706                                            0.707
+## Day                          -0.999                                          
+## Year                   0.706                                           -0.707
+## Cuml.Confirmed  0.454                       0.207         0.507  0.702       
+## Cuml.Deaths     0.433                       0.424  0.589  0.145 -0.511       
+## Cuml.Recovered  0.372               -0.619  0.297 -0.533 -0.315              
+## Confirmed       0.404                0.491 -0.230 -0.528  0.296 -0.420       
+## Deaths          0.414                0.458         0.142 -0.732  0.250       
+## Recovered       0.362               -0.403 -0.797  0.265</code></pre>
+<pre class="r"><code># Determine eigenvalues and show what variation is due to each prin.comp.
+eigval&lt;-virus_pca$sdev^2 
+varprop=round(eigval/sum(eigval),2) 
+
+ggplot()+geom_bar(aes(y=varprop,x=1:9),stat=&quot;identity&quot;)+xlab(&quot;&quot;)+geom_path(aes(y=varprop,x=1:9))+
+  geom_text(aes(x=1:9,y=varprop,label=round(varprop,2)),vjust=1,col=&quot;white&quot;,size=4)+
+  scale_y_continuous(breaks=seq(0,.6,.2),labels = scales::percent)+
+  scale_x_continuous(breaks=1:6)</code></pre>
+<p><img src="/Project1_files/figure-html/unnamed-chunk-9-1.png" width="768" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># From this ~47% of variation is due to comp.1 and ~22% is due to comp.2
+
+# Show cumulative proportion of variances due to each principle component in eigenvalue display
+round(cumsum(eigval)/sum(eigval),2)</code></pre>
+<pre><code>## Comp.1 Comp.2 Comp.3 Comp.4 Comp.5 Comp.6 Comp.7 Comp.8 Comp.9 
+##   0.50   0.72   0.83   0.91   0.96   0.98   1.00   1.00   1.00</code></pre>
+<pre class="r"><code>eigval</code></pre>
+<pre><code>##       Comp.1       Comp.2       Comp.3       Comp.4       Comp.5       Comp.6 
+## 4.508902e+00 1.995817e+00 1.000130e+00 7.191879e-01 4.398626e-01 1.731714e-01 
+##       Comp.7       Comp.8       Comp.9 
+## 1.284322e-01 3.420927e-02 2.508892e-06</code></pre>
+<pre class="r"><code>eigen(cor(virus_nums))</code></pre>
+<pre><code>## eigen() decomposition
+## $values
+## [1] 4.509045e+00 1.995881e+00 1.000162e+00 7.192106e-01 4.398765e-01
+## [6] 1.731769e-01 1.284363e-01 3.421035e-02 2.508971e-06
+## 
+## $vectors
+##               [,1]         [,2]          [,3]         [,4]         [,5]
+##  [1,]  0.029064865 -0.706480466  0.0019381867 -0.003172361 -0.002816185
+##  [2,] -0.007987709 -0.002733335 -0.9993309051  0.034008638 -0.009258148
+##  [3,]  0.028921395 -0.706494221  0.0012612878 -0.003296103 -0.002804068
+##  [4,]  0.454146680  0.021945209 -0.0031329063 -0.020175890 -0.207284835
+##  [5,]  0.433280914  0.021410335 -0.0007012461  0.049887122 -0.423736754
+##  [6,]  0.371545199  0.010373233  0.0236937053  0.619310369 -0.297126391
+##  [7,]  0.404357154  0.015679416 -0.0196966797 -0.490608044  0.229981995
+##  [8,]  0.414285877  0.018113324 -0.0191909710 -0.457592542  0.015665747
+##  [9,]  0.362063661  0.011057140  0.0021079694  0.402857510  0.797469390
+##               [,6]          [,7]          [,8]          [,9]
+##  [1,] -0.002994140  0.0017391903 -0.0008443466  7.071111e-01
+##  [2,]  0.004802407 -0.0008841169  0.0003099241  4.751689e-04
+##  [3,] -0.003207040  0.0019032957 -0.0013327557 -7.071022e-01
+##  [4,] -0.002214757  0.5067276055 -0.7022161199  2.568525e-04
+##  [5,] -0.589499945  0.1450776154  0.5110865671 -1.227515e-04
+##  [6,]  0.532588774 -0.3148987930  0.0815084642 -2.507374e-04
+##  [7,]  0.527784225  0.2955892452  0.4199336813 -1.770298e-04
+##  [8,] -0.141911306 -0.7315828669 -0.2503640653  3.008971e-05
+##  [9,] -0.264757980  0.0206021221  0.0032194780 -2.512771e-05</code></pre>
+<pre class="r"><code>virus_pca_1 &lt;- princomp(virus_nums)
+summary(virus_pca_1, loadings = TRUE)</code></pre>
+<pre><code>## Importance of components:
+##                           Comp.1    Comp.2    Comp.3     Comp.4     Comp.5
+## Standard deviation     2.1234175 1.4127340 1.0000650 0.84804945 0.66322139
+## Proportion of Variance 0.5010049 0.2217645 0.1111291 0.07991229 0.04887517
+## Cumulative Proportion  0.5010049 0.7227695 0.8338985 0.91381082 0.96268600
+##                            Comp.6    Comp.7     Comp.8       Comp.9
+## Standard deviation     0.41613869 0.3583744 0.18495748 1.583948e-03
+## Proportion of Variance 0.01924188 0.0142707 0.00380115 2.787746e-07
+## Cumulative Proportion  0.98192787 0.9961986 0.99999972 1.000000e+00
+## 
+## Loadings:
+##                Comp.1 Comp.2 Comp.3 Comp.4 Comp.5 Comp.6 Comp.7 Comp.8 Comp.9
+## Date.n                 0.706                                            0.707
+## Day                          -0.999                                          
+## Year                   0.706                                           -0.707
+## Cuml.Confirmed  0.454                       0.207         0.507  0.702       
+## Cuml.Deaths     0.433                       0.424  0.589  0.145 -0.511       
+## Cuml.Recovered  0.372               -0.619  0.297 -0.533 -0.315              
+## Confirmed       0.404                0.491 -0.230 -0.528  0.296 -0.420       
+## Deaths          0.414                0.458         0.142 -0.732  0.250       
+## Recovered       0.362               -0.403 -0.797  0.265</code></pre>
+<pre class="r"><code>viral_pca &lt;- Coronavirus %&gt;% select(-Latitude, -Longitude) %&gt;% select_if(is.numeric) %&gt;% scale() %&gt;% prcomp
+
+pca_Coronavirus1 &lt;- data.frame(PC1=viral_pca$x[, 1], PC2=viral_pca$x[, 2])
+ggplot(pca_Coronavirus1, aes(PC1, PC2)) + geom_point()+ ggtitle(&quot;PC1 against PC2&quot;)</code></pre>
+<p><img src="/Project1_files/figure-html/unnamed-chunk-9-2.png" width="768" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>pca_Coronavirus2 &lt;- data.frame(PC2=viral_pca$x[, 2], PC3=viral_pca$x[, 3])
+ggplot(pca_Coronavirus2, aes(PC2, PC3)) + geom_point()+ ggtitle(&quot;PC2 against PC3&quot;)</code></pre>
+<p><img src="/Project1_files/figure-html/unnamed-chunk-9-3.png" width="768" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>pca_Coronavirus3 &lt;- data.frame(PC1=viral_pca$x[, 1], PC3=viral_pca$x[, 3])
+ggplot(pca_Coronavirus3, aes(PC1, PC3)) + geom_point()+ ggtitle(&quot;PC1 against PC3&quot;)</code></pre>
+<p><img src="/Project1_files/figure-html/unnamed-chunk-9-4.png" width="768" style="display: block; margin: auto;" />
+### The numeric variables in the Coronavirus dataset were selected for and compiled into a matrix and analyzed by their principle components. From the summary information, it can be seen that no particular principle component is solely made up of one variable except for component 4 which is made up of the Day variable. Component 1 accounts for the most variation at about 47% but consists of several different variables rather than just one, suggesting that some of them do correlate. The resulting bar graph clearly denotes that most of the variance is accounted for by the first 3 principle components. Interestingly, there seems to be some correlation between principle components 2 and 3 but this is somewhat expected due to the fact that daily confirmed cases increases with each day for most countries due to the spread of the coronavirus (SARS and COVID19 strains).
+The plots constructed from ggplot show the relationships between PC1,PC2, and PC3, where a somewhat linear relationship exists between PC2 and PC3 except for one cluster of extreme points. Another relationship exists between PC1 and PC3 where two clusters of points develop, showing a relationship between Cumulative Confirmed cases (the highest proportion in PC1) and Daily confirmed cases and daily death counts.</p>
+<pre><code>## R version 3.6.2 (2019-12-12)
+## Platform: x86_64-apple-darwin15.6.0 (64-bit)
+## Running under: macOS Catalina 10.15.4
+## 
+## Matrix products: default
+## BLAS:   /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRblas.0.dylib
+## LAPACK: /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRlapack.dylib
+## 
+## locale:
+## [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## other attached packages:
+##  [1] factoextra_1.0.6 plotly_4.9.2     cluster_2.1.0    GGally_1.4.0    
+##  [5] forcats_0.5.0    stringr_1.4.0    purrr_0.3.3      readr_1.3.1     
+##  [9] tidyr_1.0.2      tibble_2.1.3     tidyverse_1.3.0  dplyr_0.8.4     
+## [13] ggplot2_3.2.1    knitr_1.28      
+## 
+## loaded via a namespace (and not attached):
+##  [1] ggrepel_0.8.2      Rcpp_1.0.3         lubridate_1.7.4    lattice_0.20-40   
+##  [5] utf8_1.1.4         assertthat_0.2.1   digest_0.6.25      R6_2.4.1          
+##  [9] cellranger_1.1.0   plyr_1.8.5         backports_1.1.5    reprex_0.3.0      
+## [13] evaluate_0.14      httr_1.4.1         blogdown_0.18      pillar_1.4.3      
+## [17] rlang_0.4.4        lazyeval_0.2.2     readxl_1.3.1       rstudioapi_0.11   
+## [21] data.table_1.12.8  rmarkdown_2.1      labeling_0.3       htmlwidgets_1.5.1 
+## [25] munsell_0.5.0      broom_0.5.4        compiler_3.6.2     modelr_0.1.6      
+## [29] xfun_0.12          pkgconfig_2.0.3    htmltools_0.4.0    tidyselect_1.0.0  
+## [33] bookdown_0.18      reshape_0.8.8      fansi_0.4.1        viridisLite_0.3.0 
+## [37] crayon_1.3.4       dbplyr_1.4.2       withr_2.1.2        grid_3.6.2        
+## [41] nlme_3.1-144       jsonlite_1.6.1     gtable_0.3.0       lifecycle_0.1.0   
+## [45] DBI_1.1.0          magrittr_1.5       scales_1.1.0       cli_2.0.1         
+## [49] stringi_1.4.6      farver_2.0.3       fs_1.3.1           xml2_1.2.2        
+## [53] ellipsis_0.3.0     vctrs_0.2.3        generics_0.0.2     RColorBrewer_1.1-2
+## [57] tools_3.6.2        glue_1.3.1         hms_0.5.3          yaml_2.2.1        
+## [61] colorspace_1.4-1   rvest_0.3.5        haven_2.2.0</code></pre>
+<pre><code>## [1] &quot;2020-05-14 03:04:30 CDT&quot;</code></pre>
+<pre><code>##                                                                                             sysname 
+##                                                                                            &quot;Darwin&quot; 
+##                                                                                             release 
+##                                                                                            &quot;19.4.0&quot; 
+##                                                                                             version 
+## &quot;Darwin Kernel Version 19.4.0: Wed Mar  4 22:28:40 PST 2020; root:xnu-6153.101.6~15/RELEASE_X86_64&quot; 
+##                                                                                            nodename 
+##                                                                        &quot;Blackfyre.fios-router.home&quot; 
+##                                                                                             machine 
+##                                                                                            &quot;x86_64&quot; 
+##                                                                                               login 
+##                                                                                              &quot;root&quot; 
+##                                                                                                user 
+##                                                                                       &quot;johnferratt&quot; 
+##                                                                                      effective_user 
+##                                                                                       &quot;johnferratt&quot;</code></pre>
+</div>

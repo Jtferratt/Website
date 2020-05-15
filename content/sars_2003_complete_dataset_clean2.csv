@@ -1,0 +1,2539 @@
+Date,Country,Virus ,Cuml.Confirmed,Cuml.Deaths,Cuml.Recovered,Province.State
+3/17/03,Germany,SARS,1,0,0,Not Recorded
+3/17/03,Canada,SARS,8,2,0,Not Recorded
+3/17/03,Singapore,SARS,20,0,0,Not Recorded
+3/17/03,Hong Kong,SARS,95,1,0,Not Recorded
+3/17/03,Switzerland,SARS,2,0,0,Not Recorded
+3/17/03,Thailand,SARS,1,0,0,Not Recorded
+3/17/03,Vietnam,SARS,40,1,0,Not Recorded
+3/18/03,Germany,SARS,2,0,0,Not Recorded
+3/18/03,Canada,SARS,8,2,0,Not Recorded
+3/18/03,China,SARS,0,0,0,Not Recorded
+3/18/03,Singapore,SARS,23,0,0,Not Recorded
+3/18/03,Hong Kong,SARS,123,1,0,Not Recorded
+3/18/03,Taiwan,SARS,3,0,0,Not Recorded
+3/18/03,Thailand,SARS,1,0,0,Not Recorded
+3/18/03,Vietnam,SARS,57,1,0,Not Recorded
+3/18/03,Slovenia,SARS,1,0,0,Not Recorded
+3/18/03,UK,SARS,1,0,0,Not Recorded
+3/19/03,Canada,SARS,8,2,0,Not Recorded
+3/19/03,China,SARS,0,0,0,Not Recorded
+3/19/03,Germany,SARS,1,0,0,Not Recorded
+3/19/03,Hong Kong,SARS,150,5,0,Not Recorded
+3/19/03,Singapore,SARS,31,0,0,Not Recorded
+3/19/03,Slovenia,SARS,1,0,0,Not Recorded
+3/19/03,Spain,SARS,1,0,0,Not Recorded
+3/19/03,Taiwan,SARS,3,0,0,Not Recorded
+3/19/03,Thailand,SARS,1,0,0,Not Recorded
+3/19/03,UK,SARS,1,0,0,Not Recorded
+3/19/03,US,SARS,11,0,0,Not Recorded
+3/19/03,Vietnam,SARS,56,2,0,Not Recorded
+3/20/03,Canada,SARS,9,2,0,Not Recorded
+3/20/03,China,SARS,0,0,0,Not Recorded
+3/20/03,Germany,SARS,1,0,0,Not Recorded
+3/20/03,Hong Kong,SARS,173,6,0,Not Recorded
+3/20/03,Singapore,SARS,34,0,0,Not Recorded
+3/20/03,Slovenia,SARS,1,0,0,Not Recorded
+3/20/03,Spain,SARS,1,0,0,Not Recorded
+3/20/03,Switzerland,SARS,7,0,0,Not Recorded
+3/20/03,Taiwan,SARS,4,0,0,Not Recorded
+3/20/03,Thailand,SARS,1,0,0,Not Recorded
+3/20/03,UK,SARS,2,0,0,Not Recorded
+3/20/03,US,SARS,11,0,0,Not Recorded
+3/20/03,Vietnam,SARS,62,2,0,Not Recorded
+3/21/03,Canada,SARS,9,2,0,Not Recorded
+3/21/03,China,SARS,0,0,0,Not Recorded
+3/21/03,Germany,SARS,1,0,0,Not Recorded
+3/21/03,Hong Kong,SARS,203,6,0,Not Recorded
+3/21/03,Italy,SARS,1,0,0,Not Recorded
+3/21/03,Ireland,SARS,1,0,0,Not Recorded
+3/21/03,Singapore,SARS,39,0,0,Not Recorded
+3/21/03,Slovenia,SARS,1,0,0,Not Recorded
+3/21/03,Spain,SARS,1,0,0,Not Recorded
+3/21/03,Switzerland,SARS,7,0,0,Not Recorded
+3/21/03,Taiwan,SARS,6,0,0,Not Recorded
+3/21/03,Thailand,SARS,4,0,0,Not Recorded
+3/21/03,UK,SARS,2,0,0,Not Recorded
+3/21/03,US,SARS,13,0,0,Not Recorded
+3/21/03,Vietnam,SARS,62,2,0,Not Recorded
+3/22/03,Canada,SARS,9,2,0,Not Recorded
+3/22/03,China,SARS,0,0,0,Not Recorded
+3/22/03,Germany,SARS,2,0,0,Not Recorded
+3/22/03,Hong Kong,SARS,222,7,0,Not Recorded
+3/22/03,Italy,SARS,2,0,0,Not Recorded
+3/22/03,Ireland,SARS,1,0,0,Not Recorded
+3/22/03,Singapore,SARS,44,0,0,Not Recorded
+3/22/03,Slovenia,SARS,1,0,0,Not Recorded
+3/22/03,Spain,SARS,1,0,0,Not Recorded
+3/22/03,Switzerland,SARS,7,0,0,Not Recorded
+3/22/03,Taiwan,SARS,6,0,0,Not Recorded
+3/22/03,Thailand,SARS,4,0,0,Not Recorded
+3/22/03,UK,SARS,2,0,0,Not Recorded
+3/22/03,US,SARS,22,0,0,Not Recorded
+3/22/03,Vietnam,SARS,63,2,0,Not Recorded
+3/24/03,Canada,SARS,11,3,0,Not Recorded
+3/24/03,China,SARS,0,0,0,Not Recorded
+3/24/03,France,SARS,1,0,0,Not Recorded
+3/24/03,Germany,SARS,4,0,0,Not Recorded
+3/24/03,Hong Kong,SARS,260,10,0,Not Recorded
+3/24/03,Italy,SARS,2,0,0,Not Recorded
+3/24/03,Ireland,SARS,1,0,0,Not Recorded
+3/24/03,Singapore,SARS,65,0,0,Not Recorded
+3/24/03,Spain,SARS,1,0,0,Not Recorded
+3/24/03,Switzerland,SARS,2,0,0,Not Recorded
+3/24/03,Taiwan,SARS,6,0,0,Not Recorded
+3/24/03,Thailand,SARS,5,0,0,Not Recorded
+3/24/03,UK,SARS,3,0,0,Not Recorded
+3/24/03,US,SARS,37,0,0,Not Recorded
+3/24/03,Vietnam,SARS,58,4,0,Not Recorded
+3/25/03,Canada,SARS,11,3,0,Not Recorded
+3/25/03,China,SARS,0,0,0,Not Recorded
+3/25/03,France,SARS,1,0,0,Not Recorded
+3/25/03,Germany,SARS,4,0,0,Not Recorded
+3/25/03,Hong Kong,SARS,286,10,0,Not Recorded
+3/25/03,Italy,SARS,2,0,0,Not Recorded
+3/25/03,Ireland,SARS,1,0,0,Not Recorded
+3/25/03,Singapore,SARS,69,0,0,Not Recorded
+3/25/03,Switzerland,SARS,2,0,0,Not Recorded
+3/25/03,Taiwan,SARS,6,0,0,Not Recorded
+3/25/03,Thailand,SARS,5,0,0,Not Recorded
+3/25/03,UK,SARS,3,0,0,Not Recorded
+3/25/03,US,SARS,39,0,0,Not Recorded
+3/25/03,Vietnam,SARS,58,4,0,Not Recorded
+3/26/03,Canada,SARS,19,3,0,Not Recorded
+3/26/03,China,SARS,792,31,0,Not Recorded
+3/26/03,Hong Kong,SARS,316,10,0,Not Recorded
+3/26/03,Taiwan,SARS,6,0,0,Not Recorded
+3/26/03,France,SARS,1,0,0,Not Recorded
+3/26/03,Germany,SARS,4,0,0,Not Recorded
+3/26/03,Italy,SARS,3,0,0,Not Recorded
+3/26/03,Ireland,SARS,2,0,0,Not Recorded
+3/26/03,Singapore,SARS,74,1,0,Not Recorded
+3/26/03,Switzerland,SARS,2,0,0,Not Recorded
+3/26/03,Thailand,SARS,3,0,0,Not Recorded
+3/26/03,UK,SARS,3,0,0,Not Recorded
+3/26/03,US,SARS,40,0,0,Not Recorded
+3/26/03,Vietnam,SARS,58,4,0,Not Recorded
+3/27/03,Canada,SARS,28,3,0,Not Recorded
+3/27/03,China,SARS,806,34,0,Not Recorded
+3/27/03,Hong Kong,SARS,367,10,0,Not Recorded
+3/27/03,Taiwan,SARS,6,0,0,Not Recorded
+3/27/03,France,SARS,1,0,0,Not Recorded
+3/27/03,Germany,SARS,4,0,0,Not Recorded
+3/27/03,Italy,SARS,2,0,0,Not Recorded
+3/27/03,Ireland,SARS,2,0,0,Not Recorded
+3/27/03,Romania,SARS,3,0,0,Not Recorded
+3/27/03,Singapore,SARS,78,2,0,Not Recorded
+3/27/03,Switzerland,SARS,2,0,0,Not Recorded
+3/27/03,Thailand,SARS,3,0,0,Not Recorded
+3/27/03,UK,SARS,3,0,0,Not Recorded
+3/27/03,US,SARS,45,0,0,Not Recorded
+3/27/03,Vietnam,SARS,58,4,0,Not Recorded
+3/28/03,Canada,SARS,29,3,0,Not Recorded
+3/28/03,China,SARS,806,34,0,Not Recorded
+3/28/03,Hong Kong,SARS,425,10,0,Not Recorded
+3/28/03,Taiwan,SARS,10,0,0,Not Recorded
+3/28/03,France,SARS,1,0,0,Not Recorded
+3/28/03,Germany,SARS,4,0,0,Not Recorded
+3/28/03,Italy,SARS,2,0,0,Not Recorded
+3/28/03,Ireland,SARS,2,0,0,Not Recorded
+3/28/03,Romania,SARS,3,0,0,Not Recorded
+3/28/03,Singapore,SARS,86,2,0,Not Recorded
+3/28/03,Switzerland,SARS,2,0,0,Not Recorded
+3/28/03,Thailand,SARS,3,0,0,Not Recorded
+3/28/03,UK,SARS,3,0,0,Not Recorded
+3/28/03,US,SARS,51,0,0,Not Recorded
+3/28/03,Vietnam,SARS,58,4,0,Not Recorded
+3/29/03,Canada,SARS,37,3,0,Not Recorded
+3/29/03,China,SARS,806,34,0,Not Recorded
+3/29/03,Hong Kong,SARS,470,10,0,Not Recorded
+3/29/03,Taiwan,SARS,10,0,0,Not Recorded
+3/29/03,France,SARS,1,0,0,Not Recorded
+3/29/03,Germany,SARS,4,0,0,Not Recorded
+3/29/03,Italy,SARS,2,0,0,Not Recorded
+3/29/03,Ireland,SARS,2,0,0,Not Recorded
+3/29/03,Romania,SARS,3,0,0,Not Recorded
+3/29/03,Singapore,SARS,89,2,0,Not Recorded
+3/29/03,Switzerland,SARS,3,0,0,Not Recorded
+3/29/03,Thailand,SARS,3,1,0,Not Recorded
+3/29/03,UK,SARS,3,0,0,Not Recorded
+3/29/03,US,SARS,59,0,0,Not Recorded
+3/29/03,Vietnam,SARS,58,4,0,Not Recorded
+3/31/03,Canada,SARS,44,4,0,Not Recorded
+3/31/03,China,SARS,806,34,0,Not Recorded
+3/31/03,Hong Kong,SARS,530,13,0,Not Recorded
+3/31/03,Taiwan,SARS,10,0,0,Not Recorded
+3/31/03,France,SARS,1,0,0,Not Recorded
+3/31/03,Germany,SARS,5,0,0,Not Recorded
+3/31/03,Italy,SARS,2,0,0,Not Recorded
+3/31/03,Ireland,SARS,2,0,0,Not Recorded
+3/31/03,Romania,SARS,3,0,0,Not Recorded
+3/31/03,Singapore,SARS,91,2,0,Not Recorded
+3/31/03,Switzerland,SARS,3,0,0,Not Recorded
+3/31/03,Thailand,SARS,5,1,0,Not Recorded
+3/31/03,UK,SARS,3,0,0,Not Recorded
+3/31/03,US,SARS,59,0,0,Not Recorded
+3/31/03,Vietnam,SARS,58,4,0,Not Recorded
+4/1/03,Australia,SARS,1,0,0,Not Recorded
+4/1/03,Belgium,SARS,1,0,0,Not Recorded
+4/1/03,Canada,SARS,53,4,0,Not Recorded
+4/1/03,China,SARS,806,34,0,Not Recorded
+4/1/03,Hong Kong,SARS,685,16,0,Not Recorded
+4/1/03,Taiwan,SARS,13,0,0,Not Recorded
+4/1/03,France,SARS,1,0,0,Not Recorded
+4/1/03,Germany,SARS,5,0,0,Not Recorded
+4/1/03,Italy,SARS,3,0,0,Not Recorded
+4/1/03,Ireland,SARS,2,0,0,Not Recorded
+4/1/03,Romania,SARS,3,0,0,Not Recorded
+4/1/03,Singapore,SARS,92,3,0,Not Recorded
+4/1/03,Switzerland,SARS,3,0,0,Not Recorded
+4/1/03,Thailand,SARS,6,1,0,Not Recorded
+4/1/03,UK,SARS,3,0,0,Not Recorded
+4/1/03,US,SARS,69,0,0,Not Recorded
+4/1/03,Vietnam,SARS,58,4,0,Not Recorded
+4/2/03,Australia,SARS,1,0,0,Not Recorded
+4/2/03,Belgium,SARS,1,0,0,Not Recorded
+4/2/03,Canada,SARS,58,6,0,Not Recorded
+4/2/03,China,SARS,1190,46,0,Not Recorded
+4/2/03,Hong Kong,SARS,708,16,0,Not Recorded
+4/2/03,Taiwan,SARS,13,0,0,Not Recorded
+4/2/03,France,SARS,1,0,0,Not Recorded
+4/2/03,Germany,SARS,5,0,0,Not Recorded
+4/2/03,Italy,SARS,3,0,0,Not Recorded
+4/2/03,Ireland,SARS,2,0,0,Not Recorded
+4/2/03,Romania,SARS,3,0,0,Not Recorded
+4/2/03,Singapore,SARS,95,4,0,Not Recorded
+4/2/03,Spain,SARS,1,0,0,Not Recorded
+4/2/03,Switzerland,SARS,2,0,0,Not Recorded
+4/2/03,Thailand,SARS,7,2,0,Not Recorded
+4/2/03,UK,SARS,3,0,0,Not Recorded
+4/2/03,US,SARS,72,0,0,Not Recorded
+4/2/03,Vietnam,SARS,58,4,0,Not Recorded
+4/3/03,Australia,SARS,1,0,0,Not Recorded
+4/3/03,Belgium,SARS,1,0,0,Not Recorded
+4/3/03,Brazil,SARS,1,0,0,Not Recorded
+4/3/03,Canada,SARS,62,6,0,Not Recorded
+4/3/03,China,SARS,1190,46,0,Not Recorded
+4/3/03,Hong Kong,SARS,734,17,0,Not Recorded
+4/3/03,Taiwan,SARS,14,0,0,Not Recorded
+4/3/03,France,SARS,3,0,0,Not Recorded
+4/3/03,Germany,SARS,5,0,0,Not Recorded
+4/3/03,Italy,SARS,3,0,0,Not Recorded
+4/3/03,Ireland,SARS,1,0,0,Not Recorded
+4/3/03,Romania,SARS,1,0,0,Not Recorded
+4/3/03,Singapore,SARS,98,4,0,Not Recorded
+4/3/03,Switzerland,SARS,2,0,0,Not Recorded
+4/3/03,Thailand,SARS,7,2,0,Not Recorded
+4/3/03,UK,SARS,3,0,0,Not Recorded
+4/3/03,US,SARS,85,0,0,Not Recorded
+4/3/03,Vietnam,SARS,59,4,0,Not Recorded
+4/4/03,Australia,SARS,1,0,0,Not Recorded
+4/4/03,Belgium,SARS,1,0,0,Not Recorded
+4/4/03,Brazil,SARS,1,0,0,Not Recorded
+4/4/03,Canada,SARS,69,7,0,Not Recorded
+4/4/03,China,SARS,1220,49,0,Not Recorded
+4/4/03,Hong Kong,SARS,761,17,0,Not Recorded
+4/4/03,Taiwan,SARS,15,0,0,Not Recorded
+4/4/03,France,SARS,3,0,0,Not Recorded
+4/4/03,Germany,SARS,5,0,0,Not Recorded
+4/4/03,Italy,SARS,3,0,0,Not Recorded
+4/4/03,Ireland,SARS,1,0,0,Not Recorded
+4/4/03,Romania,SARS,1,0,0,Not Recorded
+4/4/03,Singapore,SARS,100,5,0,Not Recorded
+4/4/03,Spain,SARS,1,0,0,Not Recorded
+4/4/03,Switzerland,SARS,2,0,0,Not Recorded
+4/4/03,Thailand,SARS,7,2,0,Not Recorded
+4/4/03,UK,SARS,3,0,0,Not Recorded
+4/4/03,US,SARS,100,0,0,Not Recorded
+4/4/03,Vietnam,SARS,59,4,0,Not Recorded
+4/5/03,Australia,SARS,1,0,0,Not Recorded
+4/5/03,Belgium,SARS,1,0,0,Not Recorded
+4/5/03,Brazil,SARS,1,0,0,Not Recorded
+4/5/03,Canada,SARS,74,7,0,Not Recorded
+4/5/03,China,SARS,1220,49,0,Not Recorded
+4/5/03,Hong Kong,SARS,800,20,0,Not Recorded
+4/5/03,Taiwan,SARS,17,0,0,Not Recorded
+4/5/03,France,SARS,3,0,0,Not Recorded
+4/5/03,Germany,SARS,5,0,0,Not Recorded
+4/5/03,Italy,SARS,3,0,0,Not Recorded
+4/5/03,Malaysia,SARS,1,1,0,Not Recorded
+4/5/03,Ireland,SARS,1,0,0,Not Recorded
+4/5/03,Romania,SARS,1,0,0,Not Recorded
+4/5/03,Singapore,SARS,101,6,0,Not Recorded
+4/5/03,Spain,SARS,1,0,0,Not Recorded
+4/5/03,Switzerland,SARS,1,0,0,Not Recorded
+4/5/03,Thailand,SARS,7,2,0,Not Recorded
+4/5/03,UK,SARS,4,0,0,Not Recorded
+4/5/03,US,SARS,115,0,0,Not Recorded
+4/5/03,Vietnam,SARS,59,4,0,Not Recorded
+4/7/03,Australia,SARS,1,0,0,Not Recorded
+4/7/03,Brazil,SARS,1,0,0,Not Recorded
+4/7/03,Canada,SARS,90,9,0,Not Recorded
+4/7/03,China,SARS,1268,53,0,Not Recorded
+4/7/03,Hong Kong,SARS,883,23,0,Not Recorded
+4/7/03,Taiwan,SARS,21,0,0,Not Recorded
+4/7/03,France,SARS,3,0,0,Not Recorded
+4/7/03,Germany,SARS,5,0,0,Not Recorded
+4/7/03,Italy,SARS,3,0,0,Not Recorded
+4/7/03,Malaysia,SARS,1,1,0,Not Recorded
+4/7/03,Ireland,SARS,1,0,0,Not Recorded
+4/7/03,Romania,SARS,1,0,0,Not Recorded
+4/7/03,Singapore,SARS,106,6,0,Not Recorded
+4/7/03,Spain,SARS,1,0,0,Not Recorded
+4/7/03,Switzerland,SARS,1,0,0,Not Recorded
+4/7/03,Thailand,SARS,7,2,0,Not Recorded
+4/7/03,UK,SARS,5,0,0,Not Recorded
+4/7/03,US,SARS,141,0,0,Not Recorded
+4/7/03,Vietnam,SARS,62,4,0,Not Recorded
+4/8/03,Australia,SARS,1,0,0,Not Recorded
+4/8/03,Brazil,SARS,1,0,0,Not Recorded
+4/8/03,Canada,SARS,91,10,0,Not Recorded
+4/8/03,China,SARS,1279,53,0,Not Recorded
+4/8/03,Hong Kong,SARS,928,25,0,Not Recorded
+4/8/03,Taiwan,SARS,19,0,0,Not Recorded
+4/8/03,France,SARS,4,0,0,Not Recorded
+4/8/03,Germany,SARS,5,0,0,Not Recorded
+4/8/03,Italy,SARS,3,0,0,Not Recorded
+4/8/03,Malaysia,SARS,1,1,0,Not Recorded
+4/8/03,Ireland,SARS,1,0,0,Not Recorded
+4/8/03,Romania,SARS,1,0,0,Not Recorded
+4/8/03,Singapore,SARS,113,8,0,Not Recorded
+4/8/03,Spain,SARS,1,0,0,Not Recorded
+4/8/03,Switzerland,SARS,1,0,0,Not Recorded
+4/8/03,Thailand,SARS,7,2,0,Not Recorded
+4/8/03,UK,SARS,5,0,0,Not Recorded
+4/8/03,US,SARS,148,0,0,Not Recorded
+4/8/03,Vietnam,SARS,62,4,0,Not Recorded
+4/9/03,Brazil,SARS,1,0,0,Not Recorded
+4/9/03,Canada,SARS,94,10,0,Not Recorded
+4/9/03,China,SARS,1280,53,0,Not Recorded
+4/9/03,Hong Kong,SARS,970,27,0,Not Recorded
+4/9/03,Taiwan,SARS,19,0,0,Not Recorded
+4/9/03,France,SARS,4,0,0,Not Recorded
+4/9/03,Germany,SARS,5,0,0,Not Recorded
+4/9/03,Italy,SARS,3,0,0,Not Recorded
+4/9/03,Malaysia,SARS,1,1,0,Not Recorded
+4/9/03,Ireland,SARS,1,0,0,Not Recorded
+4/9/03,Romania,SARS,1,0,0,Not Recorded
+4/9/03,Singapore,SARS,118,9,0,Not Recorded
+4/9/03,Spain,SARS,1,0,0,Not Recorded
+4/9/03,Switzerland,SARS,1,0,0,Not Recorded
+4/9/03,Thailand,SARS,7,2,0,Not Recorded
+4/9/03,UK,SARS,5,0,0,Not Recorded
+4/9/03,US,SARS,149,0,0,Not Recorded
+4/9/03,Vietnam,SARS,62,4,0,Not Recorded
+4/10/03,Brazil,SARS,2,0,0,Not Recorded
+4/10/03,Canada,SARS,97,10,22,Not Recorded
+4/10/03,China,SARS,1290,55,1025,Not Recorded
+4/10/03,Hong Kong,SARS,998,30,154,Not Recorded
+4/10/03,Taiwan,SARS,19,0,5,Not Recorded
+4/10/03,France,SARS,4,0,0,Not Recorded
+4/10/03,Germany,SARS,6,0,2,Not Recorded
+4/10/03,Italy,SARS,3,0,1,Not Recorded
+4/10/03,Kuwait,SARS,1,0,0,Not Recorded
+4/10/03,Malaysia,SARS,3,1,0,Not Recorded
+4/10/03,Ireland,SARS,1,0,1,Not Recorded
+4/10/03,Romania,SARS,1,0,0,Not Recorded
+4/10/03,Singapore,SARS,126,9,75,Not Recorded
+4/10/03,Spain,SARS,1,0,0,Not Recorded
+4/10/03,Switzerland,SARS,1,0,1,Not Recorded
+4/10/03,Thailand,SARS,7,2,5,Not Recorded
+4/10/03,UK,SARS,5,0,3,Not Recorded
+4/10/03,US,SARS,154,0,0,Not Recorded
+4/10/03,Vietnam,SARS,62,4,43,Not Recorded
+4/11/03,Brazil,SARS,2,0,0,Not Recorded
+4/11/03,Canada,SARS,98,10,25,Not Recorded
+4/11/03,China,SARS,1309,58,1037,Not Recorded
+4/11/03,Hong Kong,SARS,1059,32,169,Not Recorded
+4/11/03,Taiwan,SARS,21,0,6,Not Recorded
+4/11/03,France,SARS,5,0,0,Not Recorded
+4/11/03,Germany,SARS,6,0,4,Not Recorded
+4/11/03,Italy,SARS,3,0,2,Not Recorded
+4/11/03,Japan,SARS,4,0,0,Not Recorded
+4/11/03,Kuwait,SARS,1,0,0,Not Recorded
+4/11/03,Malaysia,SARS,4,1,0,Not Recorded
+4/11/03,Ireland,SARS,1,0,1,Not Recorded
+4/11/03,Romania,SARS,1,0,0,Not Recorded
+4/11/03,Singapore,SARS,133,9,77,Not Recorded
+4/11/03,South Africa,SARS,1,0,0,Not Recorded
+4/11/03,Spain,SARS,1,0,0,Not Recorded
+4/11/03,Switzerland,SARS,1,0,1,Not Recorded
+4/11/03,Thailand,SARS,7,2,5,Not Recorded
+4/11/03,UK,SARS,5,0,3,Not Recorded
+4/11/03,US,SARS,166,0,0,Not Recorded
+4/11/03,Vietnam,SARS,62,4,43,Not Recorded
+4/12/03,Brazil,SARS,2,0,0,Not Recorded
+4/12/03,Canada,SARS,101,10,26,Not Recorded
+4/12/03,China,SARS,1309,58,1037,Not Recorded
+4/12/03,Hong Kong,SARS,1108,35,215,Not Recorded
+4/12/03,Taiwan,SARS,23,0,7,Not Recorded
+4/12/03,France,SARS,5,0,1,Not Recorded
+4/12/03,Germany,SARS,6,0,4,Not Recorded
+4/12/03,Italy,SARS,3,0,2,Not Recorded
+4/12/03,Japan,SARS,4,0,0,Not Recorded
+4/12/03,Kuwait,SARS,1,0,0,Not Recorded
+4/12/03,Malaysia,SARS,4,1,0,Not Recorded
+4/12/03,Ireland,SARS,1,0,1,Not Recorded
+4/12/03,Romania,SARS,1,0,0,Not Recorded
+4/12/03,Singapore,SARS,147,9,77,Not Recorded
+4/12/03,South Africa,SARS,1,0,0,Not Recorded
+4/12/03,Spain,SARS,1,0,0,Not Recorded
+4/12/03,Switzerland,SARS,1,0,1,Not Recorded
+4/12/03,Thailand,SARS,8,2,5,Not Recorded
+4/12/03,UK,SARS,6,0,3,Not Recorded
+4/12/03,US,SARS,166,0,0,Not Recorded
+4/12/03,China,SARS,62,4,46,Not Recorded
+4/14/03,Brazil,SARS,2,0,0,Not Recorded
+4/14/03,Canada,SARS,100,13,27,Not Recorded
+4/14/03,China,SARS,1418,64,1088,Not Recorded
+4/14/03,Hong Kong,SARS,1190,47,229,Not Recorded
+4/14/03,Taiwan,SARS,23,0,7,Not Recorded
+4/14/03,France,SARS,5,0,1,Not Recorded
+4/14/03,Germany,SARS,6,0,4,Not Recorded
+4/14/03,Indonesia,SARS,1,0,0,Not Recorded
+4/14/03,Italy,SARS,3,0,2,Not Recorded
+4/14/03,Kuwait,SARS,1,0,0,Not Recorded
+4/14/03,Malaysia,SARS,4,1,0,Not Recorded
+4/14/03,Philippines,SARS,1,0,1,Not Recorded
+4/14/03,Ireland,SARS,1,0,1,Not Recorded
+4/14/03,Romania,SARS,1,0,0,Not Recorded
+4/14/03,Singapore,SARS,158,12,84,Not Recorded
+4/14/03,South Africa,SARS,1,0,0,Not Recorded
+4/14/03,Spain,SARS,1,0,0,Not Recorded
+4/14/03,Sweden,SARS,1,0,0,Not Recorded
+4/14/03,Switzerland,SARS,1,0,1,Not Recorded
+4/14/03,Thailand,SARS,8,2,5,Not Recorded
+4/14/03,UK,SARS,6,0,3,Not Recorded
+4/14/03,US,SARS,174,0,0,Not Recorded
+4/14/03,Vietnam,SARS,63,5,46,Not Recorded
+4/15/03,Brazil,SARS,2,0,0,Not Recorded
+4/15/03,Canada,SARS,100,13,27,Not Recorded
+4/15/03,China,SARS,1418,64,1088,Not Recorded
+4/15/03,Hong Kong,SARS,1232,56,243,Not Recorded
+4/15/03,Taiwan,SARS,23,0,7,Not Recorded
+4/15/03,France,SARS,5,0,1,Not Recorded
+4/15/03,Germany,SARS,6,0,4,Not Recorded
+4/15/03,Indonesia,SARS,1,0,0,Not Recorded
+4/15/03,Italy,SARS,3,0,2,Not Recorded
+4/15/03,Japan,SARS,1,0,0,Not Recorded
+4/15/03,Kuwait,SARS,1,0,0,Not Recorded
+4/15/03,Malaysia,SARS,4,1,0,Not Recorded
+4/15/03,Philippines,SARS,1,0,1,Not Recorded
+4/15/03,Ireland,SARS,1,0,1,Not Recorded
+4/15/03,Romania,SARS,1,0,1,Not Recorded
+4/15/03,Singapore,SARS,162,13,85,Not Recorded
+4/15/03,South Africa,SARS,1,0,0,Not Recorded
+4/15/03,Spain,SARS,1,0,0,Not Recorded
+4/15/03,Sweden,SARS,1,0,0,Not Recorded
+4/15/03,Switzerland,SARS,1,0,1,Not Recorded
+4/15/03,Thailand,SARS,8,2,5,Not Recorded
+4/15/03,UK,SARS,6,0,3,Not Recorded
+4/15/03,US,SARS,193,0,0,Not Recorded
+4/15/03,Vietnam,SARS,63,5,46,Not Recorded
+4/16/03,Brazil,SARS,2,0,0,Not Recorded
+4/16/03,Canada,SARS,103,13,37,Not Recorded
+4/16/03,China,SARS,1432,64,1094,Not Recorded
+4/16/03,Hong Kong,SARS,1268,61,257,Not Recorded
+4/16/03,Taiwan,SARS,27,0,10,Not Recorded
+4/16/03,France,SARS,5,0,1,Not Recorded
+4/16/03,Germany,SARS,6,0,4,Not Recorded
+4/16/03,Indonesia,SARS,1,0,0,Not Recorded
+4/16/03,Italy,SARS,3,0,2,Not Recorded
+4/16/03,Japan,SARS,1,0,0,Not Recorded
+4/16/03,Kuwait,SARS,1,0,0,Not Recorded
+4/16/03,Malaysia,SARS,5,1,0,Not Recorded
+4/16/03,Philippines,SARS,1,0,1,Not Recorded
+4/16/03,Ireland,SARS,1,0,1,Not Recorded
+4/16/03,Romania,SARS,1,0,1,Not Recorded
+4/16/03,Singapore,SARS,162,13,85,Not Recorded
+4/16/03,South Africa,SARS,1,0,0,Not Recorded
+4/16/03,Spain,SARS,1,0,0,Not Recorded
+4/16/03,Sweden,SARS,1,0,0,Not Recorded
+4/16/03,Switzerland,SARS,1,0,1,Not Recorded
+4/16/03,Thailand,SARS,8,2,5,Not Recorded
+4/16/03,UK,SARS,6,0,3,Not Recorded
+4/16/03,US,SARS,193,0,0,Not Recorded
+4/16/03,Vietnam,SARS,63,5,46,Not Recorded
+4/17/03,Australia,SARS,3,0,3,Not Recorded
+4/17/03,Brazil,SARS,2,0,0,Not Recorded
+4/17/03,Canada,SARS,126,12,46,Not Recorded
+4/17/03,China,SARS,1457,65,1107,Not Recorded
+4/17/03,Hong Kong,SARS,1297,65,272,Not Recorded
+4/17/03,Taiwan,SARS,27,0,10,Not Recorded
+4/17/03,France,SARS,5,0,1,Not Recorded
+4/17/03,Germany,SARS,6,0,4,Not Recorded
+4/17/03,India,SARS,1,0,0,Not Recorded
+4/17/03,Indonesia,SARS,1,0,0,Not Recorded
+4/17/03,Italy,SARS,3,0,2,Not Recorded
+4/17/03,Japan,SARS,2,0,0,Not Recorded
+4/17/03,Kuwait,SARS,1,0,0,Not Recorded
+4/17/03,Malaysia,SARS,5,1,0,Not Recorded
+4/17/03,Mongolia,SARS,3,0,3,Not Recorded
+4/17/03,Philippines,SARS,1,0,1,Not Recorded
+4/17/03,Ireland,SARS,1,0,1,Not Recorded
+4/17/03,Romania,SARS,1,0,1,Not Recorded
+4/17/03,Singapore,SARS,167,15,91,Not Recorded
+4/17/03,South Africa,SARS,1,0,0,Not Recorded
+4/17/03,Spain,SARS,1,0,0,Not Recorded
+4/17/03,Sweden,SARS,1,0,0,Not Recorded
+4/17/03,Switzerland,SARS,1,0,1,Not Recorded
+4/17/03,Thailand,SARS,8,2,5,Not Recorded
+4/17/03,UK,SARS,6,0,3,Not Recorded
+4/17/03,US,SARS,199,0,0,Not Recorded
+4/17/03,Vietnam,SARS,63,5,46,Not Recorded
+4/18/03,Australia,SARS,3,0,3,Not Recorded
+4/18/03,Brazil,SARS,2,0,0,Not Recorded
+4/18/03,Canada,SARS,132,12,54,Not Recorded
+4/18/03,China,SARS,1512,65,1140,Not Recorded
+4/18/03,Hong Kong,SARS,1358,81,363,Not Recorded
+4/18/03,Taiwan,SARS,29,0,17,Not Recorded
+4/18/03,France,SARS,5,0,1,Not Recorded
+4/18/03,Germany,SARS,6,0,4,Not Recorded
+4/18/03,India,SARS,1,0,1,Not Recorded
+4/18/03,Indonesia,SARS,1,0,0,Not Recorded
+4/18/03,Italy,SARS,3,0,2,Not Recorded
+4/18/03,Japan,SARS,4,0,0,Not Recorded
+4/18/03,Kuwait,SARS,1,0,0,Not Recorded
+4/18/03,Malaysia,SARS,5,1,0,Not Recorded
+4/18/03,Mongolia,SARS,3,0,3,Not Recorded
+4/18/03,Philippines,SARS,1,0,1,Not Recorded
+4/18/03,Ireland,SARS,1,0,1,Not Recorded
+4/18/03,Romania,SARS,1,0,1,Not Recorded
+4/18/03,Singapore,SARS,177,16,100,Not Recorded
+4/18/03,South Africa,SARS,1,0,0,Not Recorded
+4/18/03,Spain,SARS,1,0,0,Not Recorded
+4/18/03,Sweden,SARS,3,0,0,Not Recorded
+4/18/03,Switzerland,SARS,1,0,1,Not Recorded
+4/18/03,Thailand,SARS,7,2,6,Not Recorded
+4/18/03,UK,SARS,6,0,5,Not Recorded
+4/18/03,US,SARS,220,0,0,Not Recorded
+4/18/03,Vietnam,SARS,63,5,46,Not Recorded
+4/19/03,Australia,SARS,3,0,3,Not Recorded
+4/19/03,Brazil,SARS,2,0,0,Not Recorded
+4/19/03,Canada,SARS,132,12,54,Not Recorded
+4/19/03,China,SARS,1512,65,1140,Not Recorded
+4/19/03,Hong Kong,SARS,1358,81,363,Not Recorded
+4/19/03,Taiwan,SARS,29,0,17,Not Recorded
+4/19/03,France,SARS,5,0,1,Not Recorded
+4/19/03,Germany,SARS,6,0,4,Not Recorded
+4/19/03,India,SARS,1,0,1,Not Recorded
+4/19/03,Indonesia,SARS,1,0,0,Not Recorded
+4/19/03,Italy,SARS,3,0,2,Not Recorded
+4/19/03,Japan,SARS,4,0,0,Not Recorded
+4/19/03,Kuwait,SARS,1,0,0,Not Recorded
+4/19/03,Malaysia,SARS,5,1,0,Not Recorded
+4/19/03,Mongolia,SARS,3,0,3,Not Recorded
+4/19/03,Philippines,SARS,1,0,1,Not Recorded
+4/19/03,Ireland,SARS,1,0,1,Not Recorded
+4/19/03,Romania,SARS,1,0,1,Not Recorded
+4/19/03,Singapore,SARS,177,16,100,Not Recorded
+4/19/03,South Africa,SARS,1,0,0,Not Recorded
+4/19/03,Spain,SARS,1,0,0,Not Recorded
+4/19/03,Sweden,SARS,3,0,0,Not Recorded
+4/19/03,Switzerland,SARS,1,0,1,Not Recorded
+4/19/03,Thailand,SARS,7,2,6,Not Recorded
+4/19/03,UK,SARS,6,0,5,Not Recorded
+4/19/03,US,SARS,220,0,0,Not Recorded
+4/19/03,Vietnam,SARS,63,5,46,Not Recorded
+4/21/03,Australia,SARS,3,0,3,Not Recorded
+4/21/03,Brazil,SARS,2,0,0,Not Recorded
+4/21/03,Canada,SARS,132,12,54,Not Recorded
+4/21/03,China,SARS,1959,86,1187,Not Recorded
+4/21/03,Hong Kong,SARS,1402,94,436,Not Recorded
+4/21/03,Taiwan,SARS,29,0,17,Not Recorded
+4/21/03,France,SARS,5,0,1,Not Recorded
+4/21/03,Germany,SARS,6,0,4,Not Recorded
+4/21/03,India,SARS,1,0,1,Not Recorded
+4/21/03,Indonesia,SARS,1,0,0,Not Recorded
+4/21/03,Italy,SARS,3,0,2,Not Recorded
+4/21/03,Japan,SARS,5,0,0,Not Recorded
+4/21/03,Kuwait,SARS,1,0,1,Not Recorded
+4/21/03,Malaysia,SARS,6,1,0,Not Recorded
+4/21/03,Mongolia,SARS,3,0,3,Not Recorded
+4/21/03,Philippines,SARS,2,1,1,Not Recorded
+4/21/03,Ireland,SARS,1,0,1,Not Recorded
+4/21/03,Romania,SARS,1,0,1,Not Recorded
+4/21/03,Singapore,SARS,178,16,104,Not Recorded
+4/21/03,South Africa,SARS,1,0,0,Not Recorded
+4/21/03,Spain,SARS,1,0,0,Not Recorded
+4/21/03,Sweden,SARS,3,0,0,Not Recorded
+4/21/03,Switzerland,SARS,1,0,1,Not Recorded
+4/21/03,Thailand,SARS,7,2,5,Not Recorded
+4/21/03,UK,SARS,6,0,5,Not Recorded
+4/21/03,US,SARS,39,0,0,Not Recorded
+4/21/03,Vietnam,SARS,63,5,46,Not Recorded
+4/22/03,Australia,SARS,3,0,3,Not Recorded
+4/22/03,Brazil,SARS,2,0,0,Not Recorded
+4/22/03,Canada,SARS,139,13,65,Not Recorded
+4/22/03,China,SARS,2001,92,1201,Not Recorded
+4/22/03,Hong Kong,SARS,1434,99,461,Not Recorded
+4/22/03,Taiwan,SARS,29,0,21,Not Recorded
+4/22/03,France,SARS,5,0,1,Not Recorded
+4/22/03,Germany,SARS,7,0,6,Not Recorded
+4/22/03,India,SARS,1,0,1,Not Recorded
+4/22/03,Indonesia,SARS,1,0,0,Not Recorded
+4/22/03,Italy,SARS,3,0,2,Not Recorded
+4/22/03,Japan,SARS,2,0,0,Not Recorded
+4/22/03,Kuwait,SARS,1,0,1,Not Recorded
+4/22/03,Malaysia,SARS,6,1,0,Not Recorded
+4/22/03,Mongolia,SARS,3,0,3,Not Recorded
+4/22/03,Philippines,SARS,2,1,1,Not Recorded
+4/22/03,Ireland,SARS,1,0,1,Not Recorded
+4/22/03,Romania,SARS,1,0,1,Not Recorded
+4/22/03,Singapore,SARS,186,16,110,Not Recorded
+4/22/03,South Africa,SARS,1,0,0,Not Recorded
+4/22/03,Spain,SARS,1,0,0,Not Recorded
+4/22/03,Sweden,SARS,3,0,0,Not Recorded
+4/22/03,Switzerland,SARS,1,0,1,Not Recorded
+4/22/03,Thailand,SARS,7,2,5,Not Recorded
+4/22/03,UK,SARS,6,0,5,Not Recorded
+4/22/03,US,SARS,38,0,0,Not Recorded
+4/22/03,Vietnam,SARS,63,5,46,Not Recorded
+4/23/03,Australia,SARS,4,0,3,Not Recorded
+4/23/03,Brazil,SARS,2,0,0,Not Recorded
+4/23/03,Canada,SARS,140,13,65,Not Recorded
+4/23/03,China,SARS,2305,106,1231,Not Recorded
+4/23/03,Hong Kong,SARS,1458,105,522,Not Recorded
+4/23/03,Taiwan,SARS,37,0,21,Not Recorded
+4/23/03,France,SARS,5,0,1,Not Recorded
+4/23/03,Germany,SARS,7,0,6,Not Recorded
+4/23/03,India,SARS,1,0,1,Not Recorded
+4/23/03,Indonesia,SARS,1,0,0,Not Recorded
+4/23/03,Italy,SARS,3,0,2,Not Recorded
+4/23/03,Japan,SARS,2,0,0,Not Recorded
+4/23/03,Kuwait,SARS,1,0,1,Not Recorded
+4/23/03,Malaysia,SARS,5,2,2,Not Recorded
+4/23/03,Mongolia,SARS,3,0,3,Not Recorded
+4/23/03,Philippines,SARS,2,1,1,Not Recorded
+4/23/03,Ireland,SARS,1,0,1,Not Recorded
+4/23/03,Romania,SARS,1,0,1,Not Recorded
+4/23/03,Singapore,SARS,189,17,114,Not Recorded
+4/23/03,South Africa,SARS,1,0,0,Not Recorded
+4/23/03,Spain,SARS,1,0,0,Not Recorded
+4/23/03,Sweden,SARS,3,0,0,Not Recorded
+4/23/03,Switzerland,SARS,1,0,1,Not Recorded
+4/23/03,Thailand,SARS,7,2,5,Not Recorded
+4/23/03,UK,SARS,6,0,5,Not Recorded
+4/23/03,US,SARS,39,0,0,Not Recorded
+4/23/03,Vietnam,SARS,63,5,46,Not Recorded
+4/24/03,Brazil,SARS,2,0,2,Not Recorded
+4/24/03,Bulgaria,SARS,1,0,0,Not Recorded
+4/24/03,Canada,SARS,140,15,67,Not Recorded
+4/24/03,China,SARS,2422,110,1254,Not Recorded
+4/24/03,Hong Kong,SARS,1488,109,567,Not Recorded
+4/24/03,Taiwan,SARS,37,0,21,Not Recorded
+4/24/03,France,SARS,5,0,1,Not Recorded
+4/24/03,Germany,SARS,7,0,6,Not Recorded
+4/24/03,India,SARS,1,0,1,Not Recorded
+4/24/03,Indonesia,SARS,1,0,1,Not Recorded
+4/24/03,Italy,SARS,4,0,3,Not Recorded
+4/24/03,Japan,SARS,2,0,0,Not Recorded
+4/24/03,Kuwait,SARS,1,0,1,Not Recorded
+4/24/03,Malaysia,SARS,5,2,2,Not Recorded
+4/24/03,Mongolia,SARS,3,0,3,Not Recorded
+4/24/03,Philippines,SARS,2,1,1,Not Recorded
+4/24/03,Ireland,SARS,1,0,1,Not Recorded
+4/24/03,Romania,SARS,1,0,1,Not Recorded
+4/24/03,Singapore,SARS,192,19,118,Not Recorded
+4/24/03,South Africa,SARS,1,0,0,Not Recorded
+4/24/03,Spain,SARS,1,0,1,Not Recorded
+4/24/03,Sweden,SARS,3,0,2,Not Recorded
+4/24/03,Switzerland,SARS,1,0,1,Not Recorded
+4/24/03,Thailand,SARS,8,2,5,Not Recorded
+4/24/03,UK,SARS,6,0,6,Not Recorded
+4/24/03,US,SARS,37,0,0,Not Recorded
+4/24/03,Vietnam,SARS,63,5,49,Not Recorded
+4/25/03,Brazil,SARS,2,0,2,Not Recorded
+4/25/03,Bulgaria,SARS,1,0,0,Not Recorded
+4/25/03,Canada,SARS,140,15,74,Not Recorded
+4/25/03,China,SARS,2601,115,1277,Not Recorded
+4/25/03,Hong Kong,SARS,1510,115,614,Not Recorded
+4/25/03,Taiwan,SARS,41,0,21,Not Recorded
+4/25/03,France,SARS,5,0,1,Not Recorded
+4/25/03,Germany,SARS,7,0,6,Not Recorded
+4/25/03,India,SARS,1,0,1,Not Recorded
+4/25/03,Indonesia,SARS,1,0,1,Not Recorded
+4/25/03,Italy,SARS,4,0,3,Not Recorded
+4/25/03,Japan,SARS,2,0,0,Not Recorded
+4/25/03,Kuwait,SARS,1,0,1,Not Recorded
+4/25/03,Malaysia,SARS,5,2,2,Not Recorded
+4/25/03,Mongolia,SARS,3,0,3,Not Recorded
+4/25/03,Philippines,SARS,2,1,1,Not Recorded
+4/25/03,Ireland,SARS,1,0,1,Not Recorded
+4/25/03,Romania,SARS,1,0,1,Not Recorded
+4/25/03,Singapore,SARS,195,19,126,Not Recorded
+4/25/03,South Africa,SARS,1,0,0,Not Recorded
+4/25/03,Spain,SARS,1,0,1,Not Recorded
+4/25/03,Sweden,SARS,3,0,2,Not Recorded
+4/25/03,Switzerland,SARS,1,0,1,Not Recorded
+4/25/03,Thailand,SARS,8,2,5,Not Recorded
+4/25/03,UK,SARS,6,0,6,Not Recorded
+4/25/03,US,SARS,39,0,0,Not Recorded
+4/25/03,Vietnam,SARS,63,5,53,Not Recorded
+4/26/03,Brazil,SARS,2,0,2,Not Recorded
+4/26/03,Bulgaria,SARS,1,0,0,Not Recorded
+4/26/03,Canada,SARS,142,18,77,Not Recorded
+4/26/03,China,SARS,2753,122,1285,Not Recorded
+4/26/03,Hong Kong,SARS,1527,121,632,Not Recorded
+4/26/03,Taiwan,SARS,49,0,25,Not Recorded
+4/26/03,France,SARS,5,0,1,Not Recorded
+4/26/03,Germany,SARS,7,0,6,Not Recorded
+4/26/03,India,SARS,1,0,1,Not Recorded
+4/26/03,Indonesia,SARS,1,0,1,Not Recorded
+4/26/03,Italy,SARS,4,0,3,Not Recorded
+4/26/03,Japan,SARS,2,0,0,Not Recorded
+4/26/03,Kuwait,SARS,1,0,1,Not Recorded
+4/26/03,Malaysia,SARS,5,2,2,Not Recorded
+4/26/03,Mongolia,SARS,5,0,3,Not Recorded
+4/26/03,Philippines,SARS,4,2,1,Not Recorded
+4/26/03,Ireland,SARS,1,0,1,Not Recorded
+4/26/03,Romania,SARS,1,0,1,Not Recorded
+4/26/03,Singapore,SARS,198,21,126,Not Recorded
+4/26/03,South Africa,SARS,1,0,0,Not Recorded
+4/26/03,Spain,SARS,1,0,1,Not Recorded
+4/26/03,Sweden,SARS,3,0,2,Not Recorded
+4/26/03,Switzerland,SARS,1,0,1,Not Recorded
+4/26/03,Thailand,SARS,7,2,5,Not Recorded
+4/26/03,UK,SARS,6,0,6,Not Recorded
+4/26/03,US,SARS,41,0,0,Not Recorded
+4/26/03,Vietnam,SARS,63,5,53,Not Recorded
+4/28/03,Brazil,SARS,2,0,2,Not Recorded
+4/28/03,Bulgaria,SARS,1,0,0,Not Recorded
+4/28/03,Canada,SARS,142,18,77,Not Recorded
+4/28/03,China,SARS,2914,131,1299,Not Recorded
+4/28/03,Hong Kong,SARS,1557,138,710,Not Recorded
+4/28/03,Taiwan,SARS,66,0,25,Not Recorded
+4/28/03,France,SARS,5,0,1,Not Recorded
+4/28/03,Germany,SARS,7,0,6,Not Recorded
+4/28/03,India,SARS,1,0,1,Not Recorded
+4/28/03,Indonesia,SARS,1,0,1,Not Recorded
+4/28/03,Italy,SARS,8,0,3,Not Recorded
+4/28/03,Japan,SARS,2,0,0,Not Recorded
+4/28/03,Kuwait,SARS,1,0,1,Not Recorded
+4/28/03,Malaysia,SARS,6,2,2,Not Recorded
+4/28/03,Mongolia,SARS,5,0,3,Not Recorded
+4/28/03,Philippines,SARS,4,2,1,Not Recorded
+4/28/03,Ireland,SARS,1,0,1,Not Recorded
+4/28/03,Romania,SARS,1,0,1,Not Recorded
+4/28/03,Singapore,SARS,199,23,137,Not Recorded
+4/28/03,South Africa,SARS,1,0,0,Not Recorded
+4/28/03,Spain,SARS,1,0,1,Not Recorded
+4/28/03,Sweden,SARS,3,0,2,Not Recorded
+4/28/03,Switzerland,SARS,1,0,1,Not Recorded
+4/28/03,Thailand,SARS,7,2,5,Not Recorded
+4/28/03,UK,SARS,6,0,6,Not Recorded
+4/28/03,US,SARS,41,0,0,Not Recorded
+4/28/03,Vietnam,SARS,63,5,53,Not Recorded
+4/29/03,Brazil,SARS,2,0,2,Not Recorded
+4/29/03,Bulgaria,SARS,1,0,0,Not Recorded
+4/29/03,Canada,SARS,146,20,86,Not Recorded
+4/29/03,China,SARS,3303,148,1322,Not Recorded
+4/29/03,Hong Kong,SARS,1572,150,759,Not Recorded
+4/29/03,Taiwan,SARS,66,0,25,Not Recorded
+4/29/03,France,SARS,5,0,1,Not Recorded
+4/29/03,Germany,SARS,7,0,6,Not Recorded
+4/29/03,India,SARS,1,0,1,Not Recorded
+4/29/03,Indonesia,SARS,1,0,1,Not Recorded
+4/29/03,Italy,SARS,9,0,4,Not Recorded
+4/29/03,Japan,SARS,2,0,0,Not Recorded
+4/29/03,Kuwait,SARS,1,0,1,Not Recorded
+4/29/03,Malaysia,SARS,6,2,3,Not Recorded
+4/29/03,Mongolia,SARS,5,0,3,Not Recorded
+4/29/03,Philippines,SARS,4,2,1,Not Recorded
+4/29/03,Ireland,SARS,1,0,1,Not Recorded
+4/29/03,South Korea,SARS,1,0,0,Not Recorded
+4/29/03,Romania,SARS,1,0,1,Not Recorded
+4/29/03,Singapore,SARS,201,24,139,Not Recorded
+4/29/03,South Africa,SARS,1,0,0,Not Recorded
+4/29/03,Spain,SARS,1,0,1,Not Recorded
+4/29/03,Sweden,SARS,3,0,2,Not Recorded
+4/29/03,Switzerland,SARS,1,0,1,Not Recorded
+4/29/03,Thailand,SARS,7,2,5,Not Recorded
+4/29/03,UK,SARS,6,0,6,Not Recorded
+4/29/03,US,SARS,41,0,0,Not Recorded
+4/29/03,Vietnam,SARS,63,5,53,Not Recorded
+4/30/03,Brazil,SARS,2,0,2,Not Recorded
+4/30/03,Bulgaria,SARS,1,0,0,Not Recorded
+4/30/03,Canada,SARS,148,20,87,Not Recorded
+4/30/03,China,SARS,3460,159,1332,Not Recorded
+4/30/03,Hong Kong,SARS,1589,157,791,Not Recorded
+4/30/03,Macau,SARS,1,0,0,Not Recorded
+4/30/03,Taiwan,SARS,78,1,25,Not Recorded
+4/30/03,France,SARS,5,0,1,Not Recorded
+4/30/03,Germany,SARS,7,0,7,Not Recorded
+4/30/03,Indonesia,SARS,2,0,1,Not Recorded
+4/30/03,Italy,SARS,9,0,4,Not Recorded
+4/30/03,Japan,SARS,2,0,0,Not Recorded
+4/30/03,Kuwait,SARS,1,0,1,Not Recorded
+4/30/03,Malaysia,SARS,6,2,3,Not Recorded
+4/30/03,Mongolia,SARS,6,0,3,Not Recorded
+4/30/03,Philippines,SARS,4,2,1,Not Recorded
+4/30/03,Ireland,SARS,1,0,1,Not Recorded
+4/30/03,South Korea,SARS,1,0,0,Not Recorded
+4/30/03,Romania,SARS,1,0,1,Not Recorded
+4/30/03,Singapore,SARS,201,24,139,Not Recorded
+4/30/03,South Africa,SARS,1,0,0,Not Recorded
+4/30/03,Spain,SARS,1,0,1,Not Recorded
+4/30/03,Sweden,SARS,3,0,2,Not Recorded
+4/30/03,Switzerland,SARS,1,0,1,Not Recorded
+4/30/03,Thailand,SARS,7,2,5,Not Recorded
+4/30/03,UK,SARS,6,0,6,Not Recorded
+4/30/03,US,SARS,52,0,0,Not Recorded
+4/30/03,Vietnam,SARS,63,5,53,Not Recorded
+5/1/03,Brazil,SARS,2,0,2,Not Recorded
+5/1/03,Bulgaria,SARS,1,0,0,Not Recorded
+5/1/03,Canada,SARS,147,20,87,Not Recorded
+5/1/03,China,SARS,3638,170,1351,Not Recorded
+5/1/03,Hong Kong,SARS,1600,162,834,Not Recorded
+5/1/03,Macau,SARS,1,0,0,Not Recorded
+5/1/03,Taiwan,SARS,89,3,25,Not Recorded
+5/1/03,France,SARS,5,0,1,Not Recorded
+5/1/03,Germany,SARS,7,0,7,Not Recorded
+5/1/03,Indonesia,SARS,2,0,1,Not Recorded
+5/1/03,Italy,SARS,9,0,4,Not Recorded
+5/1/03,Japan,SARS,2,0,0,Not Recorded
+5/1/03,Kuwait,SARS,1,0,1,Not Recorded
+5/1/03,Malaysia,SARS,6,2,3,Not Recorded
+5/1/03,Mongolia,SARS,6,0,3,Not Recorded
+5/1/03,Philippines,SARS,4,2,1,Not Recorded
+5/1/03,Poland,SARS,1,0,0,Not Recorded
+5/1/03,Ireland,SARS,1,0,1,Not Recorded
+5/1/03,South Korea,SARS,1,0,0,Not Recorded
+5/1/03,Romania,SARS,1,0,1,Not Recorded
+5/1/03,Singapore,SARS,201,25,143,Not Recorded
+5/1/03,South Africa,SARS,1,0,0,Not Recorded
+5/1/03,Spain,SARS,1,0,1,Not Recorded
+5/1/03,Sweden,SARS,3,0,2,Not Recorded
+5/1/03,Switzerland,SARS,1,0,1,Not Recorded
+5/1/03,Thailand,SARS,7,2,5,Not Recorded
+5/1/03,UK,SARS,6,0,6,Not Recorded
+5/1/03,US,SARS,54,0,23,Not Recorded
+5/1/03,Vietnam,SARS,63,5,56,Not Recorded
+5/2/03,Brazil,SARS,2,0,2,Not Recorded
+5/2/03,Bulgaria,SARS,1,0,0,Not Recorded
+5/2/03,Canada,SARS,149,22,93,Not Recorded
+5/2/03,China,SARS,3799,181,1372,Not Recorded
+5/2/03,Hong Kong,SARS,1611,170,878,Not Recorded
+5/2/03,Macau,SARS,1,0,0,Not Recorded
+5/2/03,Taiwan,SARS,100,8,25,Not Recorded
+5/2/03,France,SARS,5,0,4,Not Recorded
+5/2/03,Germany,SARS,7,0,7,Not Recorded
+5/2/03,Indonesia,SARS,2,0,1,Not Recorded
+5/2/03,Italy,SARS,9,0,4,Not Recorded
+5/2/03,Kuwait,SARS,1,0,1,Not Recorded
+5/2/03,Malaysia,SARS,6,2,3,Not Recorded
+5/2/03,Mongolia,SARS,8,0,4,Not Recorded
+5/2/03,New Zealand,SARS,1,0,1,Not Recorded
+5/2/03,Philippines,SARS,3,2,1,Not Recorded
+5/2/03,Poland,SARS,1,0,0,Not Recorded
+5/2/03,Ireland,SARS,1,0,1,Not Recorded
+5/2/03,South Korea,SARS,1,0,0,Not Recorded
+5/2/03,Romania,SARS,1,0,1,Not Recorded
+5/2/03,Singapore,SARS,203,25,146,Not Recorded
+5/2/03,South Africa,SARS,1,0,0,Not Recorded
+5/2/03,Spain,SARS,1,0,1,Not Recorded
+5/2/03,Sweden,SARS,3,0,2,Not Recorded
+5/2/03,Switzerland,SARS,1,0,1,Not Recorded
+5/2/03,Thailand,SARS,7,2,5,Not Recorded
+5/2/03,UK,SARS,6,0,6,Not Recorded
+5/2/03,US,SARS,56,0,24,Not Recorded
+5/2/03,Vietnam,SARS,63,5,56,Not Recorded
+5/3/03,Brazil,SARS,2,0,2,Not Recorded
+5/3/03,Bulgaria,SARS,1,0,0,Not Recorded
+5/3/03,Canada,SARS,149,22,94,Not Recorded
+5/3/03,China,SARS,3971,190,1406,Not Recorded
+5/3/03,Hong Kong,SARS,1621,179,898,Not Recorded
+5/3/03,Macau,SARS,1,0,0,Not Recorded
+5/3/03,Taiwan,SARS,100,8,25,Not Recorded
+5/3/03,France,SARS,5,0,4,Not Recorded
+5/3/03,Germany,SARS,7,0,7,Not Recorded
+5/3/03,Indonesia,SARS,2,0,1,Not Recorded
+5/3/03,Italy,SARS,9,0,4,Not Recorded
+5/3/03,Kuwait,SARS,1,0,1,Not Recorded
+5/3/03,Malaysia,SARS,6,2,3,Not Recorded
+5/3/03,Mongolia,SARS,8,0,4,Not Recorded
+5/3/03,New Zealand,SARS,1,0,1,Not Recorded
+5/3/03,Philippines,SARS,3,2,1,Not Recorded
+5/3/03,Poland,SARS,1,0,0,Not Recorded
+5/3/03,Ireland,SARS,1,0,1,Not Recorded
+5/3/03,South Korea,SARS,1,0,0,Not Recorded
+5/3/03,Romania,SARS,1,0,1,Not Recorded
+5/3/03,Singapore,SARS,203,25,147,Not Recorded
+5/3/03,South Africa,SARS,1,0,1,Not Recorded
+5/3/03,Spain,SARS,1,0,1,Not Recorded
+5/3/03,Sweden,SARS,3,0,2,Not Recorded
+5/3/03,Switzerland,SARS,1,0,1,Not Recorded
+5/3/03,Thailand,SARS,7,2,5,Not Recorded
+5/3/03,UK,SARS,6,0,6,Not Recorded
+5/3/03,US,SARS,54,0,24,Not Recorded
+5/3/03,Vietnam,SARS,63,5,58,Not Recorded
+5/5/03,Brazil,SARS,2,0,2,Not Recorded
+5/5/03,Bulgaria,SARS,1,0,0,Not Recorded
+5/5/03,Canada,SARS,148,22,93,Not Recorded
+5/5/03,China,SARS,4280,206,1433,Not Recorded
+5/5/03,Hong Kong,SARS,1637,187,930,Not Recorded
+5/5/03,Macau,SARS,1,0,0,Not Recorded
+5/5/03,Taiwan,SARS,116,8,25,Not Recorded
+5/5/03,France,SARS,5,0,4,Not Recorded
+5/5/03,Germany,SARS,7,0,7,Not Recorded
+5/5/03,Indonesia,SARS,2,0,1,Not Recorded
+5/5/03,Italy,SARS,9,0,4,Not Recorded
+5/5/03,Kuwait,SARS,1,0,1,Not Recorded
+5/5/03,Malaysia,SARS,7,2,4,Not Recorded
+5/5/03,Mongolia,SARS,8,0,4,Not Recorded
+5/5/03,New Zealand,SARS,1,0,1,Not Recorded
+5/5/03,Philippines,SARS,3,2,1,Not Recorded
+5/5/03,Poland,SARS,1,0,0,Not Recorded
+5/5/03,Ireland,SARS,1,0,1,Not Recorded
+5/5/03,South Korea,SARS,1,0,0,Not Recorded
+5/5/03,Romania,SARS,1,0,1,Not Recorded
+5/5/03,Singapore,SARS,204,26,149,Not Recorded
+5/5/03,South Africa,SARS,1,1,0,Not Recorded
+5/5/03,Spain,SARS,1,0,1,Not Recorded
+5/5/03,Sweden,SARS,3,0,2,Not Recorded
+5/5/03,Switzerland,SARS,1,0,1,Not Recorded
+5/5/03,Thailand,SARS,7,2,5,Not Recorded
+5/5/03,UK,SARS,6,0,6,Not Recorded
+5/5/03,US,SARS,61,0,26,Not Recorded
+5/5/03,Vietnam,SARS,63,5,58,Not Recorded
+5/6/03,Brazil,SARS,2,0,2,Not Recorded
+5/6/03,Bulgaria,SARS,1,0,0,Not Recorded
+5/6/03,Canada,SARS,148,22,93,Not Recorded
+5/6/03,China,SARS,4409,214,1460,Not Recorded
+5/6/03,Hong Kong,SARS,1646,193,958,Not Recorded
+5/6/03,Macau,SARS,1,0,0,Not Recorded
+5/6/03,Taiwan,SARS,116,10,25,Not Recorded
+5/6/03,Colombia,SARS,1,0,1,Not Recorded
+5/6/03,France,SARS,5,0,4,Not Recorded
+5/6/03,Germany,SARS,7,0,7,Not Recorded
+5/6/03,India,SARS,1,0,0,Not Recorded
+5/6/03,Indonesia,SARS,2,0,1,Not Recorded
+5/6/03,Italy,SARS,9,0,4,Not Recorded
+5/6/03,Kuwait,SARS,1,0,1,Not Recorded
+5/6/03,Malaysia,SARS,7,2,4,Not Recorded
+5/6/03,Mongolia,SARS,8,0,4,Not Recorded
+5/6/03,New Zealand,SARS,1,0,1,Not Recorded
+5/6/03,Philippines,SARS,3,2,1,Not Recorded
+5/6/03,Poland,SARS,1,0,0,Not Recorded
+5/6/03,Ireland,SARS,1,0,1,Not Recorded
+5/6/03,South Korea,SARS,1,0,0,Not Recorded
+5/6/03,Romania,SARS,1,0,1,Not Recorded
+5/6/03,Singapore,SARS,204,27,149,Not Recorded
+5/6/03,South Africa,SARS,1,1,0,Not Recorded
+5/6/03,Spain,SARS,1,0,1,Not Recorded
+5/6/03,Sweden,SARS,3,0,2,Not Recorded
+5/6/03,Switzerland,SARS,1,0,1,Not Recorded
+5/6/03,Thailand,SARS,7,2,5,Not Recorded
+5/6/03,UK,SARS,6,0,6,Not Recorded
+5/6/03,US,SARS,65,0,32,Not Recorded
+5/6/03,Vietnam,SARS,63,5,58,Not Recorded
+5/7/03,Brazil,SARS,2,0,2,Not Recorded
+5/7/03,Bulgaria,SARS,1,0,0,Not Recorded
+5/7/03,Canada,SARS,146,22,93,Not Recorded
+5/7/03,China,SARS,4560,219,1487,Not Recorded
+5/7/03,Hong Kong,SARS,1654,204,984,Not Recorded
+5/7/03,Macau,SARS,1,0,0,Not Recorded
+5/7/03,Taiwan,SARS,125,11,26,Not Recorded
+5/7/03,Colombia,SARS,1,0,1,Not Recorded
+5/7/03,France,SARS,6,0,4,Not Recorded
+5/7/03,Germany,SARS,8,0,7,Not Recorded
+5/7/03,India,SARS,1,0,0,Not Recorded
+5/7/03,Indonesia,SARS,2,0,1,Not Recorded
+5/7/03,Italy,SARS,9,0,5,Not Recorded
+5/7/03,Kuwait,SARS,1,0,1,Not Recorded
+5/7/03,Malaysia,SARS,7,2,4,Not Recorded
+5/7/03,Mongolia,SARS,9,0,6,Not Recorded
+5/7/03,New Zealand,SARS,1,0,1,Not Recorded
+5/7/03,Philippines,SARS,10,2,2,Not Recorded
+5/7/03,Poland,SARS,1,0,0,Not Recorded
+5/7/03,Ireland,SARS,1,0,1,Not Recorded
+5/7/03,South Korea,SARS,1,0,0,Not Recorded
+5/7/03,Romania,SARS,1,0,1,Not Recorded
+5/7/03,Singapore,SARS,204,27,150,Not Recorded
+5/7/03,South Africa,SARS,1,1,0,Not Recorded
+5/7/03,Spain,SARS,1,0,1,Not Recorded
+5/7/03,Sweden,SARS,3,0,2,Not Recorded
+5/7/03,Switzerland,SARS,1,0,1,Not Recorded
+5/7/03,Thailand,SARS,7,2,5,Not Recorded
+5/7/03,UK,SARS,6,0,6,Not Recorded
+5/7/03,US,SARS,65,0,32,Not Recorded
+5/7/03,Vietnam,SARS,63,5,58,Not Recorded
+5/8/03,Brazil,SARS,2,0,2,Not Recorded
+5/8/03,Bulgaria,SARS,1,0,0,Not Recorded
+5/8/03,Canada,SARS,146,22,95,Not Recorded
+5/8/03,China,SARS,4698,224,1529,Not Recorded
+5/8/03,Hong Kong,SARS,1661,208,1008,Not Recorded
+5/8/03,Macau,SARS,1,0,0,Not Recorded
+5/8/03,Taiwan,SARS,131,13,26,Not Recorded
+5/8/03,Colombia,SARS,1,0,1,Not Recorded
+5/8/03,Finland,SARS,1,0,0,Not Recorded
+5/8/03,France,SARS,6,0,4,Not Recorded
+5/8/03,Germany,SARS,8,0,7,Not Recorded
+5/8/03,India,SARS,1,0,0,Not Recorded
+5/8/03,Indonesia,SARS,2,0,1,Not Recorded
+5/8/03,Italy,SARS,9,0,6,Not Recorded
+5/8/03,Kuwait,SARS,1,0,1,Not Recorded
+5/8/03,Malaysia,SARS,7,2,4,Not Recorded
+5/8/03,Mongolia,SARS,9,0,6,Not Recorded
+5/8/03,New Zealand,SARS,1,0,1,Not Recorded
+5/8/03,Philippines,SARS,10,2,2,Not Recorded
+5/8/03,Poland,SARS,1,0,0,Not Recorded
+5/8/03,Ireland,SARS,1,0,1,Not Recorded
+5/8/03,South Korea,SARS,1,0,1,Not Recorded
+5/8/03,Romania,SARS,1,0,1,Not Recorded
+5/8/03,Singapore,SARS,204,27,153,Not Recorded
+5/8/03,South Africa,SARS,1,1,0,Not Recorded
+5/8/03,Spain,SARS,1,0,1,Not Recorded
+5/8/03,Sweden,SARS,3,0,2,Not Recorded
+5/8/03,Switzerland,SARS,1,0,1,Not Recorded
+5/8/03,Thailand,SARS,7,2,5,Not Recorded
+5/8/03,UK,SARS,6,0,6,Not Recorded
+5/8/03,US,SARS,63,0,33,Not Recorded
+5/8/03,Vietnam,SARS,63,5,58,Not Recorded
+5/9/03,Brazil,SARS,2,0,2,Not Recorded
+5/9/03,Bulgaria,SARS,1,0,0,Not Recorded
+5/9/03,Canada,SARS,145,22,94,Not Recorded
+5/9/03,China,SARS,4805,230,1582,Not Recorded
+5/9/03,Hong Kong,SARS,1667,210,1015,Not Recorded
+5/9/03,Macau,SARS,1,0,0,Not Recorded
+5/9/03,Taiwan,SARS,149,13,26,Not Recorded
+5/9/03,Colombia,SARS,1,0,1,Not Recorded
+5/9/03,Finland,SARS,1,0,0,Not Recorded
+5/9/03,France,SARS,6,0,4,Not Recorded
+5/9/03,Germany,SARS,9,0,9,Not Recorded
+5/9/03,India,SARS,1,0,0,Not Recorded
+5/9/03,Indonesia,SARS,2,0,1,Not Recorded
+5/9/03,Italy,SARS,9,0,9,Not Recorded
+5/9/03,Kuwait,SARS,1,0,1,Not Recorded
+5/9/03,Malaysia,SARS,6,2,4,Not Recorded
+5/9/03,Mongolia,SARS,9,0,6,Not Recorded
+5/9/03,New Zealand,SARS,1,0,1,Not Recorded
+5/9/03,Philippines,SARS,10,2,2,Not Recorded
+5/9/03,Poland,SARS,1,0,0,Not Recorded
+5/9/03,Ireland,SARS,1,0,1,Not Recorded
+5/9/03,South Korea,SARS,1,0,1,Not Recorded
+5/9/03,Romania,SARS,1,0,1,Not Recorded
+5/9/03,Singapore,SARS,204,27,153,Not Recorded
+5/9/03,South Africa,SARS,1,1,0,Not Recorded
+5/9/03,Spain,SARS,1,0,1,Not Recorded
+5/9/03,Sweden,SARS,3,0,2,Not Recorded
+5/9/03,Switzerland,SARS,1,0,1,Not Recorded
+5/9/03,Thailand,SARS,7,2,5,Not Recorded
+5/9/03,UK,SARS,6,0,6,Not Recorded
+5/9/03,US,SARS,63,0,33,Not Recorded
+5/9/03,Vietnam,SARS,63,5,58,Not Recorded
+5/10/03,Brazil,SARS,2,0,2,Not Recorded
+5/10/03,Bulgaria,SARS,1,0,0,Not Recorded
+5/10/03,Canada,SARS,145,22,97,Not Recorded
+5/10/03,China,SARS,4884,235,1620,Not Recorded
+5/10/03,Hong Kong,SARS,1674,212,1035,Not Recorded
+5/10/03,Macau,SARS,1,0,0,Not Recorded
+5/10/03,Taiwan,SARS,172,18,26,Not Recorded
+5/10/03,Colombia,SARS,1,0,1,Not Recorded
+5/10/03,Finland,SARS,1,0,0,Not Recorded
+5/10/03,France,SARS,7,0,4,Not Recorded
+5/10/03,Germany,SARS,9,0,9,Not Recorded
+5/10/03,India,SARS,1,0,0,Not Recorded
+5/10/03,Indonesia,SARS,2,0,1,Not Recorded
+5/10/03,Italy,SARS,9,0,9,Not Recorded
+5/10/03,Kuwait,SARS,1,0,1,Not Recorded
+5/10/03,Malaysia,SARS,7,2,4,Not Recorded
+5/10/03,Mongolia,SARS,9,0,6,Not Recorded
+5/10/03,New Zealand,SARS,1,0,1,Not Recorded
+5/10/03,Philippines,SARS,10,2,2,Not Recorded
+5/10/03,Poland,SARS,1,0,0,Not Recorded
+5/10/03,Ireland,SARS,1,0,1,Not Recorded
+5/10/03,South Korea,SARS,1,0,1,Not Recorded
+5/10/03,Romania,SARS,1,0,1,Not Recorded
+5/10/03,Singapore,SARS,205,27,155,Not Recorded
+5/10/03,South Africa,SARS,1,1,0,Not Recorded
+5/10/03,Spain,SARS,1,0,1,Not Recorded
+5/10/03,Sweden,SARS,3,0,2,Not Recorded
+5/10/03,Switzerland,SARS,1,0,1,Not Recorded
+5/10/03,Thailand,SARS,7,2,5,Not Recorded
+5/10/03,UK,SARS,6,0,6,Not Recorded
+5/10/03,US,SARS,64,0,34,Not Recorded
+5/10/03,Vietnam,SARS,63,5,58,Not Recorded
+5/12/03,Brazil,SARS,2,0,2,Not Recorded
+5/12/03,Bulgaria,SARS,1,0,0,Not Recorded
+5/12/03,Canada,SARS,143,22,98,Not Recorded
+5/12/03,China,SARS,5013,252,1693,Not Recorded
+5/12/03,Hong Kong,SARS,1683,218,1066,Not Recorded
+5/12/03,Macau,SARS,1,0,0,Not Recorded
+5/12/03,Taiwan,SARS,184,20,26,Not Recorded
+5/12/03,Colombia,SARS,1,0,1,Not Recorded
+5/12/03,Finland,SARS,1,0,0,Not Recorded
+5/12/03,France,SARS,7,0,4,Not Recorded
+5/12/03,Germany,SARS,9,0,9,Not Recorded
+5/12/03,India,SARS,1,0,0,Not Recorded
+5/12/03,Indonesia,SARS,2,0,1,Not Recorded
+5/12/03,Italy,SARS,9,0,8,Not Recorded
+5/12/03,Kuwait,SARS,1,0,1,Not Recorded
+5/12/03,Malaysia,SARS,7,2,4,Not Recorded
+5/12/03,Mongolia,SARS,9,0,6,Not Recorded
+5/12/03,New Zealand,SARS,1,0,1,Not Recorded
+5/12/03,Philippines,SARS,10,2,3,Not Recorded
+5/12/03,Poland,SARS,1,0,0,Not Recorded
+5/12/03,Ireland,SARS,1,0,1,Not Recorded
+5/12/03,South Korea,SARS,2,0,1,Not Recorded
+5/12/03,Romania,SARS,1,0,1,Not Recorded
+5/12/03,Singapore,SARS,205,28,156,Not Recorded
+5/12/03,South Africa,SARS,1,1,0,Not Recorded
+5/12/03,Spain,SARS,1,0,1,Not Recorded
+5/12/03,Sweden,SARS,3,0,2,Not Recorded
+5/12/03,Switzerland,SARS,1,0,1,Not Recorded
+5/12/03,Thailand,SARS,7,2,5,Not Recorded
+5/12/03,UK,SARS,6,0,6,Not Recorded
+5/12/03,US,SARS,64,0,34,Not Recorded
+5/12/03,Vietnam,SARS,63,5,58,Not Recorded
+5/13/03,Brazil,SARS,2,0,2,Not Recorded
+5/13/03,Bulgaria,SARS,1,0,0,Not Recorded
+5/13/03,Canada,SARS,143,22,99,Not Recorded
+5/13/03,China,SARS,5086,262,1765,Not Recorded
+5/13/03,Hong Kong,SARS,1689,225,1090,Not Recorded
+5/13/03,Macau,SARS,1,0,0,Not Recorded
+5/13/03,Taiwan,SARS,207,24,30,Not Recorded
+5/13/03,Colombia,SARS,1,0,1,Not Recorded
+5/13/03,Finland,SARS,1,0,0,Not Recorded
+5/13/03,France,SARS,7,0,4,Not Recorded
+5/13/03,Germany,SARS,9,0,9,Not Recorded
+5/13/03,India,SARS,3,0,0,Not Recorded
+5/13/03,Indonesia,SARS,2,0,1,Not Recorded
+5/13/03,Italy,SARS,9,0,9,Not Recorded
+5/13/03,Kuwait,SARS,1,0,1,Not Recorded
+5/13/03,Malaysia,SARS,7,2,4,Not Recorded
+5/13/03,Mongolia,SARS,9,0,6,Not Recorded
+5/13/03,New Zealand,SARS,1,0,1,Not Recorded
+5/13/03,Philippines,SARS,10,2,3,Not Recorded
+5/13/03,Ireland,SARS,1,0,1,Not Recorded
+5/13/03,South Korea,SARS,2,0,1,Not Recorded
+5/13/03,Romania,SARS,1,0,1,Not Recorded
+5/13/03,Singapore,SARS,205,28,157,Not Recorded
+5/13/03,South Africa,SARS,1,1,0,Not Recorded
+5/13/03,Spain,SARS,1,0,1,Not Recorded
+5/13/03,Sweden,SARS,3,0,3,Not Recorded
+5/13/03,Switzerland,SARS,1,0,1,Not Recorded
+5/13/03,Thailand,SARS,7,2,5,Not Recorded
+5/13/03,UK,SARS,4,0,4,Not Recorded
+5/13/03,US,SARS,64,0,35,Not Recorded
+5/13/03,Vietnam,SARS,63,5,58,Not Recorded
+5/14/03,Brazil,SARS,2,0,2,Not Recorded
+5/14/03,Bulgaria,SARS,1,0,0,Not Recorded
+5/14/03,Canada,SARS,143,23,104,Not Recorded
+5/14/03,China,SARS,5124,267,1811,Not Recorded
+5/14/03,Hong Kong,SARS,1698,227,1128,Not Recorded
+5/14/03,Macau,SARS,1,0,0,Not Recorded
+5/14/03,Taiwan,SARS,238,30,38,Not Recorded
+5/14/03,Colombia,SARS,1,0,1,Not Recorded
+5/14/03,Finland,SARS,1,0,0,Not Recorded
+5/14/03,France,SARS,7,0,4,Not Recorded
+5/14/03,Germany,SARS,9,0,9,Not Recorded
+5/14/03,India,SARS,3,0,0,Not Recorded
+5/14/03,Indonesia,SARS,2,0,2,Not Recorded
+5/14/03,Italy,SARS,9,0,9,Not Recorded
+5/14/03,Kuwait,SARS,1,0,1,Not Recorded
+5/14/03,Malaysia,SARS,7,2,5,Not Recorded
+5/14/03,Mongolia,SARS,9,0,6,Not Recorded
+5/14/03,New Zealand,SARS,1,0,1,Not Recorded
+5/14/03,Philippines,SARS,10,2,3,Not Recorded
+5/14/03,Ireland,SARS,1,0,1,Not Recorded
+5/14/03,South Korea,SARS,3,0,1,Not Recorded
+5/14/03,Romania,SARS,1,0,1,Not Recorded
+5/14/03,Singapore,SARS,205,28,157,Not Recorded
+5/14/03,South Africa,SARS,1,1,0,Not Recorded
+5/14/03,Spain,SARS,1,0,1,Not Recorded
+5/14/03,Sweden,SARS,3,0,3,Not Recorded
+5/14/03,Switzerland,SARS,1,0,1,Not Recorded
+5/14/03,Thailand,SARS,8,2,5,Not Recorded
+5/14/03,UK,SARS,4,0,4,Not Recorded
+5/14/03,US,SARS,64,0,35,Not Recorded
+5/14/03,Vietnam,SARS,63,5,58,Not Recorded
+5/15/03,Brazil,SARS,2,0,2,Not Recorded
+5/15/03,Bulgaria,SARS,1,0,0,Not Recorded
+5/15/03,Canada,SARS,142,23,107,Not Recorded
+5/15/03,China,SARS,5163,271,1858,Not Recorded
+5/15/03,Hong Kong,SARS,1703,234,1160,Not Recorded
+5/15/03,Macau,SARS,1,0,0,Not Recorded
+5/15/03,Taiwan,SARS,264,30,38,Not Recorded
+5/15/03,Colombia,SARS,1,0,1,Not Recorded
+5/15/03,Finland,SARS,1,0,0,Not Recorded
+5/15/03,France,SARS,7,0,4,Not Recorded
+5/15/03,Germany,SARS,9,0,9,Not Recorded
+5/15/03,India,SARS,3,0,3,Not Recorded
+5/15/03,Indonesia,SARS,2,0,2,Not Recorded
+5/15/03,Italy,SARS,9,0,9,Not Recorded
+5/15/03,Kuwait,SARS,1,0,1,Not Recorded
+5/15/03,Malaysia,SARS,7,2,5,Not Recorded
+5/15/03,Mongolia,SARS,9,0,7,Not Recorded
+5/15/03,New Zealand,SARS,1,0,1,Not Recorded
+5/15/03,Philippines,SARS,12,2,4,Not Recorded
+5/15/03,Ireland,SARS,1,0,1,Not Recorded
+5/15/03,South Korea,SARS,3,0,1,Not Recorded
+5/15/03,Romania,SARS,1,0,1,Not Recorded
+5/15/03,Singapore,SARS,205,28,157,Not Recorded
+5/15/03,South Africa,SARS,1,1,0,Not Recorded
+5/15/03,Spain,SARS,1,0,1,Not Recorded
+5/15/03,Sweden,SARS,3,0,3,Not Recorded
+5/15/03,Switzerland,SARS,1,0,1,Not Recorded
+5/15/03,Thailand,SARS,8,2,5,Not Recorded
+5/15/03,UK,SARS,4,0,4,Not Recorded
+5/15/03,US,SARS,64,0,35,Not Recorded
+5/15/03,Vietnam,SARS,63,5,58,Not Recorded
+5/16/03,Brazil,SARS,2,0,2,Not Recorded
+5/16/03,Bulgaria,SARS,1,0,0,Not Recorded
+5/16/03,Canada,SARS,140,23,106,Not Recorded
+5/16/03,China,SARS,5191,275,1947,Not Recorded
+5/16/03,Hong Kong,SARS,1706,238,1171,Not Recorded
+5/16/03,Macau,SARS,1,0,0,Not Recorded
+5/16/03,Taiwan,SARS,274,35,46,Not Recorded
+5/16/03,Colombia,SARS,1,0,1,Not Recorded
+5/16/03,Finland,SARS,1,0,0,Not Recorded
+5/16/03,France,SARS,7,0,4,Not Recorded
+5/16/03,Germany,SARS,9,0,9,Not Recorded
+5/16/03,India,SARS,3,0,3,Not Recorded
+5/16/03,Indonesia,SARS,2,0,2,Not Recorded
+5/16/03,Italy,SARS,9,0,9,Not Recorded
+5/16/03,Kuwait,SARS,1,0,1,Not Recorded
+5/16/03,Malaysia,SARS,7,2,5,Not Recorded
+5/16/03,Mongolia,SARS,9,0,7,Not Recorded
+5/16/03,New Zealand,SARS,1,0,1,Not Recorded
+5/16/03,Philippines,SARS,12,2,4,Not Recorded
+5/16/03,Ireland,SARS,1,0,1,Not Recorded
+5/16/03,South Korea,SARS,3,0,1,Not Recorded
+5/16/03,Romania,SARS,1,0,1,Not Recorded
+5/16/03,Singapore,SARS,205,28,157,Not Recorded
+5/16/03,South Africa,SARS,1,1,0,Not Recorded
+5/16/03,Spain,SARS,1,0,1,Not Recorded
+5/16/03,Sweden,SARS,3,0,3,Not Recorded
+5/16/03,Switzerland,SARS,1,0,1,Not Recorded
+5/16/03,Thailand,SARS,8,2,5,Not Recorded
+5/16/03,UK,SARS,4,0,4,Not Recorded
+5/16/03,US,SARS,65,0,34,Not Recorded
+5/16/03,Vietnam,SARS,63,5,58,Not Recorded
+5/17/03,Brazil,SARS,2,0,2,Not Recorded
+5/17/03,Canada,SARS,140,23,106,Not Recorded
+5/17/03,China,SARS,5209,282,2009,Not Recorded
+5/17/03,Hong Kong,SARS,1710,243,1191,Not Recorded
+5/17/03,Macau,SARS,1,0,0,Not Recorded
+5/17/03,Taiwan,SARS,274,35,46,Not Recorded
+5/17/03,Colombia,SARS,1,0,1,Not Recorded
+5/17/03,Finland,SARS,1,0,0,Not Recorded
+5/17/03,France,SARS,7,0,6,Not Recorded
+5/17/03,Germany,SARS,9,0,9,Not Recorded
+5/17/03,India,SARS,3,0,3,Not Recorded
+5/17/03,Indonesia,SARS,2,0,2,Not Recorded
+5/17/03,Italy,SARS,9,0,9,Not Recorded
+5/17/03,Kuwait,SARS,1,0,1,Not Recorded
+5/17/03,Malaysia,SARS,7,2,5,Not Recorded
+5/17/03,Mongolia,SARS,9,0,7,Not Recorded
+5/17/03,New Zealand,SARS,1,0,1,Not Recorded
+5/17/03,Philippines,SARS,12,2,4,Not Recorded
+5/17/03,Ireland,SARS,1,0,1,Not Recorded
+5/17/03,South Korea,SARS,3,0,1,Not Recorded
+5/17/03,Romania,SARS,1,0,1,Not Recorded
+5/17/03,Singapore,SARS,205,28,157,Not Recorded
+5/17/03,South Africa,SARS,1,1,0,Not Recorded
+5/17/03,Spain,SARS,1,0,1,Not Recorded
+5/17/03,Sweden,SARS,3,0,3,Not Recorded
+5/17/03,Switzerland,SARS,1,0,1,Not Recorded
+5/17/03,Thailand,SARS,8,2,5,Not Recorded
+5/17/03,UK,SARS,4,0,4,Not Recorded
+5/17/03,US,SARS,66,0,34,Not Recorded
+5/17/03,Vietnam,SARS,63,5,58,Not Recorded
+5/19/03,Brazil,SARS,2,0,2,Not Recorded
+5/19/03,Canada,SARS,140,23,106,Not Recorded
+5/19/03,China,SARS,5236,289,2148,Not Recorded
+5/19/03,Hong Kong,SARS,1714,251,1213,Not Recorded
+5/19/03,Macau,SARS,1,0,0,Not Recorded
+5/19/03,Taiwan,SARS,344,40,50,Not Recorded
+5/19/03,Colombia,SARS,1,0,1,Not Recorded
+5/19/03,Finland,SARS,1,0,0,Not Recorded
+5/19/03,France,SARS,7,0,6,Not Recorded
+5/19/03,Germany,SARS,9,0,9,Not Recorded
+5/19/03,India,SARS,3,0,3,Not Recorded
+5/19/03,Indonesia,SARS,2,0,2,Not Recorded
+5/19/03,Italy,SARS,9,0,9,Not Recorded
+5/19/03,Kuwait,SARS,1,0,1,Not Recorded
+5/19/03,Malaysia,SARS,7,2,5,Not Recorded
+5/19/03,Mongolia,SARS,9,0,8,Not Recorded
+5/19/03,New Zealand,SARS,1,0,1,Not Recorded
+5/19/03,Philippines,SARS,12,2,8,Not Recorded
+5/19/03,Ireland,SARS,1,0,1,Not Recorded
+5/19/03,South Korea,SARS,3,0,1,Not Recorded
+5/19/03,Romania,SARS,1,0,1,Not Recorded
+5/19/03,Singapore,SARS,206,28,160,Not Recorded
+5/19/03,South Africa,SARS,1,1,0,Not Recorded
+5/19/03,Spain,SARS,1,0,1,Not Recorded
+5/19/03,Sweden,SARS,3,0,3,Not Recorded
+5/19/03,Switzerland,SARS,1,0,1,Not Recorded
+5/19/03,Thailand,SARS,8,2,5,Not Recorded
+5/19/03,UK,SARS,4,0,4,Not Recorded
+5/19/03,US,SARS,67,0,34,Not Recorded
+5/19/03,Vietnam,SARS,63,5,58,Not Recorded
+5/20/03,Brazil,SARS,2,0,2,Not Recorded
+5/20/03,Canada,SARS,140,23,106,Not Recorded
+5/20/03,China,SARS,5248,294,2254,Not Recorded
+5/20/03,Hong Kong,SARS,1718,253,1229,Not Recorded
+5/20/03,Macau,SARS,1,0,0,Not Recorded
+5/20/03,Taiwan,SARS,383,52,63,Not Recorded
+5/20/03,Colombia,SARS,1,0,1,Not Recorded
+5/20/03,Finland,SARS,1,0,0,Not Recorded
+5/20/03,France,SARS,7,0,6,Not Recorded
+5/20/03,Germany,SARS,9,0,9,Not Recorded
+5/20/03,India,SARS,3,0,3,Not Recorded
+5/20/03,Indonesia,SARS,2,0,2,Not Recorded
+5/20/03,Italy,SARS,9,0,9,Not Recorded
+5/20/03,Kuwait,SARS,1,0,1,Not Recorded
+5/20/03,Malaysia,SARS,7,2,5,Not Recorded
+5/20/03,Mongolia,SARS,9,0,8,Not Recorded
+5/20/03,New Zealand,SARS,1,0,1,Not Recorded
+5/20/03,Philippines,SARS,12,2,8,Not Recorded
+5/20/03,Ireland,SARS,1,0,1,Not Recorded
+5/20/03,South Korea,SARS,3,0,2,Not Recorded
+5/20/03,Romania,SARS,1,0,1,Not Recorded
+5/20/03,Singapore,SARS,206,28,161,Not Recorded
+5/20/03,South Africa,SARS,1,1,0,Not Recorded
+5/20/03,Spain,SARS,1,0,1,Not Recorded
+5/20/03,Sweden,SARS,3,0,3,Not Recorded
+5/20/03,Switzerland,SARS,1,0,1,Not Recorded
+5/20/03,Thailand,SARS,8,2,5,Not Recorded
+5/20/03,UK,SARS,4,0,4,Not Recorded
+5/20/03,US,SARS,67,0,34,Not Recorded
+5/20/03,Vietnam,SARS,63,5,58,Not Recorded
+5/21/03,Brazil,SARS,2,0,2,Not Recorded
+5/21/03,Canada,SARS,140,23,108,Not Recorded
+5/21/03,China,SARS,5249,296,2335,Not Recorded
+5/21/03,Hong Kong,SARS,1719,255,1237,Not Recorded
+5/21/03,Macau,SARS,1,0,0,Not Recorded
+5/21/03,Taiwan,SARS,418,52,71,Not Recorded
+5/21/03,Colombia,SARS,1,0,1,Not Recorded
+5/21/03,Finland,SARS,1,0,1,Not Recorded
+5/21/03,France,SARS,7,0,6,Not Recorded
+5/21/03,Germany,SARS,9,0,9,Not Recorded
+5/21/03,India,SARS,3,0,3,Not Recorded
+5/21/03,Indonesia,SARS,2,0,2,Not Recorded
+5/21/03,Italy,SARS,9,0,9,Not Recorded
+5/21/03,Kuwait,SARS,1,0,1,Not Recorded
+5/21/03,Malaysia,SARS,8,2,5,Not Recorded
+5/21/03,Mongolia,SARS,9,0,8,Not Recorded
+5/21/03,New Zealand,SARS,1,0,1,Not Recorded
+5/21/03,Philippines,SARS,12,2,10,Not Recorded
+5/21/03,Ireland,SARS,1,0,1,Not Recorded
+5/21/03,South Korea,SARS,3,0,2,Not Recorded
+5/21/03,Romania,SARS,1,0,1,Not Recorded
+5/21/03,Singapore,SARS,206,28,161,Not Recorded
+5/21/03,South Africa,SARS,1,1,0,Not Recorded
+5/21/03,Spain,SARS,1,0,1,Not Recorded
+5/21/03,Sweden,SARS,3,0,3,Not Recorded
+5/21/03,Switzerland,SARS,1,0,1,Not Recorded
+5/21/03,Thailand,SARS,8,2,5,Not Recorded
+5/21/03,UK,SARS,4,0,4,Not Recorded
+5/21/03,US,SARS,66,0,33,Not Recorded
+5/21/03,Vietnam,SARS,63,5,58,Not Recorded
+5/22/03,Australia,SARS,6,0,6,Not Recorded
+5/22/03,Brazil,SARS,2,0,2,Not Recorded
+5/22/03,Canada,SARS,140,23,109,Not Recorded
+5/22/03,China,SARS,5271,300,2445,Not Recorded
+5/22/03,Hong Kong,SARS,1722,258,1247,Not Recorded
+5/22/03,Macau,SARS,2,0,0,Not Recorded
+5/22/03,Taiwan,SARS,483,60,74,Not Recorded
+5/22/03,Colombia,SARS,1,0,1,Not Recorded
+5/22/03,Finland,SARS,1,0,1,Not Recorded
+5/22/03,France,SARS,7,0,6,Not Recorded
+5/22/03,Germany,SARS,9,0,9,Not Recorded
+5/22/03,India,SARS,3,0,3,Not Recorded
+5/22/03,Indonesia,SARS,2,0,2,Not Recorded
+5/22/03,Italy,SARS,9,0,9,Not Recorded
+5/22/03,Kuwait,SARS,1,0,1,Not Recorded
+5/22/03,Malaysia,SARS,8,2,5,Not Recorded
+5/22/03,Mongolia,SARS,9,0,8,Not Recorded
+5/22/03,New Zealand,SARS,1,0,1,Not Recorded
+5/22/03,Philippines,SARS,12,2,10,Not Recorded
+5/22/03,Ireland,SARS,1,0,1,Not Recorded
+5/22/03,South Korea,SARS,3,0,2,Not Recorded
+5/22/03,Romania,SARS,1,0,1,Not Recorded
+5/22/03,Singapore,SARS,206,29,162,Not Recorded
+5/22/03,South Africa,SARS,1,1,0,Not Recorded
+5/22/03,Spain,SARS,1,0,1,Not Recorded
+5/22/03,Sweden,SARS,3,0,3,Not Recorded
+5/22/03,Switzerland,SARS,1,0,1,Not Recorded
+5/22/03,Thailand,SARS,8,2,5,Not Recorded
+5/22/03,UK,SARS,4,0,4,Not Recorded
+5/22/03,US,SARS,65,0,33,Not Recorded
+5/22/03,Vietnam,SARS,63,5,58,Not Recorded
+5/23/03,Brazil,SARS,2,0,2,Not Recorded
+5/23/03,Canada,SARS,140,23,109,Not Recorded
+5/23/03,China,SARS,5285,303,2544,Not Recorded
+5/23/03,Hong Kong,SARS,1724,260,1255,Not Recorded
+5/23/03,Macau,SARS,2,0,0,Not Recorded
+5/23/03,Taiwan,SARS,538,60,82,Not Recorded
+5/23/03,Colombia,SARS,1,0,1,Not Recorded
+5/23/03,Finland,SARS,1,0,1,Not Recorded
+5/23/03,France,SARS,7,0,6,Not Recorded
+5/23/03,Germany,SARS,9,0,9,Not Recorded
+5/23/03,India,SARS,3,0,3,Not Recorded
+5/23/03,Indonesia,SARS,2,0,2,Not Recorded
+5/23/03,Italy,SARS,9,0,9,Not Recorded
+5/23/03,Kuwait,SARS,1,0,1,Not Recorded
+5/23/03,Malaysia,SARS,8,2,5,Not Recorded
+5/23/03,Mongolia,SARS,9,0,8,Not Recorded
+5/23/03,New Zealand,SARS,1,0,1,Not Recorded
+5/23/03,Philippines,SARS,12,2,10,Not Recorded
+5/23/03,Ireland,SARS,1,0,1,Not Recorded
+5/23/03,South Korea,SARS,3,0,2,Not Recorded
+5/23/03,Romania,SARS,1,0,1,Not Recorded
+5/23/03,Singapore,SARS,206,31,163,Not Recorded
+5/23/03,South Africa,SARS,1,1,0,Not Recorded
+5/23/03,Spain,SARS,1,0,1,Not Recorded
+5/23/03,Sweden,SARS,3,0,3,Not Recorded
+5/23/03,Switzerland,SARS,1,0,1,Not Recorded
+5/23/03,Thailand,SARS,8,2,5,Not Recorded
+5/23/03,UK,SARS,4,0,4,Not Recorded
+5/23/03,US,SARS,65,0,33,Not Recorded
+5/23/03,Vietnam,SARS,63,5,58,Not Recorded
+5/24/03,Brazil,SARS,2,0,2,Not Recorded
+5/24/03,Canada,SARS,140,23,109,Not Recorded
+5/24/03,China,SARS,5309,308,2675,Not Recorded
+5/24/03,Hong Kong,SARS,1724,262,1266,Not Recorded
+5/24/03,Macau,SARS,2,0,0,Not Recorded
+5/24/03,Taiwan,SARS,538,60,82,Not Recorded
+5/24/03,Colombia,SARS,1,0,1,Not Recorded
+5/24/03,Finland,SARS,1,0,1,Not Recorded
+5/24/03,France,SARS,7,0,6,Not Recorded
+5/24/03,Germany,SARS,9,0,9,Not Recorded
+5/24/03,India,SARS,3,0,3,Not Recorded
+5/24/03,Indonesia,SARS,2,0,2,Not Recorded
+5/24/03,Italy,SARS,9,0,9,Not Recorded
+5/24/03,Kuwait,SARS,1,0,1,Not Recorded
+5/24/03,Malaysia,SARS,8,2,5,Not Recorded
+5/24/03,Mongolia,SARS,9,0,8,Not Recorded
+5/24/03,New Zealand,SARS,1,0,1,Not Recorded
+5/24/03,Philippines,SARS,12,2,10,Not Recorded
+5/24/03,Ireland,SARS,1,0,1,Not Recorded
+5/24/03,South Korea,SARS,3,0,2,Not Recorded
+5/24/03,Romania,SARS,1,0,1,Not Recorded
+5/24/03,Singapore,SARS,206,31,163,Not Recorded
+5/24/03,South Africa,SARS,1,1,0,Not Recorded
+5/24/03,Spain,SARS,1,0,1,Not Recorded
+5/24/03,Sweden,SARS,3,0,3,Not Recorded
+5/24/03,Switzerland,SARS,1,0,1,Not Recorded
+5/24/03,Thailand,SARS,8,2,5,Not Recorded
+5/24/03,UK,SARS,4,0,4,Not Recorded
+5/24/03,US,SARS,65,0,33,Not Recorded
+5/24/03,Vietnam,SARS,63,5,58,Not Recorded
+5/26/03,Brazil,SARS,2,0,2,Not Recorded
+5/26/03,Canada,SARS,148,26,110,Not Recorded
+5/26/03,China,SARS,5316,317,2829,Not Recorded
+5/26/03,Hong Kong,SARS,1726,267,1276,Not Recorded
+5/26/03,Macau,SARS,2,0,0,Not Recorded
+5/26/03,Taiwan,SARS,585,72,112,Not Recorded
+5/26/03,Colombia,SARS,1,0,1,Not Recorded
+5/26/03,Finland,SARS,1,0,1,Not Recorded
+5/26/03,France,SARS,7,0,6,Not Recorded
+5/26/03,Germany,SARS,9,0,9,Not Recorded
+5/26/03,India,SARS,3,0,3,Not Recorded
+5/26/03,Indonesia,SARS,2,0,2,Not Recorded
+5/26/03,Italy,SARS,9,0,9,Not Recorded
+5/26/03,Kuwait,SARS,1,0,1,Not Recorded
+5/26/03,Malaysia,SARS,5,2,3,Not Recorded
+5/26/03,Mongolia,SARS,9,0,8,Not Recorded
+5/26/03,New Zealand,SARS,1,0,1,Not Recorded
+5/26/03,Philippines,SARS,12,2,10,Not Recorded
+5/26/03,Ireland,SARS,1,0,1,Not Recorded
+5/26/03,South Korea,SARS,3,0,2,Not Recorded
+5/26/03,Romania,SARS,1,0,1,Not Recorded
+5/26/03,Singapore,SARS,206,31,163,Not Recorded
+5/26/03,South Africa,SARS,1,1,0,Not Recorded
+5/26/03,Spain,SARS,1,0,1,Not Recorded
+5/26/03,Sweden,SARS,3,0,3,Not Recorded
+5/26/03,Switzerland,SARS,1,0,1,Not Recorded
+5/26/03,Thailand,SARS,8,2,6,Not Recorded
+5/26/03,UK,SARS,4,0,4,Not Recorded
+5/26/03,US,SARS,65,0,33,Not Recorded
+5/26/03,Vietnam,SARS,63,5,58,Not Recorded
+5/27/03,Brazil,SARS,2,0,2,Not Recorded
+5/27/03,Canada,SARS,148,26,111,Not Recorded
+5/27/03,China,SARS,5322,321,2944,Not Recorded
+5/27/03,Hong Kong,SARS,1728,269,1285,Not Recorded
+5/27/03,Macau,SARS,2,0,0,Not Recorded
+5/27/03,Taiwan,SARS,596,76,112,Not Recorded
+5/27/03,Colombia,SARS,1,0,1,Not Recorded
+5/27/03,Finland,SARS,1,0,1,Not Recorded
+5/27/03,France,SARS,7,0,6,Not Recorded
+5/27/03,Germany,SARS,9,0,9,Not Recorded
+5/27/03,India,SARS,3,0,3,Not Recorded
+5/27/03,Indonesia,SARS,2,0,2,Not Recorded
+5/27/03,Italy,SARS,9,0,9,Not Recorded
+5/27/03,Kuwait,SARS,1,0,1,Not Recorded
+5/27/03,Malaysia,SARS,5,2,3,Not Recorded
+5/27/03,Mongolia,SARS,9,0,9,Not Recorded
+5/27/03,New Zealand,SARS,1,0,1,Not Recorded
+5/27/03,Philippines,SARS,12,2,10,Not Recorded
+5/27/03,Ireland,SARS,1,0,1,Not Recorded
+5/27/03,South Korea,SARS,3,0,2,Not Recorded
+5/27/03,Romania,SARS,1,0,1,Not Recorded
+5/27/03,Singapore,SARS,206,31,163,Not Recorded
+5/27/03,South Africa,SARS,1,1,0,Not Recorded
+5/27/03,Spain,SARS,1,0,1,Not Recorded
+5/27/03,Sweden,SARS,3,0,3,Not Recorded
+5/27/03,Switzerland,SARS,1,0,1,Not Recorded
+5/27/03,Thailand,SARS,8,2,6,Not Recorded
+5/27/03,UK,SARS,4,0,4,Not Recorded
+5/27/03,US,SARS,65,0,32,Not Recorded
+5/27/03,Vietnam,SARS,63,5,58,Not Recorded
+5/28/03,Australia,SARS,6,0,6,Not Recorded
+5/28/03,Brazil,SARS,2,0,2,Not Recorded
+5/28/03,Canada,SARS,149,26,111,Not Recorded
+5/28/03,China,SARS,5323,325,3036,Not Recorded
+5/28/03,Hong Kong,SARS,1730,270,1295,Not Recorded
+5/28/03,Macau,SARS,2,0,0,Not Recorded
+5/28/03,Taiwan,SARS,610,81,112,Not Recorded
+5/28/03,Colombia,SARS,1,0,1,Not Recorded
+5/28/03,Finland,SARS,1,0,1,Not Recorded
+5/28/03,France,SARS,7,0,6,Not Recorded
+5/28/03,Germany,SARS,9,0,9,Not Recorded
+5/28/03,India,SARS,3,0,3,Not Recorded
+5/28/03,Indonesia,SARS,2,0,2,Not Recorded
+5/28/03,Italy,SARS,9,0,9,Not Recorded
+5/28/03,Kuwait,SARS,1,0,1,Not Recorded
+5/28/03,Malaysia,SARS,5,2,3,Not Recorded
+5/28/03,Mongolia,SARS,9,0,9,Not Recorded
+5/28/03,New Zealand,SARS,1,0,1,Not Recorded
+5/28/03,Philippines,SARS,12,2,10,Not Recorded
+5/28/03,Ireland,SARS,1,0,1,Not Recorded
+5/28/03,South Korea,SARS,3,0,2,Not Recorded
+5/28/03,Romania,SARS,1,0,1,Not Recorded
+5/28/03,Singapore,SARS,206,31,165,Not Recorded
+5/28/03,South Africa,SARS,1,1,0,Not Recorded
+5/28/03,Spain,SARS,1,0,1,Not Recorded
+5/28/03,Sweden,SARS,3,0,3,Not Recorded
+5/28/03,Switzerland,SARS,1,0,1,Not Recorded
+5/28/03,Thailand,SARS,8,2,6,Not Recorded
+5/28/03,UK,SARS,4,0,4,Not Recorded
+5/28/03,US,SARS,66,0,32,Not Recorded
+5/28/03,Vietnam,SARS,63,5,58,Not Recorded
+5/29/03,Australia,SARS,6,0,6,Not Recorded
+5/29/03,Brazil,SARS,2,0,2,Not Recorded
+5/29/03,Canada,SARS,151,26,112,Not Recorded
+5/29/03,China,SARS,5325,327,3121,Not Recorded
+5/29/03,Hong Kong,SARS,1732,273,1302,Not Recorded
+5/29/03,Macau,SARS,1,0,0,Not Recorded
+5/29/03,Taiwan,SARS,660,81,122,Not Recorded
+5/29/03,Colombia,SARS,1,0,1,Not Recorded
+5/29/03,Finland,SARS,1,0,1,Not Recorded
+5/29/03,France,SARS,7,0,6,Not Recorded
+5/29/03,Germany,SARS,9,0,9,Not Recorded
+5/29/03,India,SARS,3,0,3,Not Recorded
+5/29/03,Indonesia,SARS,2,0,2,Not Recorded
+5/29/03,Italy,SARS,9,0,9,Not Recorded
+5/29/03,Kuwait,SARS,1,0,1,Not Recorded
+5/29/03,Malaysia,SARS,5,2,3,Not Recorded
+5/29/03,Mongolia,SARS,9,0,9,Not Recorded
+5/29/03,New Zealand,SARS,1,0,1,Not Recorded
+5/29/03,Philippines,SARS,12,2,10,Not Recorded
+5/29/03,Ireland,SARS,1,0,1,Not Recorded
+5/29/03,South Korea,SARS,3,0,2,Not Recorded
+5/29/03,Romania,SARS,1,0,1,Not Recorded
+5/29/03,Singapore,SARS,206,31,165,Not Recorded
+5/29/03,South Africa,SARS,1,1,0,Not Recorded
+5/29/03,Spain,SARS,1,0,1,Not Recorded
+5/29/03,Sweden,SARS,3,0,3,Not Recorded
+5/29/03,Switzerland,SARS,1,0,1,Not Recorded
+5/29/03,Thailand,SARS,8,2,6,Not Recorded
+5/29/03,UK,SARS,4,0,4,Not Recorded
+5/29/03,US,SARS,66,0,32,Not Recorded
+5/29/03,Vietnam,SARS,63,5,58,Not Recorded
+5/30/03,Brazil,SARS,2,0,2,Not Recorded
+5/30/03,Canada,SARS,159,28,112,Not Recorded
+5/30/03,China,SARS,5328,328,3250,Not Recorded
+5/30/03,Hong Kong,SARS,1736,274,1304,Not Recorded
+5/30/03,Macau,SARS,1,0,0,Not Recorded
+5/30/03,Taiwan,SARS,667,81,125,Not Recorded
+5/30/03,Colombia,SARS,1,0,1,Not Recorded
+5/30/03,Finland,SARS,1,0,1,Not Recorded
+5/30/03,France,SARS,7,0,6,Not Recorded
+5/30/03,Germany,SARS,9,0,9,Not Recorded
+5/30/03,India,SARS,3,0,3,Not Recorded
+5/30/03,Indonesia,SARS,2,0,2,Not Recorded
+5/30/03,Italy,SARS,9,0,9,Not Recorded
+5/30/03,Kuwait,SARS,1,0,1,Not Recorded
+5/30/03,Malaysia,SARS,5,2,3,Not Recorded
+5/30/03,Mongolia,SARS,9,0,9,Not Recorded
+5/30/03,New Zealand,SARS,1,0,1,Not Recorded
+5/30/03,Philippines,SARS,12,2,10,Not Recorded
+5/30/03,Ireland,SARS,1,0,1,Not Recorded
+5/30/03,South Korea,SARS,3,0,3,Not Recorded
+5/30/03,Romania,SARS,1,0,1,Not Recorded
+5/30/03,Singapore,SARS,206,31,165,Not Recorded
+5/30/03,South Africa,SARS,1,1,0,Not Recorded
+5/30/03,Spain,SARS,1,0,1,Not Recorded
+5/30/03,Sweden,SARS,3,0,3,Not Recorded
+5/30/03,Switzerland,SARS,1,0,1,Not Recorded
+5/30/03,Thailand,SARS,8,2,6,Not Recorded
+5/30/03,UK,SARS,4,0,4,Not Recorded
+5/30/03,US,SARS,66,0,32,Not Recorded
+5/30/03,Vietnam,SARS,63,5,58,Not Recorded
+5/31/03,Brazil,SARS,2,0,2,Not Recorded
+5/31/03,Canada,SARS,188,30,116,Not Recorded
+5/31/03,China,SARS,5328,332,3371,Not Recorded
+5/31/03,Hong Kong,SARS,1739,278,1310,Not Recorded
+5/31/03,Macau,SARS,1,0,0,Not Recorded
+5/31/03,Taiwan,SARS,676,81,129,Not Recorded
+5/31/03,Colombia,SARS,1,0,1,Not Recorded
+5/31/03,Finland,SARS,1,0,1,Not Recorded
+5/31/03,France,SARS,7,0,6,Not Recorded
+5/31/03,Germany,SARS,10,0,9,Not Recorded
+5/31/03,India,SARS,3,0,3,Not Recorded
+5/31/03,Indonesia,SARS,2,0,2,Not Recorded
+5/31/03,Italy,SARS,9,0,9,Not Recorded
+5/31/03,Kuwait,SARS,1,0,1,Not Recorded
+5/31/03,Malaysia,SARS,5,2,3,Not Recorded
+5/31/03,Mongolia,SARS,9,0,9,Not Recorded
+5/31/03,New Zealand,SARS,1,0,1,Not Recorded
+5/31/03,Philippines,SARS,12,2,10,Not Recorded
+5/31/03,Ireland,SARS,1,0,1,Not Recorded
+5/31/03,South Korea,SARS,3,0,3,Not Recorded
+5/31/03,Romania,SARS,1,0,1,Not Recorded
+5/31/03,Russia,SARS,1,0,0,Not Recorded
+5/31/03,Singapore,SARS,206,31,165,Not Recorded
+5/31/03,South Africa,SARS,1,1,0,Not Recorded
+5/31/03,Spain,SARS,1,0,1,Not Recorded
+5/31/03,Sweden,SARS,3,0,3,Not Recorded
+5/31/03,Switzerland,SARS,1,0,1,Not Recorded
+5/31/03,Thailand,SARS,8,2,6,Not Recorded
+5/31/03,UK,SARS,4,0,4,Not Recorded
+5/31/03,US,SARS,66,0,32,Not Recorded
+5/31/03,Vietnam,SARS,63,5,58,Not Recorded
+6/2/03,Brazil,SARS,2,0,2,Not Recorded
+6/2/03,Canada,SARS,198,30,116,Not Recorded
+6/2/03,China,SARS,5328,334,3495,Not Recorded
+6/2/03,Hong Kong,SARS,1746,282,1319,Not Recorded
+6/2/03,Macau,SARS,1,0,1,Not Recorded
+6/2/03,Taiwan,SARS,684,81,134,Not Recorded
+6/2/03,Colombia,SARS,1,0,1,Not Recorded
+6/2/03,Finland,SARS,1,0,1,Not Recorded
+6/2/03,France,SARS,7,0,6,Not Recorded
+6/2/03,Germany,SARS,10,0,9,Not Recorded
+6/2/03,India,SARS,3,0,3,Not Recorded
+6/2/03,Indonesia,SARS,2,0,2,Not Recorded
+6/2/03,Italy,SARS,9,0,9,Not Recorded
+6/2/03,Kuwait,SARS,1,0,1,Not Recorded
+6/2/03,Malaysia,SARS,5,2,3,Not Recorded
+6/2/03,Mongolia,SARS,9,0,9,Not Recorded
+6/2/03,New Zealand,SARS,1,0,1,Not Recorded
+6/2/03,Philippines,SARS,12,2,10,Not Recorded
+6/2/03,Ireland,SARS,1,0,1,Not Recorded
+6/2/03,South Korea,SARS,3,0,3,Not Recorded
+6/2/03,Romania,SARS,1,0,1,Not Recorded
+6/2/03,Russia,SARS,1,0,0,Not Recorded
+6/2/03,Singapore,SARS,206,31,165,Not Recorded
+6/2/03,South Africa,SARS,1,1,0,Not Recorded
+6/2/03,Spain,SARS,1,0,1,Not Recorded
+6/2/03,Sweden,SARS,3,0,3,Not Recorded
+6/2/03,Switzerland,SARS,1,0,1,Not Recorded
+6/2/03,Thailand,SARS,8,2,6,Not Recorded
+6/2/03,UK,SARS,4,0,4,Not Recorded
+6/2/03,US,SARS,66,0,32,Not Recorded
+6/2/03,Vietnam,SARS,63,5,58,Not Recorded
+6/3/03,Brazil,SARS,2,0,2,Not Recorded
+6/3/03,Canada,SARS,213,31,116,Not Recorded
+6/3/03,China,SARS,5329,334,3558,Not Recorded
+6/3/03,Hong Kong,SARS,1747,283,1326,Not Recorded
+6/3/03,Macau,SARS,1,0,1,Not Recorded
+6/3/03,Taiwan,SARS,679,81,136,Not Recorded
+6/3/03,Colombia,SARS,1,0,1,Not Recorded
+6/3/03,Finland,SARS,1,0,1,Not Recorded
+6/3/03,France,SARS,7,0,6,Not Recorded
+6/3/03,Germany,SARS,10,0,9,Not Recorded
+6/3/03,India,SARS,3,0,3,Not Recorded
+6/3/03,Indonesia,SARS,2,0,2,Not Recorded
+6/3/03,Italy,SARS,9,0,9,Not Recorded
+6/3/03,Kuwait,SARS,1,0,1,Not Recorded
+6/3/03,Malaysia,SARS,5,2,3,Not Recorded
+6/3/03,Mongolia,SARS,9,0,9,Not Recorded
+6/3/03,New Zealand,SARS,1,0,1,Not Recorded
+6/3/03,Philippines,SARS,12,2,10,Not Recorded
+6/3/03,Ireland,SARS,1,0,1,Not Recorded
+6/3/03,South Korea,SARS,3,0,3,Not Recorded
+6/3/03,Romania,SARS,1,0,1,Not Recorded
+6/3/03,Russia,SARS,1,0,0,Not Recorded
+6/3/03,Singapore,SARS,206,31,165,Not Recorded
+6/3/03,South Africa,SARS,1,1,0,Not Recorded
+6/3/03,Spain,SARS,1,0,1,Not Recorded
+6/3/03,Sweden,SARS,3,0,3,Not Recorded
+6/3/03,Switzerland,SARS,1,0,1,Not Recorded
+6/3/03,Thailand,SARS,8,2,6,Not Recorded
+6/3/03,UK,SARS,4,0,4,Not Recorded
+6/3/03,US,SARS,68,0,33,Not Recorded
+6/3/03,Vietnam,SARS,63,5,58,Not Recorded
+6/4/03,Brazil,SARS,2,0,2,Not Recorded
+6/4/03,Canada,SARS,216,31,121,Not Recorded
+6/4/03,China,SARS,5329,334,3674,Not Recorded
+6/4/03,Hong Kong,SARS,1748,283,1339,Not Recorded
+6/4/03,Macau,SARS,1,0,1,Not Recorded
+6/4/03,Taiwan,SARS,678,81,272,Not Recorded
+6/4/03,Colombia,SARS,1,0,1,Not Recorded
+6/4/03,Finland,SARS,1,0,1,Not Recorded
+6/4/03,France,SARS,7,0,6,Not Recorded
+6/4/03,Germany,SARS,10,0,9,Not Recorded
+6/4/03,India,SARS,3,0,3,Not Recorded
+6/4/03,Indonesia,SARS,2,0,2,Not Recorded
+6/4/03,Italy,SARS,9,0,9,Not Recorded
+6/4/03,Kuwait,SARS,1,0,1,Not Recorded
+6/4/03,Malaysia,SARS,5,2,3,Not Recorded
+6/4/03,Mongolia,SARS,9,0,9,Not Recorded
+6/4/03,New Zealand,SARS,1,0,1,Not Recorded
+6/4/03,Philippines,SARS,12,2,10,Not Recorded
+6/4/03,Ireland,SARS,1,0,1,Not Recorded
+6/4/03,South Korea,SARS,3,0,3,Not Recorded
+6/4/03,Romania,SARS,1,0,1,Not Recorded
+6/4/03,Russia,SARS,1,0,0,Not Recorded
+6/4/03,Singapore,SARS,206,31,165,Not Recorded
+6/4/03,South Africa,SARS,1,1,0,Not Recorded
+6/4/03,Spain,SARS,1,0,1,Not Recorded
+6/4/03,Sweden,SARS,3,0,3,Not Recorded
+6/4/03,Switzerland,SARS,1,0,1,Not Recorded
+6/4/03,Thailand,SARS,8,2,6,Not Recorded
+6/4/03,UK,SARS,4,0,4,Not Recorded
+6/4/03,US,SARS,69,0,34,Not Recorded
+6/4/03,Vietnam,SARS,63,5,58,Not Recorded
+6/5/03,Brazil,SARS,2,0,2,Not Recorded
+6/5/03,Canada,SARS,218,31,120,Not Recorded
+6/5/03,China,SARS,5329,336,3770,Not Recorded
+6/5/03,Hong Kong,SARS,1748,284,1343,Not Recorded
+6/5/03,Macau,SARS,1,0,1,Not Recorded
+6/5/03,Taiwan,SARS,677,81,257,Not Recorded
+6/5/03,Colombia,SARS,1,0,1,Not Recorded
+6/5/03,Finland,SARS,1,0,1,Not Recorded
+6/5/03,France,SARS,7,0,6,Not Recorded
+6/5/03,Germany,SARS,10,0,9,Not Recorded
+6/5/03,India,SARS,3,0,3,Not Recorded
+6/5/03,Indonesia,SARS,2,0,2,Not Recorded
+6/5/03,Italy,SARS,9,0,9,Not Recorded
+6/5/03,Kuwait,SARS,1,0,1,Not Recorded
+6/5/03,Malaysia,SARS,5,2,3,Not Recorded
+6/5/03,Mongolia,SARS,9,0,9,Not Recorded
+6/5/03,New Zealand,SARS,1,0,1,Not Recorded
+6/5/03,Philippines,SARS,12,2,10,Not Recorded
+6/5/03,Ireland,SARS,1,0,1,Not Recorded
+6/5/03,South Korea,SARS,3,0,3,Not Recorded
+6/5/03,Romania,SARS,1,0,1,Not Recorded
+6/5/03,Russia,SARS,1,0,0,Not Recorded
+6/5/03,Singapore,SARS,206,31,165,Not Recorded
+6/5/03,South Africa,SARS,1,1,0,Not Recorded
+6/5/03,Spain,SARS,1,0,1,Not Recorded
+6/5/03,Sweden,SARS,3,0,3,Not Recorded
+6/5/03,Switzerland,SARS,1,0,1,Not Recorded
+6/5/03,Thailand,SARS,8,2,6,Not Recorded
+6/5/03,UK,SARS,4,0,4,Not Recorded
+6/5/03,US,SARS,69,0,34,Not Recorded
+6/5/03,Vietnam,SARS,63,5,58,Not Recorded
+6/6/03,Brazil,SARS,2,0,2,Not Recorded
+6/6/03,Canada,SARS,219,31,120,Not Recorded
+6/6/03,China,SARS,5329,338,3869,Not Recorded
+6/6/03,Hong Kong,SARS,1750,286,1350,Not Recorded
+6/6/03,Macau,SARS,1,0,1,Not Recorded
+6/6/03,Taiwan,SARS,676,81,257,Not Recorded
+6/6/03,Colombia,SARS,1,0,1,Not Recorded
+6/6/03,Finland,SARS,1,0,1,Not Recorded
+6/6/03,France,SARS,7,0,6,Not Recorded
+6/6/03,Germany,SARS,10,0,9,Not Recorded
+6/6/03,India,SARS,3,0,3,Not Recorded
+6/6/03,Indonesia,SARS,2,0,2,Not Recorded
+6/6/03,Italy,SARS,9,0,9,Not Recorded
+6/6/03,Kuwait,SARS,1,0,1,Not Recorded
+6/6/03,Malaysia,SARS,5,2,3,Not Recorded
+6/6/03,Mongolia,SARS,9,0,9,Not Recorded
+6/6/03,New Zealand,SARS,1,0,1,Not Recorded
+6/6/03,Philippines,SARS,12,2,10,Not Recorded
+6/6/03,Ireland,SARS,1,0,1,Not Recorded
+6/6/03,South Korea,SARS,3,0,3,Not Recorded
+6/6/03,Romania,SARS,1,0,1,Not Recorded
+6/6/03,Russia,SARS,1,0,0,Not Recorded
+6/6/03,Singapore,SARS,206,31,165,Not Recorded
+6/6/03,South Africa,SARS,1,1,0,Not Recorded
+6/6/03,Spain,SARS,1,0,1,Not Recorded
+6/6/03,Sweden,SARS,3,0,3,Not Recorded
+6/6/03,Switzerland,SARS,1,0,1,Not Recorded
+6/6/03,Thailand,SARS,8,2,6,Not Recorded
+6/6/03,UK,SARS,4,0,4,Not Recorded
+6/6/03,US,SARS,68,0,35,Not Recorded
+6/6/03,Vietnam,SARS,63,5,58,Not Recorded
+6/9/03,Brazil,SARS,2,0,2,Not Recorded
+6/9/03,Canada,SARS,229,32,128,Not Recorded
+6/9/03,China,SARS,5328,340,4186,Not Recorded
+6/9/03,Hong Kong,SARS,1753,288,1365,Not Recorded
+6/9/03,Macau,SARS,1,0,1,Not Recorded
+6/9/03,Taiwan,SARS,680,81,257,Not Recorded
+6/9/03,Colombia,SARS,1,0,1,Not Recorded
+6/9/03,Finland,SARS,1,0,1,Not Recorded
+6/9/03,France,SARS,7,0,6,Not Recorded
+6/9/03,Germany,SARS,10,0,9,Not Recorded
+6/9/03,India,SARS,3,0,3,Not Recorded
+6/9/03,Indonesia,SARS,2,0,2,Not Recorded
+6/9/03,Italy,SARS,9,0,9,Not Recorded
+6/9/03,Kuwait,SARS,1,0,1,Not Recorded
+6/9/03,Malaysia,SARS,5,2,3,Not Recorded
+6/9/03,Mongolia,SARS,9,0,9,Not Recorded
+6/9/03,New Zealand,SARS,1,0,1,Not Recorded
+6/9/03,Philippines,SARS,12,2,10,Not Recorded
+6/9/03,Ireland,SARS,1,0,1,Not Recorded
+6/9/03,South Korea,SARS,3,0,3,Not Recorded
+6/9/03,Romania,SARS,1,0,1,Not Recorded
+6/9/03,Russia,SARS,1,0,0,Not Recorded
+6/9/03,Singapore,SARS,206,31,168,Not Recorded
+6/9/03,South Africa,SARS,1,1,0,Not Recorded
+6/9/03,Spain,SARS,1,0,1,Not Recorded
+6/9/03,Sweden,SARS,3,0,3,Not Recorded
+6/9/03,Switzerland,SARS,1,0,1,Not Recorded
+6/9/03,Thailand,SARS,9,2,6,Not Recorded
+6/9/03,UK,SARS,4,0,4,Not Recorded
+6/9/03,US,SARS,68,0,35,Not Recorded
+6/9/03,Vietnam,SARS,63,5,58,Not Recorded
+6/10/03,Brazil,SARS,3,0,2,Not Recorded
+6/10/03,Canada,SARS,229,32,131,Not Recorded
+6/10/03,China,SARS,5328,343,4294,Not Recorded
+6/10/03,Hong Kong,SARS,1754,290,1368,Not Recorded
+6/10/03,Macau,SARS,1,0,1,Not Recorded
+6/10/03,Taiwan,SARS,686,81,319,Not Recorded
+6/10/03,Colombia,SARS,1,0,1,Not Recorded
+6/10/03,Finland,SARS,1,0,1,Not Recorded
+6/10/03,France,SARS,7,0,6,Not Recorded
+6/10/03,Germany,SARS,10,0,9,Not Recorded
+6/10/03,India,SARS,3,0,3,Not Recorded
+6/10/03,Indonesia,SARS,2,0,2,Not Recorded
+6/10/03,Italy,SARS,9,0,9,Not Recorded
+6/10/03,Kuwait,SARS,1,0,1,Not Recorded
+6/10/03,Malaysia,SARS,5,2,3,Not Recorded
+6/10/03,Mongolia,SARS,9,0,9,Not Recorded
+6/10/03,New Zealand,SARS,1,0,1,Not Recorded
+6/10/03,Philippines,SARS,12,2,10,Not Recorded
+6/10/03,Ireland,SARS,1,0,1,Not Recorded
+6/10/03,South Korea,SARS,3,0,3,Not Recorded
+6/10/03,Romania,SARS,1,0,1,Not Recorded
+6/10/03,Russia,SARS,1,0,0,Not Recorded
+6/10/03,Singapore,SARS,206,31,168,Not Recorded
+6/10/03,South Africa,SARS,1,1,0,Not Recorded
+6/10/03,Spain,SARS,1,0,1,Not Recorded
+6/10/03,Sweden,SARS,3,0,3,Not Recorded
+6/10/03,Switzerland,SARS,1,0,1,Not Recorded
+6/10/03,Thailand,SARS,9,2,6,Not Recorded
+6/10/03,UK,SARS,4,0,4,Not Recorded
+6/10/03,US,SARS,69,0,36,Not Recorded
+6/10/03,Vietnam,SARS,63,5,58,Not Recorded
+6/11/03,Brazil,SARS,3,0,2,Not Recorded
+6/11/03,Canada,SARS,230,32,134,Not Recorded
+6/11/03,China,SARS,5329,343,4390,Not Recorded
+6/11/03,Hong Kong,SARS,1754,290,1368,Not Recorded
+6/11/03,Macau,SARS,1,0,1,Not Recorded
+6/11/03,Taiwan,SARS,687,81,344,Not Recorded
+6/11/03,Colombia,SARS,1,0,1,Not Recorded
+6/11/03,Finland,SARS,1,0,1,Not Recorded
+6/11/03,France,SARS,7,0,6,Not Recorded
+6/11/03,Germany,SARS,10,0,9,Not Recorded
+6/11/03,India,SARS,3,0,3,Not Recorded
+6/11/03,Indonesia,SARS,2,0,2,Not Recorded
+6/11/03,Italy,SARS,9,0,9,Not Recorded
+6/11/03,Kuwait,SARS,1,0,1,Not Recorded
+6/11/03,Malaysia,SARS,5,2,3,Not Recorded
+6/11/03,Mongolia,SARS,9,0,9,Not Recorded
+6/11/03,New Zealand,SARS,1,0,1,Not Recorded
+6/11/03,Philippines,SARS,12,2,10,Not Recorded
+6/11/03,Ireland,SARS,1,0,1,Not Recorded
+6/11/03,South Korea,SARS,3,0,3,Not Recorded
+6/11/03,Romania,SARS,1,0,1,Not Recorded
+6/11/03,Russia,SARS,1,0,0,Not Recorded
+6/11/03,Singapore,SARS,206,31,168,Not Recorded
+6/11/03,South Africa,SARS,1,1,0,Not Recorded
+6/11/03,Spain,SARS,1,0,1,Not Recorded
+6/11/03,Sweden,SARS,3,0,3,Not Recorded
+6/11/03,Switzerland,SARS,1,0,1,Not Recorded
+6/11/03,Thailand,SARS,9,2,6,Not Recorded
+6/11/03,UK,SARS,4,0,4,Not Recorded
+6/11/03,US,SARS,71,0,36,Not Recorded
+6/11/03,Vietnam,SARS,63,5,58,Not Recorded
+6/12/03,Brazil,SARS,3,0,2,Not Recorded
+6/12/03,Canada,SARS,238,32,141,Not Recorded
+6/12/03,China,SARS,5328,343,4457,Not Recorded
+6/12/03,Hong Kong,SARS,1755,291,1377,Not Recorded
+6/12/03,Macau,SARS,1,0,1,Not Recorded
+6/12/03,Taiwan,SARS,688,81,347,Not Recorded
+6/12/03,Colombia,SARS,1,0,1,Not Recorded
+6/12/03,Finland,SARS,1,0,1,Not Recorded
+6/12/03,France,SARS,7,0,6,Not Recorded
+6/12/03,Germany,SARS,10,0,9,Not Recorded
+6/12/03,India,SARS,3,0,3,Not Recorded
+6/12/03,Indonesia,SARS,2,0,2,Not Recorded
+6/12/03,Italy,SARS,9,0,9,Not Recorded
+6/12/03,Kuwait,SARS,1,0,1,Not Recorded
+6/12/03,Malaysia,SARS,5,2,3,Not Recorded
+6/12/03,Mongolia,SARS,9,0,9,Not Recorded
+6/12/03,New Zealand,SARS,1,0,1,Not Recorded
+6/12/03,Philippines,SARS,14,2,12,Not Recorded
+6/12/03,Ireland,SARS,1,0,1,Not Recorded
+6/12/03,South Korea,SARS,3,0,3,Not Recorded
+6/12/03,Romania,SARS,1,0,1,Not Recorded
+6/12/03,Russia,SARS,1,0,0,Not Recorded
+6/12/03,Singapore,SARS,206,31,169,Not Recorded
+6/12/03,South Africa,SARS,1,1,0,Not Recorded
+6/12/03,Spain,SARS,1,0,1,Not Recorded
+6/12/03,Sweden,SARS,3,0,3,Not Recorded
+6/12/03,Switzerland,SARS,1,0,1,Not Recorded
+6/12/03,Thailand,SARS,9,2,6,Not Recorded
+6/12/03,UK,SARS,4,0,4,Not Recorded
+6/12/03,US,SARS,70,0,36,Not Recorded
+6/12/03,Vietnam,SARS,63,5,58,Not Recorded
+6/13/03,Brazil,SARS,3,0,2,Not Recorded
+6/13/03,Canada,SARS,242,32,150,Not Recorded
+6/13/03,China,SARS,5327,343,4530,Not Recorded
+6/13/03,Hong Kong,SARS,1755,293,1380,Not Recorded
+6/13/03,Macau,SARS,1,0,1,Not Recorded
+6/13/03,Taiwan,SARS,693,81,385,Not Recorded
+6/13/03,Colombia,SARS,1,0,1,Not Recorded
+6/13/03,Finland,SARS,1,0,1,Not Recorded
+6/13/03,France,SARS,7,0,6,Not Recorded
+6/13/03,Germany,SARS,10,0,9,Not Recorded
+6/13/03,India,SARS,3,0,3,Not Recorded
+6/13/03,Indonesia,SARS,2,0,2,Not Recorded
+6/13/03,Italy,SARS,9,0,9,Not Recorded
+6/13/03,Kuwait,SARS,1,0,1,Not Recorded
+6/13/03,Malaysia,SARS,5,2,3,Not Recorded
+6/13/03,Mongolia,SARS,9,0,9,Not Recorded
+6/13/03,New Zealand,SARS,1,0,1,Not Recorded
+6/13/03,Philippines,SARS,14,2,12,Not Recorded
+6/13/03,Ireland,SARS,1,0,1,Not Recorded
+6/13/03,South Korea,SARS,3,0,3,Not Recorded
+6/13/03,Romania,SARS,1,0,1,Not Recorded
+6/13/03,Russia,SARS,1,0,0,Not Recorded
+6/13/03,Singapore,SARS,206,31,169,Not Recorded
+6/13/03,South Africa,SARS,1,1,0,Not Recorded
+6/13/03,Spain,SARS,1,0,1,Not Recorded
+6/13/03,Sweden,SARS,3,0,3,Not Recorded
+6/13/03,Switzerland,SARS,1,0,1,Not Recorded
+6/13/03,Thailand,SARS,9,2,6,Not Recorded
+6/13/03,UK,SARS,4,0,4,Not Recorded
+6/13/03,US,SARS,71,0,36,Not Recorded
+6/13/03,Vietnam,SARS,63,5,58,Not Recorded
+6/16/03,Brazil,SARS,3,0,2,Not Recorded
+6/16/03,Canada,SARS,243,32,156,Not Recorded
+6/16/03,China,SARS,5326,346,4656,Not Recorded
+6/16/03,Hong Kong,SARS,1755,295,1386,Not Recorded
+6/16/03,Macau,SARS,1,0,1,Not Recorded
+6/16/03,Taiwan,SARS,698,83,443,Not Recorded
+6/16/03,Colombia,SARS,1,0,1,Not Recorded
+6/16/03,Finland,SARS,1,0,1,Not Recorded
+6/16/03,France,SARS,7,0,6,Not Recorded
+6/16/03,Germany,SARS,10,0,9,Not Recorded
+6/16/03,India,SARS,3,0,3,Not Recorded
+6/16/03,Indonesia,SARS,2,0,2,Not Recorded
+6/16/03,Italy,SARS,9,0,9,Not Recorded
+6/16/03,Kuwait,SARS,1,0,1,Not Recorded
+6/16/03,Malaysia,SARS,5,2,3,Not Recorded
+6/16/03,Mongolia,SARS,9,0,9,Not Recorded
+6/16/03,New Zealand,SARS,1,0,1,Not Recorded
+6/16/03,Philippines,SARS,14,2,12,Not Recorded
+6/16/03,Ireland,SARS,1,0,1,Not Recorded
+6/16/03,South Korea,SARS,3,0,3,Not Recorded
+6/16/03,Romania,SARS,1,0,1,Not Recorded
+6/16/03,Russia,SARS,1,0,0,Not Recorded
+6/16/03,Singapore,SARS,206,31,169,Not Recorded
+6/16/03,South Africa,SARS,1,1,0,Not Recorded
+6/16/03,Spain,SARS,1,0,1,Not Recorded
+6/16/03,Sweden,SARS,3,0,3,Not Recorded
+6/16/03,Switzerland,SARS,1,0,1,Not Recorded
+6/16/03,Thailand,SARS,9,2,6,Not Recorded
+6/16/03,UK,SARS,4,0,4,Not Recorded
+6/16/03,US,SARS,72,0,36,Not Recorded
+6/16/03,Vietnam,SARS,63,5,58,Not Recorded
+6/17/03,Brazil,SARS,3,0,2,Not Recorded
+6/17/03,Canada,SARS,247,32,171,Not Recorded
+6/17/03,China,SARS,5326,346,4725,Not Recorded
+6/17/03,Hong Kong,SARS,1755,295,1387,Not Recorded
+6/17/03,Macau,SARS,1,0,1,Not Recorded
+6/17/03,Taiwan,SARS,697,83,460,Not Recorded
+6/17/03,Colombia,SARS,1,0,1,Not Recorded
+6/17/03,Finland,SARS,1,0,1,Not Recorded
+6/17/03,France,SARS,7,0,6,Not Recorded
+6/17/03,Germany,SARS,10,0,9,Not Recorded
+6/17/03,India,SARS,3,0,3,Not Recorded
+6/17/03,Indonesia,SARS,2,0,2,Not Recorded
+6/17/03,Italy,SARS,9,0,9,Not Recorded
+6/17/03,Kuwait,SARS,1,0,1,Not Recorded
+6/17/03,Malaysia,SARS,5,2,3,Not Recorded
+6/17/03,Mongolia,SARS,9,0,9,Not Recorded
+6/17/03,New Zealand,SARS,1,0,1,Not Recorded
+6/17/03,Philippines,SARS,14,2,12,Not Recorded
+6/17/03,Ireland,SARS,1,0,1,Not Recorded
+6/17/03,South Korea,SARS,3,0,3,Not Recorded
+6/17/03,Romania,SARS,1,0,1,Not Recorded
+6/17/03,Russia,SARS,1,0,0,Not Recorded
+6/17/03,Singapore,SARS,206,31,169,Not Recorded
+6/17/03,South Africa,SARS,1,1,0,Not Recorded
+6/17/03,Spain,SARS,1,0,1,Not Recorded
+6/17/03,Sweden,SARS,3,0,3,Not Recorded
+6/17/03,Switzerland,SARS,1,0,1,Not Recorded
+6/17/03,Thailand,SARS,9,2,6,Not Recorded
+6/17/03,UK,SARS,4,0,4,Not Recorded
+6/17/03,US,SARS,73,0,36,Not Recorded
+6/17/03,Vietnam,SARS,63,5,58,Not Recorded
+6/18/03,Brazil,SARS,3,0,2,Not Recorded
+6/18/03,Canada,SARS,246,33,176,Not Recorded
+6/18/03,China,SARS,5326,347,4762,Not Recorded
+6/18/03,Hong Kong,SARS,1755,295,1393,Not Recorded
+6/18/03,Macau,SARS,1,0,1,Not Recorded
+6/18/03,Taiwan,SARS,697,83,469,Not Recorded
+6/18/03,Colombia,SARS,1,0,1,Not Recorded
+6/18/03,Finland,SARS,1,0,1,Not Recorded
+6/18/03,France,SARS,7,0,6,Not Recorded
+6/18/03,Germany,SARS,10,0,9,Not Recorded
+6/18/03,India,SARS,3,0,3,Not Recorded
+6/18/03,Indonesia,SARS,2,0,2,Not Recorded
+6/18/03,Italy,SARS,9,0,9,Not Recorded
+6/18/03,Kuwait,SARS,1,0,1,Not Recorded
+6/18/03,Malaysia,SARS,5,2,3,Not Recorded
+6/18/03,Mongolia,SARS,9,0,9,Not Recorded
+6/18/03,New Zealand,SARS,1,0,1,Not Recorded
+6/18/03,Philippines,SARS,14,2,12,Not Recorded
+6/18/03,Ireland,SARS,1,0,1,Not Recorded
+6/18/03,South Korea,SARS,3,0,3,Not Recorded
+6/18/03,Romania,SARS,1,0,1,Not Recorded
+6/18/03,Russia,SARS,1,0,0,Not Recorded
+6/18/03,Singapore,SARS,206,31,169,Not Recorded
+6/18/03,South Africa,SARS,1,1,0,Not Recorded
+6/18/03,Spain,SARS,1,0,1,Not Recorded
+6/18/03,Sweden,SARS,3,0,3,Not Recorded
+6/18/03,Switzerland,SARS,1,0,1,Not Recorded
+6/18/03,Thailand,SARS,9,2,6,Not Recorded
+6/18/03,UK,SARS,4,0,4,Not Recorded
+6/18/03,US,SARS,75,0,36,Not Recorded
+6/18/03,Vietnam,SARS,63,5,58,Not Recorded
+6/19/03,Brazil,SARS,3,0,2,Not Recorded
+6/19/03,Canada,SARS,245,34,175,Not Recorded
+6/19/03,China,SARS,5326,347,4786,Not Recorded
+6/19/03,Hong Kong,SARS,1755,296,1396,Not Recorded
+6/19/03,Macau,SARS,1,0,1,Not Recorded
+6/19/03,Taiwan,SARS,695,84,472,Not Recorded
+6/19/03,Colombia,SARS,1,0,1,Not Recorded
+6/19/03,Finland,SARS,1,0,1,Not Recorded
+6/19/03,France,SARS,7,0,6,Not Recorded
+6/19/03,Germany,SARS,10,0,9,Not Recorded
+6/19/03,India,SARS,3,0,3,Not Recorded
+6/19/03,Indonesia,SARS,2,0,2,Not Recorded
+6/19/03,Italy,SARS,9,0,9,Not Recorded
+6/19/03,Kuwait,SARS,1,0,1,Not Recorded
+6/19/03,Malaysia,SARS,5,2,3,Not Recorded
+6/19/03,Mongolia,SARS,9,0,9,Not Recorded
+6/19/03,New Zealand,SARS,1,0,1,Not Recorded
+6/19/03,Philippines,SARS,14,2,12,Not Recorded
+6/19/03,Ireland,SARS,1,0,1,Not Recorded
+6/19/03,South Korea,SARS,3,0,3,Not Recorded
+6/19/03,Romania,SARS,1,0,1,Not Recorded
+6/19/03,Russia,SARS,1,0,0,Not Recorded
+6/19/03,Singapore,SARS,206,31,170,Not Recorded
+6/19/03,South Africa,SARS,1,1,0,Not Recorded
+6/19/03,Spain,SARS,1,0,1,Not Recorded
+6/19/03,Sweden,SARS,3,0,3,Not Recorded
+6/19/03,Switzerland,SARS,1,0,1,Not Recorded
+6/19/03,Thailand,SARS,9,2,6,Not Recorded
+6/19/03,UK,SARS,4,0,4,Not Recorded
+6/19/03,US,SARS,75,0,36,Not Recorded
+6/19/03,Vietnam,SARS,63,5,58,Not Recorded
+6/20/03,Brazil,SARS,3,0,2,Not Recorded
+6/20/03,Canada,SARS,245,34,180,Not Recorded
+6/20/03,China,SARS,5326,347,4806,Not Recorded
+6/20/03,Hong Kong,SARS,1755,296,1403,Not Recorded
+6/20/03,Macau,SARS,1,0,1,Not Recorded
+6/20/03,Taiwan,SARS,695,84,480,Not Recorded
+6/20/03,Colombia,SARS,1,0,1,Not Recorded
+6/20/03,Finland,SARS,1,0,1,Not Recorded
+6/20/03,France,SARS,7,0,6,Not Recorded
+6/20/03,Germany,SARS,10,0,9,Not Recorded
+6/20/03,India,SARS,3,0,3,Not Recorded
+6/20/03,Indonesia,SARS,2,0,2,Not Recorded
+6/20/03,Italy,SARS,9,0,9,Not Recorded
+6/20/03,Kuwait,SARS,1,0,1,Not Recorded
+6/20/03,Malaysia,SARS,5,2,3,Not Recorded
+6/20/03,Mongolia,SARS,9,0,9,Not Recorded
+6/20/03,New Zealand,SARS,1,0,1,Not Recorded
+6/20/03,Philippines,SARS,14,2,12,Not Recorded
+6/20/03,Ireland,SARS,1,0,1,Not Recorded
+6/20/03,South Korea,SARS,3,0,3,Not Recorded
+6/20/03,Romania,SARS,1,0,1,Not Recorded
+6/20/03,Russia,SARS,1,0,0,Not Recorded
+6/20/03,Singapore,SARS,206,31,170,Not Recorded
+6/20/03,South Africa,SARS,1,1,0,Not Recorded
+6/20/03,Spain,SARS,1,0,1,Not Recorded
+6/20/03,Sweden,SARS,3,0,3,Not Recorded
+6/20/03,Switzerland,SARS,1,0,1,Not Recorded
+6/20/03,Thailand,SARS,9,2,6,Not Recorded
+6/20/03,UK,SARS,4,0,4,Not Recorded
+6/20/03,US,SARS,74,0,36,Not Recorded
+6/20/03,Vietnam,SARS,63,5,58,Not Recorded
+6/23/03,Brazil,SARS,3,0,2,Not Recorded
+6/23/03,Canada,SARS,246,35,182,Not Recorded
+6/23/03,China,SARS,5326,347,4895,Not Recorded
+6/23/03,Hong Kong,SARS,1755,296,1411,Not Recorded
+6/23/03,Macau,SARS,1,0,1,Not Recorded
+6/23/03,Taiwan,SARS,692,84,486,Not Recorded
+6/23/03,Colombia,SARS,1,0,1,Not Recorded
+6/23/03,Finland,SARS,1,0,1,Not Recorded
+6/23/03,France,SARS,7,0,6,Not Recorded
+6/23/03,Germany,SARS,10,0,9,Not Recorded
+6/23/03,India,SARS,3,0,3,Not Recorded
+6/23/03,Indonesia,SARS,2,0,2,Not Recorded
+6/23/03,Italy,SARS,9,0,9,Not Recorded
+6/23/03,Kuwait,SARS,1,0,1,Not Recorded
+6/23/03,Malaysia,SARS,5,2,3,Not Recorded
+6/23/03,Mongolia,SARS,9,0,9,Not Recorded
+6/23/03,New Zealand,SARS,1,0,1,Not Recorded
+6/23/03,Philippines,SARS,14,2,12,Not Recorded
+6/23/03,Ireland,SARS,1,0,1,Not Recorded
+6/23/03,South Korea,SARS,3,0,3,Not Recorded
+6/23/03,Romania,SARS,1,0,1,Not Recorded
+6/23/03,Russia,SARS,1,0,0,Not Recorded
+6/23/03,Singapore,SARS,206,31,170,Not Recorded
+6/23/03,South Africa,SARS,1,1,0,Not Recorded
+6/23/03,Spain,SARS,1,0,1,Not Recorded
+6/23/03,Sweden,SARS,3,0,3,Not Recorded
+6/23/03,Switzerland,SARS,1,0,1,Not Recorded
+6/23/03,Thailand,SARS,9,2,7,Not Recorded
+6/23/03,UK,SARS,4,0,4,Not Recorded
+6/23/03,US,SARS,74,0,36,Not Recorded
+6/23/03,Vietnam,SARS,63,5,58,Not Recorded
+6/24/03,Brazil,SARS,3,0,2,Not Recorded
+6/24/03,Canada,SARS,249,37,188,Not Recorded
+6/24/03,China,SARS,5326,347,4901,Not Recorded
+6/24/03,Hong Kong,SARS,1755,296,1417,Not Recorded
+6/24/03,Macau,SARS,1,0,1,Not Recorded
+6/24/03,Taiwan,SARS,687,84,492,Not Recorded
+6/24/03,Colombia,SARS,1,0,1,Not Recorded
+6/24/03,Finland,SARS,1,0,1,Not Recorded
+6/24/03,France,SARS,7,0,6,Not Recorded
+6/24/03,Germany,SARS,10,0,9,Not Recorded
+6/24/03,India,SARS,3,0,3,Not Recorded
+6/24/03,Indonesia,SARS,2,0,2,Not Recorded
+6/24/03,Italy,SARS,9,0,9,Not Recorded
+6/24/03,Kuwait,SARS,1,0,1,Not Recorded
+6/24/03,Malaysia,SARS,5,2,3,Not Recorded
+6/24/03,Mongolia,SARS,9,0,9,Not Recorded
+6/24/03,New Zealand,SARS,1,0,1,Not Recorded
+6/24/03,Philippines,SARS,14,2,12,Not Recorded
+6/24/03,Ireland,SARS,1,0,1,Not Recorded
+6/24/03,South Korea,SARS,3,0,3,Not Recorded
+6/24/03,Romania,SARS,1,0,1,Not Recorded
+6/24/03,Russia,SARS,1,0,0,Not Recorded
+6/24/03,Singapore,SARS,206,31,170,Not Recorded
+6/24/03,South Africa,SARS,1,1,0,Not Recorded
+6/24/03,Spain,SARS,1,0,1,Not Recorded
+6/24/03,Sweden,SARS,3,0,3,Not Recorded
+6/24/03,Switzerland,SARS,1,0,1,Not Recorded
+6/24/03,Thailand,SARS,9,2,7,Not Recorded
+6/24/03,UK,SARS,4,0,4,Not Recorded
+6/24/03,US,SARS,75,0,36,Not Recorded
+6/24/03,Vietnam,SARS,63,5,58,Not Recorded
+6/25/03,Brazil,SARS,3,0,2,Not Recorded
+6/25/03,Canada,SARS,250,37,188,Not Recorded
+6/25/03,China,SARS,5327,348,4916,Not Recorded
+6/25/03,Hong Kong,SARS,1755,296,1419,Not Recorded
+6/25/03,Macau,SARS,1,0,1,Not Recorded
+6/25/03,Taiwan,SARS,686,84,492,Not Recorded
+6/25/03,Colombia,SARS,1,0,1,Not Recorded
+6/25/03,Finland,SARS,1,0,1,Not Recorded
+6/25/03,France,SARS,7,0,6,Not Recorded
+6/25/03,Germany,SARS,10,0,9,Not Recorded
+6/25/03,India,SARS,3,0,3,Not Recorded
+6/25/03,Indonesia,SARS,2,0,2,Not Recorded
+6/25/03,Italy,SARS,9,0,9,Not Recorded
+6/25/03,Japan,SARS,1,0,0,Not Recorded
+6/25/03,Kuwait,SARS,1,0,1,Not Recorded
+6/25/03,Malaysia,SARS,5,2,3,Not Recorded
+6/25/03,Mongolia,SARS,9,0,9,Not Recorded
+6/25/03,New Zealand,SARS,1,0,1,Not Recorded
+6/25/03,Philippines,SARS,14,2,12,Not Recorded
+6/25/03,Ireland,SARS,1,0,1,Not Recorded
+6/25/03,South Korea,SARS,3,0,3,Not Recorded
+6/25/03,Romania,SARS,1,0,1,Not Recorded
+6/25/03,Russia,SARS,1,0,0,Not Recorded
+6/25/03,Singapore,SARS,206,31,170,Not Recorded
+6/25/03,South Africa,SARS,1,1,0,Not Recorded
+6/25/03,Spain,SARS,1,0,1,Not Recorded
+6/25/03,Sweden,SARS,3,0,3,Not Recorded
+6/25/03,Switzerland,SARS,1,0,1,Not Recorded
+6/25/03,Thailand,SARS,9,2,7,Not Recorded
+6/25/03,UK,SARS,4,0,4,Not Recorded
+6/25/03,US,SARS,75,0,36,Not Recorded
+6/25/03,Vietnam,SARS,63,5,58,Not Recorded
+6/26/03,Brazil,SARS,3,0,2,Not Recorded
+6/26/03,Canada,SARS,251,37,190,Not Recorded
+6/26/03,China,SARS,5327,348,4921,Not Recorded
+6/26/03,Hong Kong,SARS,1755,296,1419,Not Recorded
+6/26/03,Macau,SARS,1,0,1,Not Recorded
+6/26/03,Taiwan,SARS,682,84,491,Not Recorded
+6/26/03,Colombia,SARS,1,0,1,Not Recorded
+6/26/03,Finland,SARS,1,0,1,Not Recorded
+6/26/03,France,SARS,7,0,6,Not Recorded
+6/26/03,Germany,SARS,10,0,9,Not Recorded
+6/26/03,India,SARS,3,0,3,Not Recorded
+6/26/03,Indonesia,SARS,2,0,2,Not Recorded
+6/26/03,Italy,SARS,9,0,9,Not Recorded
+6/26/03,Japan,SARS,1,0,0,Not Recorded
+6/26/03,Kuwait,SARS,1,0,1,Not Recorded
+6/26/03,Malaysia,SARS,5,2,3,Not Recorded
+6/26/03,Mongolia,SARS,9,0,9,Not Recorded
+6/26/03,New Zealand,SARS,1,0,1,Not Recorded
+6/26/03,Philippines,SARS,14,2,12,Not Recorded
+6/26/03,Ireland,SARS,1,0,1,Not Recorded
+6/26/03,South Korea,SARS,3,0,3,Not Recorded
+6/26/03,Romania,SARS,1,0,1,Not Recorded
+6/26/03,Russia,SARS,1,0,0,Not Recorded
+6/26/03,Singapore,SARS,206,32,170,Not Recorded
+6/26/03,South Africa,SARS,1,1,0,Not Recorded
+6/26/03,Spain,SARS,1,0,1,Not Recorded
+6/26/03,Sweden,SARS,3,0,3,Not Recorded
+6/26/03,Switzerland,SARS,1,0,1,Not Recorded
+6/26/03,Thailand,SARS,9,2,7,Not Recorded
+6/26/03,UK,SARS,4,0,4,Not Recorded
+6/26/03,US,SARS,74,0,36,Not Recorded
+6/26/03,Vietnam,SARS,63,5,58,Not Recorded
+6/27/03,Brazil,SARS,3,0,2,Not Recorded
+6/27/03,Canada,SARS,251,37,191,Not Recorded
+6/27/03,China,SARS,5327,348,4921,Not Recorded
+6/27/03,Hong Kong,SARS,1755,297,1422,Not Recorded
+6/27/03,Macau,SARS,1,0,1,Not Recorded
+6/27/03,Taiwan,SARS,681,84,492,Not Recorded
+6/27/03,Colombia,SARS,1,0,1,Not Recorded
+6/27/03,Finland,SARS,1,0,1,Not Recorded
+6/27/03,France,SARS,7,0,6,Not Recorded
+6/27/03,Germany,SARS,10,0,9,Not Recorded
+6/27/03,India,SARS,3,0,3,Not Recorded
+6/27/03,Indonesia,SARS,2,0,2,Not Recorded
+6/27/03,Italy,SARS,5,0,5,Not Recorded
+6/27/03,Kuwait,SARS,1,0,1,Not Recorded
+6/27/03,Malaysia,SARS,5,2,3,Not Recorded
+6/27/03,Mongolia,SARS,9,0,9,Not Recorded
+6/27/03,New Zealand,SARS,1,0,1,Not Recorded
+6/27/03,Philippines,SARS,14,2,12,Not Recorded
+6/27/03,Ireland,SARS,1,0,1,Not Recorded
+6/27/03,South Korea,SARS,3,0,3,Not Recorded
+6/27/03,Romania,SARS,1,0,1,Not Recorded
+6/27/03,Russia,SARS,1,0,0,Not Recorded
+6/27/03,Singapore,SARS,206,32,171,Not Recorded
+6/27/03,South Africa,SARS,1,1,0,Not Recorded
+6/27/03,Spain,SARS,1,0,1,Not Recorded
+6/27/03,Sweden,SARS,3,0,3,Not Recorded
+6/27/03,Switzerland,SARS,1,0,1,Not Recorded
+6/27/03,Thailand,SARS,9,2,7,Not Recorded
+6/27/03,UK,SARS,4,0,4,Not Recorded
+6/27/03,US,SARS,74,0,64,Not Recorded
+6/27/03,Vietnam,SARS,63,5,58,Not Recorded
+6/30/03,Australia,SARS,5,0,5,Not Recorded
+6/30/03,Brazil,SARS,3,0,2,Not Recorded
+6/30/03,Canada,SARS,252,37,192,Not Recorded
+6/30/03,China,SARS,5327,348,4927,Not Recorded
+6/30/03,Hong Kong,SARS,1755,298,1429,Not Recorded
+6/30/03,Macau,SARS,1,0,1,Not Recorded
+6/30/03,Taiwan,SARS,678,84,495,Not Recorded
+6/30/03,Colombia,SARS,1,0,1,Not Recorded
+6/30/03,Finland,SARS,1,0,1,Not Recorded
+6/30/03,France,SARS,7,0,6,Not Recorded
+6/30/03,Germany,SARS,10,0,9,Not Recorded
+6/30/03,India,SARS,3,0,3,Not Recorded
+6/30/03,Indonesia,SARS,2,0,2,Not Recorded
+6/30/03,Italy,SARS,5,0,5,Not Recorded
+6/30/03,Kuwait,SARS,1,0,1,Not Recorded
+6/30/03,Malaysia,SARS,5,2,3,Not Recorded
+6/30/03,Mongolia,SARS,9,0,9,Not Recorded
+6/30/03,New Zealand,SARS,1,0,1,Not Recorded
+6/30/03,Philippines,SARS,14,2,12,Not Recorded
+6/30/03,Ireland,SARS,1,0,1,Not Recorded
+6/30/03,South Korea,SARS,3,0,3,Not Recorded
+6/30/03,Romania,SARS,1,0,1,Not Recorded
+6/30/03,Russia,SARS,1,0,0,Not Recorded
+6/30/03,Singapore,SARS,206,32,171,Not Recorded
+6/30/03,South Africa,SARS,1,1,0,Not Recorded
+6/30/03,Spain,SARS,1,0,1,Not Recorded
+6/30/03,Sweden,SARS,3,0,3,Not Recorded
+6/30/03,Switzerland,SARS,1,0,1,Not Recorded
+6/30/03,Thailand,SARS,9,2,7,Not Recorded
+6/30/03,UK,SARS,4,0,4,Not Recorded
+6/30/03,US,SARS,73,0,63,Not Recorded
+6/30/03,Vietnam,SARS,63,5,58,Not Recorded
+7/1/03,Brazil,SARS,1,0,1,Not Recorded
+7/1/03,Canada,SARS,252,38,192,Not Recorded
+7/1/03,China,SARS,5327,348,4930,Not Recorded
+7/1/03,Hong Kong,SARS,1755,298,1429,Not Recorded
+7/1/03,Macau,SARS,1,0,1,Not Recorded
+7/1/03,Taiwan,SARS,678,84,498,Not Recorded
+7/1/03,Colombia,SARS,1,0,1,Not Recorded
+7/1/03,Finland,SARS,1,0,1,Not Recorded
+7/1/03,France,SARS,7,0,6,Not Recorded
+7/1/03,Germany,SARS,10,0,9,Not Recorded
+7/1/03,India,SARS,3,0,3,Not Recorded
+7/1/03,Indonesia,SARS,2,0,2,Not Recorded
+7/1/03,Italy,SARS,5,0,5,Not Recorded
+7/1/03,Kuwait,SARS,1,0,1,Not Recorded
+7/1/03,Malaysia,SARS,5,2,3,Not Recorded
+7/1/03,Mongolia,SARS,9,0,9,Not Recorded
+7/1/03,New Zealand,SARS,1,0,1,Not Recorded
+7/1/03,Philippines,SARS,14,2,12,Not Recorded
+7/1/03,Ireland,SARS,1,0,1,Not Recorded
+7/1/03,South Korea,SARS,3,0,3,Not Recorded
+7/1/03,Romania,SARS,1,0,1,Not Recorded
+7/1/03,Russia,SARS,1,0,0,Not Recorded
+7/1/03,Singapore,SARS,206,32,171,Not Recorded
+7/1/03,South Africa,SARS,1,1,0,Not Recorded
+7/1/03,Spain,SARS,1,0,1,Not Recorded
+7/1/03,Sweden,SARS,3,0,3,Not Recorded
+7/1/03,Switzerland,SARS,1,0,1,Not Recorded
+7/1/03,Thailand,SARS,9,2,7,Not Recorded
+7/1/03,UK,SARS,4,0,4,Not Recorded
+7/1/03,US,SARS,73,0,63,Not Recorded
+7/1/03,Vietnam,SARS,63,5,58,Not Recorded
+7/2/03,Brazil,SARS,1,0,1,Not Recorded
+7/2/03,Canada,SARS,252,38,192,Not Recorded
+7/2/03,China,SARS,5327,348,4933,Not Recorded
+7/2/03,Hong Kong,SARS,1755,298,1429,Not Recorded
+7/2/03,Macau,SARS,1,0,1,Not Recorded
+7/2/03,Taiwan,SARS,676,84,498,Not Recorded
+7/2/03,Colombia,SARS,1,0,1,Not Recorded
+7/2/03,Finland,SARS,1,0,1,Not Recorded
+7/2/03,France,SARS,7,0,6,Not Recorded
+7/2/03,Germany,SARS,10,0,9,Not Recorded
+7/2/03,India,SARS,3,0,3,Not Recorded
+7/2/03,Indonesia,SARS,2,0,2,Not Recorded
+7/2/03,Italy,SARS,4,0,4,Not Recorded
+7/2/03,Kuwait,SARS,1,0,1,Not Recorded
+7/2/03,Malaysia,SARS,5,2,3,Not Recorded
+7/2/03,Mongolia,SARS,9,0,9,Not Recorded
+7/2/03,New Zealand,SARS,1,0,1,Not Recorded
+7/2/03,Philippines,SARS,14,2,12,Not Recorded
+7/2/03,Ireland,SARS,1,0,1,Not Recorded
+7/2/03,South Korea,SARS,3,0,3,Not Recorded
+7/2/03,Romania,SARS,1,0,1,Not Recorded
+7/2/03,Russia,SARS,1,0,0,Not Recorded
+7/2/03,Singapore,SARS,206,32,171,Not Recorded
+7/2/03,South Africa,SARS,1,1,0,Not Recorded
+7/2/03,Spain,SARS,1,0,1,Not Recorded
+7/2/03,Sweden,SARS,3,0,3,Not Recorded
+7/2/03,Switzerland,SARS,1,0,1,Not Recorded
+7/2/03,Thailand,SARS,9,2,7,Not Recorded
+7/2/03,UK,SARS,4,0,4,Not Recorded
+7/2/03,US,SARS,73,0,63,Not Recorded
+7/2/03,Vietnam,SARS,63,5,58,Not Recorded
+7/3/03,Brazil,SARS,1,0,1,Not Recorded
+7/3/03,Canada,SARS,251,38,193,Not Recorded
+7/3/03,China,SARS,5327,348,4933,Not Recorded
+7/3/03,Hong Kong,SARS,1755,298,1429,Not Recorded
+7/3/03,Macau,SARS,1,0,1,Not Recorded
+7/3/03,Taiwan,SARS,674,84,498,Not Recorded
+7/3/03,Colombia,SARS,1,0,1,Not Recorded
+7/3/03,Finland,SARS,1,0,1,Not Recorded
+7/3/03,France,SARS,7,0,6,Not Recorded
+7/3/03,Germany,SARS,10,0,9,Not Recorded
+7/3/03,India,SARS,3,0,3,Not Recorded
+7/3/03,Indonesia,SARS,2,0,2,Not Recorded
+7/3/03,Italy,SARS,4,0,4,Not Recorded
+7/3/03,Kuwait,SARS,1,0,1,Not Recorded
+7/3/03,Malaysia,SARS,5,2,3,Not Recorded
+7/3/03,Mongolia,SARS,9,0,9,Not Recorded
+7/3/03,New Zealand,SARS,1,0,1,Not Recorded
+7/3/03,Philippines,SARS,14,2,12,Not Recorded
+7/3/03,Ireland,SARS,1,0,1,Not Recorded
+7/3/03,South Korea,SARS,3,0,3,Not Recorded
+7/3/03,Romania,SARS,1,0,1,Not Recorded
+7/3/03,Russia,SARS,1,0,0,Not Recorded
+7/3/03,Singapore,SARS,206,32,171,Not Recorded
+7/3/03,South Africa,SARS,1,1,0,Not Recorded
+7/3/03,Spain,SARS,1,0,1,Not Recorded
+7/3/03,Sweden,SARS,3,0,3,Not Recorded
+7/3/03,Switzerland,SARS,1,0,1,Not Recorded
+7/3/03,Thailand,SARS,9,2,7,Not Recorded
+7/3/03,UK,SARS,4,0,4,Not Recorded
+7/3/03,US,SARS,73,0,65,Not Recorded
+7/3/03,Vietnam,SARS,63,5,58,Not Recorded
+7/4/03,Brazil,SARS,1,0,1,Not Recorded
+7/4/03,Canada,SARS,251,38,193,Not Recorded
+7/4/03,China,SARS,5327,348,4934,Not Recorded
+7/4/03,Hong Kong,SARS,1755,298,1430,Not Recorded
+7/4/03,Macau,SARS,1,0,1,Not Recorded
+7/4/03,Taiwan,SARS,674,84,500,Not Recorded
+7/4/03,Colombia,SARS,1,0,1,Not Recorded
+7/4/03,Finland,SARS,1,0,1,Not Recorded
+7/4/03,France,SARS,7,0,6,Not Recorded
+7/4/03,Germany,SARS,10,0,9,Not Recorded
+7/4/03,India,SARS,3,0,3,Not Recorded
+7/4/03,Indonesia,SARS,2,0,2,Not Recorded
+7/4/03,Italy,SARS,4,0,4,Not Recorded
+7/4/03,Kuwait,SARS,1,0,1,Not Recorded
+7/4/03,Malaysia,SARS,5,2,3,Not Recorded
+7/4/03,Mongolia,SARS,9,0,9,Not Recorded
+7/4/03,New Zealand,SARS,1,0,1,Not Recorded
+7/4/03,Philippines,SARS,14,2,12,Not Recorded
+7/4/03,Ireland,SARS,1,0,1,Not Recorded
+7/4/03,South Korea,SARS,3,0,3,Not Recorded
+7/4/03,Romania,SARS,1,0,1,Not Recorded
+7/4/03,Russia,SARS,1,0,0,Not Recorded
+7/4/03,Singapore,SARS,206,32,171,Not Recorded
+7/4/03,South Africa,SARS,1,1,0,Not Recorded
+7/4/03,Spain,SARS,1,0,1,Not Recorded
+7/4/03,Sweden,SARS,3,0,3,Not Recorded
+7/4/03,Switzerland,SARS,1,0,1,Not Recorded
+7/4/03,Thailand,SARS,9,2,7,Not Recorded
+7/4/03,UK,SARS,4,0,4,Not Recorded
+7/4/03,US,SARS,73,0,65,Not Recorded
+7/4/03,Vietnam,SARS,63,5,58,Not Recorded
+7/7/03,Brazil,SARS,1,0,1,Not Recorded
+7/7/03,Canada,SARS,251,38,193,Not Recorded
+7/7/03,China,SARS,5327,348,4934,Not Recorded
+7/7/03,Hong Kong,SARS,1755,298,1430,Not Recorded
+7/7/03,Macau,SARS,1,0,1,Not Recorded
+7/7/03,Taiwan,SARS,674,84,500,Not Recorded
+7/7/03,Colombia,SARS,1,0,1,Not Recorded
+7/7/03,Finland,SARS,1,0,1,Not Recorded
+7/7/03,France,SARS,7,0,6,Not Recorded
+7/7/03,Germany,SARS,10,0,9,Not Recorded
+7/7/03,India,SARS,3,0,3,Not Recorded
+7/7/03,Indonesia,SARS,2,0,2,Not Recorded
+7/7/03,Italy,SARS,4,0,4,Not Recorded
+7/7/03,Kuwait,SARS,1,0,1,Not Recorded
+7/7/03,Malaysia,SARS,5,2,3,Not Recorded
+7/7/03,Mongolia,SARS,9,0,9,Not Recorded
+7/7/03,New Zealand,SARS,1,0,1,Not Recorded
+7/7/03,Philippines,SARS,14,2,12,Not Recorded
+7/7/03,Ireland,SARS,1,0,1,Not Recorded
+7/7/03,South Korea,SARS,3,0,3,Not Recorded
+7/7/03,Romania,SARS,1,0,1,Not Recorded
+7/7/03,Russia,SARS,1,0,0,Not Recorded
+7/7/03,Singapore,SARS,206,32,171,Not Recorded
+7/7/03,South Africa,SARS,1,1,0,Not Recorded
+7/7/03,Spain,SARS,1,0,1,Not Recorded
+7/7/03,Sweden,SARS,3,0,3,Not Recorded
+7/7/03,Switzerland,SARS,1,0,1,Not Recorded
+7/7/03,Thailand,SARS,9,2,7,Not Recorded
+7/7/03,UK,SARS,4,0,4,Not Recorded
+7/7/03,US,SARS,73,0,65,Not Recorded
+7/7/03,Vietnam,SARS,63,5,58,Not Recorded
+7/8/03,Brazil,SARS,1,0,1,Not Recorded
+7/8/03,Canada,SARS,250,38,194,Not Recorded
+7/8/03,China,SARS,5327,348,4934,Not Recorded
+7/8/03,Hong Kong,SARS,1755,298,1430,Not Recorded
+7/8/03,Macau,SARS,1,0,1,Not Recorded
+7/8/03,Taiwan,SARS,671,84,502,Not Recorded
+7/8/03,Colombia,SARS,1,0,1,Not Recorded
+7/8/03,Finland,SARS,1,0,1,Not Recorded
+7/8/03,France,SARS,7,0,6,Not Recorded
+7/8/03,Germany,SARS,10,0,9,Not Recorded
+7/8/03,India,SARS,3,0,3,Not Recorded
+7/8/03,Indonesia,SARS,2,0,2,Not Recorded
+7/8/03,Italy,SARS,4,0,4,Not Recorded
+7/8/03,Kuwait,SARS,1,0,1,Not Recorded
+7/8/03,Malaysia,SARS,5,2,3,Not Recorded
+7/8/03,Mongolia,SARS,9,0,9,Not Recorded
+7/8/03,New Zealand,SARS,1,0,1,Not Recorded
+7/8/03,Philippines,SARS,14,2,12,Not Recorded
+7/8/03,Ireland,SARS,1,0,1,Not Recorded
+7/8/03,South Korea,SARS,3,0,3,Not Recorded
+7/8/03,Romania,SARS,1,0,1,Not Recorded
+7/8/03,Russia,SARS,1,0,0,Not Recorded
+7/8/03,Singapore,SARS,206,32,171,Not Recorded
+7/8/03,South Africa,SARS,1,1,0,Not Recorded
+7/8/03,Spain,SARS,1,0,1,Not Recorded
+7/8/03,Sweden,SARS,3,0,3,Not Recorded
+7/8/03,Switzerland,SARS,1,0,1,Not Recorded
+7/8/03,Thailand,SARS,9,2,7,Not Recorded
+7/8/03,UK,SARS,4,0,4,Not Recorded
+7/8/03,US,SARS,74,0,64,Not Recorded
+7/8/03,Vietnam,SARS,63,5,58,Not Recorded
+7/9/03,Brazil,SARS,1,0,1,Not Recorded
+7/9/03,Canada,SARS,249,38,193,Not Recorded
+7/9/03,China,SARS,5327,348,4939,Not Recorded
+7/9/03,Hong Kong,SARS,1755,298,1431,Not Recorded
+7/9/03,Macau,SARS,1,0,1,Not Recorded
+7/9/03,Taiwan,SARS,671,84,504,Not Recorded
+7/9/03,Colombia,SARS,1,0,1,Not Recorded
+7/9/03,Finland,SARS,1,0,1,Not Recorded
+7/9/03,France,SARS,7,0,6,Not Recorded
+7/9/03,Germany,SARS,10,0,9,Not Recorded
+7/9/03,India,SARS,3,0,3,Not Recorded
+7/9/03,Indonesia,SARS,2,0,2,Not Recorded
+7/9/03,Italy,SARS,4,0,4,Not Recorded
+7/9/03,Kuwait,SARS,1,0,1,Not Recorded
+7/9/03,Malaysia,SARS,5,2,3,Not Recorded
+7/9/03,Mongolia,SARS,9,0,9,Not Recorded
+7/9/03,New Zealand,SARS,1,0,1,Not Recorded
+7/9/03,Philippines,SARS,14,2,12,Not Recorded
+7/9/03,Ireland,SARS,1,0,1,Not Recorded
+7/9/03,South Korea,SARS,3,0,3,Not Recorded
+7/9/03,Romania,SARS,1,0,1,Not Recorded
+7/9/03,Russia,SARS,1,0,0,Not Recorded
+7/9/03,Singapore,SARS,206,32,171,Not Recorded
+7/9/03,South Africa,SARS,1,1,0,Not Recorded
+7/9/03,Spain,SARS,1,0,1,Not Recorded
+7/9/03,Sweden,SARS,3,0,3,Not Recorded
+7/9/03,Switzerland,SARS,1,0,1,Not Recorded
+7/9/03,Thailand,SARS,9,2,7,Not Recorded
+7/9/03,UK,SARS,4,0,4,Not Recorded
+7/9/03,US,SARS,75,0,67,Not Recorded
+7/9/03,Vietnam,SARS,63,5,58,Not Recorded
+7/10/03,Brazil,SARS,1,0,1,Not Recorded
+7/10/03,Canada,SARS,250,38,194,Not Recorded
+7/10/03,China,SARS,5327,348,4941,Not Recorded
+7/10/03,Hong Kong,SARS,1755,298,1431,Not Recorded
+7/10/03,Macau,SARS,1,0,1,Not Recorded
+7/10/03,Taiwan,SARS,671,84,506,Not Recorded
+7/10/03,Colombia,SARS,1,0,1,Not Recorded
+7/10/03,Finland,SARS,1,0,1,Not Recorded
+7/10/03,France,SARS,7,0,6,Not Recorded
+7/10/03,Germany,SARS,10,0,9,Not Recorded
+7/10/03,India,SARS,3,0,3,Not Recorded
+7/10/03,Indonesia,SARS,2,0,2,Not Recorded
+7/10/03,Italy,SARS,4,0,4,Not Recorded
+7/10/03,Kuwait,SARS,1,0,1,Not Recorded
+7/10/03,Malaysia,SARS,5,2,3,Not Recorded
+7/10/03,Mongolia,SARS,9,0,9,Not Recorded
+7/10/03,New Zealand,SARS,1,0,1,Not Recorded
+7/10/03,Philippines,SARS,14,2,12,Not Recorded
+7/10/03,Ireland,SARS,1,0,1,Not Recorded
+7/10/03,South Korea,SARS,3,0,3,Not Recorded
+7/10/03,Romania,SARS,1,0,1,Not Recorded
+7/10/03,Russia,SARS,1,0,0,Not Recorded
+7/10/03,Singapore,SARS,206,32,172,Not Recorded
+7/10/03,South Africa,SARS,1,1,0,Not Recorded
+7/10/03,Spain,SARS,1,0,1,Not Recorded
+7/10/03,Sweden,SARS,3,0,3,Not Recorded
+7/10/03,Switzerland,SARS,1,0,1,Not Recorded
+7/10/03,Thailand,SARS,9,2,7,Not Recorded
+7/10/03,UK,SARS,4,0,4,Not Recorded
+7/10/03,US,SARS,75,0,67,Not Recorded
+7/10/03,Vietnam,SARS,63,5,58,Not Recorded
+7/11/03,Brazil,SARS,1,0,1,Not Recorded
+7/11/03,Canada,SARS,250,38,194,Not Recorded
+7/11/03,China,SARS,5327,348,4941,Not Recorded
+7/11/03,Hong Kong,SARS,1755,298,1433,Not Recorded
+7/11/03,Macau,SARS,1,0,1,Not Recorded
+7/11/03,Taiwan,SARS,671,84,507,Not Recorded
+7/11/03,Colombia,SARS,1,0,1,Not Recorded
+7/11/03,Finland,SARS,1,0,1,Not Recorded
+7/11/03,France,SARS,7,1,6,Not Recorded
+7/11/03,Germany,SARS,10,0,9,Not Recorded
+7/11/03,India,SARS,3,0,3,Not Recorded
+7/11/03,Indonesia,SARS,2,0,2,Not Recorded
+7/11/03,Italy,SARS,4,0,4,Not Recorded
+7/11/03,Kuwait,SARS,1,0,1,Not Recorded
+7/11/03,Malaysia,SARS,5,2,3,Not Recorded
+7/11/03,Mongolia,SARS,9,0,9,Not Recorded
+7/11/03,New Zealand,SARS,1,0,1,Not Recorded
+7/11/03,Philippines,SARS,14,2,12,Not Recorded
+7/11/03,Ireland,SARS,1,0,1,Not Recorded
+7/11/03,South Korea,SARS,3,0,3,Not Recorded
+7/11/03,Romania,SARS,1,0,1,Not Recorded
+7/11/03,Russia,SARS,1,0,0,Not Recorded
+7/11/03,Singapore,SARS,206,32,172,Not Recorded
+7/11/03,South Africa,SARS,1,1,0,Not Recorded
+7/11/03,Spain,SARS,1,0,1,Not Recorded
+7/11/03,Sweden,SARS,3,0,3,Not Recorded
+7/11/03,Switzerland,SARS,1,0,1,Not Recorded
+7/11/03,Thailand,SARS,9,2,7,Not Recorded
+7/11/03,UK,SARS,4,0,4,Not Recorded
+7/11/03,US,SARS,75,0,67,Not Recorded
+7/11/03,Vietnam,SARS,63,5,58,Not Recorded
