@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1589502317912.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "55585942",
+    "id" : "449CE231",
+    "lastKnownWriteTime" : 1589502348,
+    "last_content_update" : 1589502348288,
+    "path" : "~/Desktop/John's_MacBook_Desktop/SDS348/Website/content/Project1.Rmd",
+    "project_path" : "content/Project1.Rmd",
+    "properties" : {
+        "cursorPosition" : "4,17",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

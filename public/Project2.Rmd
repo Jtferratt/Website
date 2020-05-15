@@ -2,7 +2,7 @@
 title: 'Project 2: Modeling, Testing, and Classification'
 author: "John Ferratt"
 UTEID: "jtf948"
-date: "April 30, 2020"
+date: "2020-04-30"
 output:
   pdf_document: default
   html_document: default
