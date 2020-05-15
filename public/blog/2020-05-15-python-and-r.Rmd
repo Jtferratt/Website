@@ -1,0 +1,140 @@
+---
+title: "Python and R"
+author: "John Ferratt"
+date: '2020-05-15'
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+description: Detailing how Python and R can work together!
+slug: python-and-r
+tags: []
+categories: []
+---
+# Python and R
+## R is a very handy programming language for analyzing datasets, manipulating data and creating effective plots to illustrate relationships between variables whereas Python which can do similar things is very slick in its ability to create functions and its easily readable code and simplicity. Below, I've taken the `heart` dataset in python and using the Reticulate library, I've been able to use that dataset in R. This allowed me to run a logistic regression on the data, and using LASSO, I've selected the variables that have a significant effect on whether or not a patient was predicted to have heart disease (For more information, see the Modeling project under the Projects Tab) to obtain an ROC plot of which I used to calculate the Area-under-the-curve (AUC). This could then be used to determine how effective our model is. 
+
+```{python}
+import re
+import pandas as pd
+heart = pd.read_csv("heart.csv")
+```
+
+```{R}
+library("reticulate")
+library("lmtest")
+library("tidyverse")
+library("plotROC")
+library("glmnet")
+
+heart <- read.csv("heart.csv")
+
+# Define class_diags function:
+class_diag<-function(probs,truth){
+  
+  tab<-table(factor(probs>.5,levels=c("FALSE","TRUE")),truth)
+  acc=sum(diag(tab))/sum(tab)
+  sens=tab[2,2]/colSums(tab)[2]
+  spec=tab[1,1]/colSums(tab)[1]
+  ppv=tab[2,2]/rowSums(tab)[2]
+
+  if(is.numeric(truth)==FALSE & is.logical(truth)==FALSE) truth<-as.numeric(truth)-1
+  
+  #CALCULATE EXACT AUC
+  ord<-order(probs, decreasing=TRUE)
+  probs <- probs[ord]; truth <- truth[ord]
+  
+  TPR=cumsum(truth)/max(1,sum(truth)) 
+  FPR=cumsum(!truth)/max(1,sum(!truth))
+  
+  dup<-c(probs[-1]>=probs[-length(probs)], FALSE)
+  TPR<-c(0,TPR[!dup],1); FPR<-c(0,FPR[!dup],1)
+  
+  n <- length(TPR)
+  auc<- sum( ((TPR[-1]+TPR[-n])/2) * (FPR[-1]-FPR[-n]) )
+
+  data.frame(acc,sens,spec,ppv,auc)
+}
+
+heart$cp <- as.factor(heart$cp)
+heart$sex <- as.factor(heart$sex)
+heart$fbs <- as.factor(heart$fbs)
+heart$slope <- as.factor(heart$slope)
+heart$thal <- as.factor(heart$thal)
+heart$ca <- as.factor(heart$ca)
+heart <- heart %>% mutate(chol_c= chol - mean(chol), trestbps_c=trestbps - mean(trestbps),exang=as.factor(exang))
+
+
+heartLassoFit <- glm(target~(.), data=heart, family="binomial")
+summary(heartLassoFit)
+
+heartmatrix <- model.matrix(heartLassoFit)
+heartmatrix <- heartmatrix[,-1]
+
+heartresponse <- as.matrix(heart$target)
+
+cv.lasso1 <- cv.glmnet(x=heartmatrix, y=heartresponse, family="binomial")
+lasso1 <- glmnet(x=heartmatrix, y=heartresponse, family="binomial", alpha=1, lambda=cv.lasso1$lambda.1se)
+coef(lasso1)
+
+# Set Explanatory Dummy variables in a new dataset with the acquired LASSO Non-zero Coefficients
+
+heart6 <- heart %>% mutate(sex1=ifelse(sex=="1",1,0), cp1=ifelse(cp=="1",1,0), cp2=ifelse(cp=="2",1,0), 
+                           cp3=ifelse(cp=="3",1,0), exang1=ifelse(exang=="1",1,0),
+                           slope1=ifelse(slope=="1",1,0), slope2=ifelse(slope=="2",1,0), 
+                           ca1=ifelse(ca=="1",1,0), ca2=ifelse(ca=="2",1,0), ca3=ifelse(ca=="3",1,0),
+                           thal2=ifelse(thal=="2",1,0), thal3=ifelse(thal=="3",1,0)) %>%
+                    select(-sex, -cp, -chol, -fbs, -slope, -ca, -exang, -thal, -chol_c)
+  
+# 10-fold Out-of-Sample Cross Validation for LASSO Nonzero Coefficients
+
+k=10
+
+heart7<-heart6[sample(nrow(heart6)),] 
+folds<-cut(seq(1:nrow(heart6)),breaks=k,labels=F) 
+
+diags<-NULL
+for(i in 1:k){          
+train<-heart7[folds!=i,] 
+test<-heart7[folds==i,]  
+
+truth<-test$target
+
+fit<- glm(target~(.), data=train, family="binomial")
+probs<- predict(fit, newdata=test, type="response")
+
+diags<-rbind(diags,class_diag(probs,truth)) 
+}
+
+summarize_all(diags,mean)
+
+heart4 <- heart %>% mutate(probcurve= predict(heartLassoFit, type= "response"))
+heartROCplot <- ggplot(heart4) + geom_roc(aes(m= probcurve, d= target), n.cuts=0) +
+  ggtitle("ROC Plot for Heart Disease Dataset Logistic Regression")
+heartROCplot
+
+# AUC Computation
+auc <- calc_auc(heartROCplot) %>% pull(AUC)
+auc
+```
+
+Now if we take the AUC and run it back through python, we can set up a function with a set of conditional statements to describe the AUC obtained from the logistic regression. 
+
+```{python}
+def rating(number):
+    if number <= 0.5:
+        return "very bad"
+    elif number <= 0.6:
+        return "bad"
+    elif number <= 0.7:
+        return "poor"
+    elif number <= 0.8:
+        return "fair"
+    elif number <= 0.9:
+        return "good"
+    elif number <= 1.0:
+        return "great"
+    
+result = rating(r.auc)
+print("The AUC of",r.auc,"is considered",result)
+```
